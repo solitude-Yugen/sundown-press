@@ -1,0 +1,87 @@
+﻿/* â”€â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.main-footer {
+  position: relative;
+  z-index: 2;
+  background: #0A2E2F;
+  border-top: 1px solid rgba(212, 160, 60, 0.1);
+}
+
+.footer-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0 40px;
+  gap: 60px;
+}
+
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo-icon {
+  font-size: 32px;
+  color: var(--gold);
+}
+
+.footer-logo-text {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--cream-white);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 8px;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255, 253, 247, 0.4);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.footer-links-group {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-accent);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 253, 247, 0.5);
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: var(--cream-white);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid rgba(212, 160, 60, 0.08);
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: rgba(255, 253, 247, 0.35);
+}

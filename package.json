@@ -1,0 +1,21 @@
+{
+  "name": "sundown-press",
+  "version": "1.0.0",
+  "description": "Sundown Press — Personalized Memory Products & Celebrations landing page",
+  "private": true,
+  "scripts": {
+    "dev": "npx -y serve -p 3000 .",
+    "lint": "npx -y eslint src/",
+    "format": "npx -y prettier --write src/"
+  },
+  "author": {
+    "name": "Vishruti Jadhav",
+    "email": "vishruti.jadhav01@gmail.com",
+    "url": "https://github.com/solitude-Yugen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solitude-Yugen/sundown-press.git"
+  },
+  "license": "UNLICENSED"
+}

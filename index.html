@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sundown Press — Personalized Memory Products & Celebrations</title>
+  <meta name="description" content="Sundown Press crafts personalized greetings, wedding invitations, printed keepsakes, and photo booth experiences. Where every moment becomes a masterpiece." />
+  <meta name="theme-color" content="#0F3D3E" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP + ScrollTrigger for parallax & animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Three.js Canvas Background -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Floating Gold Particles Overlay -->
+  <div id="particles-overlay"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo-wrap">
+        <img src="logo.png" alt="Sundown Press" class="preloader-logo-img" />
+      </div>
+      <div class="preloader-bar"><div class="preloader-progress"></div></div>
+      <p class="preloader-tagline">Personalized Celebrations & Keepsakes</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header id="main-nav">
+    <nav class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo" aria-label="Sundown Press Home">
+        <img src="logo_emblem.png" alt="Sundown Press" class="nav-logo-img" />
+        <span class="nav-logo-text">Sundown Press</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#greetings" class="nav-link">Digital Greetings</a>
+        <a href="#keepsakes" class="nav-link">Printed Keepsakes</a>
+        <a href="#weddings" class="nav-link">Weddings</a>
+        <a href="#photobooth" class="nav-link">Photo Booth</a>
+        <a href="#contact" class="nav-link nav-cta">Get in Touch</a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="#greetings" class="mobile-link">Digital Greetings</a>
+      <a href="#keepsakes" class="mobile-link">Printed Keepsakes</a>
+      <a href="#weddings" class="mobile-link">Weddings</a>
+      <a href="#photobooth" class="mobile-link">Photo Booth</a>
+      <a href="#contact" class="mobile-link mobile-cta">Get in Touch</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════ HERO SECTION ═══════════════════ -->
+    <section id="hero" class="hero-section">
+      <div class="hero-split">
+        <!-- Left: Text Content -->
+        <div class="hero-text-side">
+          <div class="hero-badge" data-animate="fade-up">
+            <span class="badge-star">★</span>
+            <span>Crafting Memories Since 2024</span>
+            <span class="badge-star">★</span>
+          </div>
+          <h1 class="hero-title" data-animate="hero-title">
+            <span class="title-line" data-line="1">Where Every <span class="title-accent">Moment</span></span>
+            <span class="title-line" data-line="2">Becomes a <span class="title-accent">Masterpiece.</span></span>
+          </h1>
+          <p class="hero-subtitle" data-animate="fade-up" data-delay="0.6">
+            Personalized digital greetings, bespoke wedding invitations, 
+            handcrafted printed keepsakes, and unforgettable photo booth experiences.
+          </p>
+          <div class="hero-ctas" data-animate="fade-up" data-delay="0.8">
+            <a href="#greetings" class="btn btn-primary">
+              <span>Explore Our Craft</span>
+              <span class="btn-arrow">→</span>
+            </a>
+            <a href="#weddings" class="btn btn-secondary">
+              <span>Wedding Invitations</span>
+            </a>
+          </div>
+          <div class="hero-stats" data-animate="fade-up" data-delay="1.0">
+            <div class="stat">
+              <span class="stat-number" data-count="500">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number" data-count="1200">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Greetings Sent</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number" data-count="150">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Weddings Celebrated</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3D Luxury Envelope & Pull-out Royal Invitation Suite -->
+        <div class="hero-card-side">
+          <div class="hero-suite-wrapper" id="hero3dCard" role="button" tabindex="0" aria-label="Interactive Luxury Wedding Invitation Suite">
+            <!-- Atmospheric Gold Aura / Glow -->
+            <div class="suite-ambient-glow"></div>
+
+            <!-- Envelope Container -->
+            <div class="envelope-suite">
+              <!-- Back wall of envelope with rich gold interior pattern -->
+              <div class="envelope-back-wall">
+                <div class="envelope-gold-liner"></div>
+              </div>
+
+              <!-- Royal Invitation Card (Tucked inside, glides UP & forward when opened) -->
+              <div class="royal-invite-card" id="royalInviteCard">
+                <div class="invite-card-inner">
+                  <img src="invite_card_1.jpg" alt="Priya & Arjun Royal Wedding Invitation" class="invite-artwork-img" />
+                  <div class="invite-gold-border"></div>
+                  <div class="invite-corner-flourish tl">✦</div>
+                  <div class="invite-corner-flourish tr">✦</div>
+                  <div class="invite-corner-flourish bl">✦</div>
+                  <div class="invite-corner-flourish br">✦</div>
+                  <div class="invite-satin-band">
+                    <span class="ribbon-knot">✦</span>
+                  </div>
+                  <div class="invite-foil-glare"></div>
+                </div>
+              </div>
+
+              <!-- Envelope Front Pocket (Lower front pouch of envelope) -->
+              <div class="envelope-front-pocket">
+                <div class="pocket-v-crease"></div>
+                <div class="pocket-calligraphy">
+                  <span class="pocket-to">FOR THE CELEBRATION OF</span>
+                  <h3 class="pocket-names">Priya &amp; Arjun</h3>
+                  <span class="pocket-date">14 · DECEMBER · 2024</span>
+                  <span class="pocket-city">JAIPUR, RAJASTHAN</span>
+                </div>
+                <div class="pocket-gold-filigree"></div>
+                <div class="pocket-texture-mesh"></div>
+              </div>
+
+              <!-- Top Flap (Hinged at top; flips open upwards 180° when clicked) -->
+              <div class="envelope-flap-hinge" id="envelopeFlapHinge">
+                <!-- Flap Outer Face (visible when closed, holds 3D wax seal) -->
+                <div class="flap-face flap-face-outer">
+                  <div class="flap-outer-tri"></div>
+                  <div class="flap-gold-piping"></div>
+                  <!-- Raised 3D Wax Seal with emblem -->
+                  <div class="royal-wax-seal">
+                    <div class="wax-seal-drips"></div>
+                    <div class="wax-seal-rim">
+                      <div class="wax-seal-center">
+                        <img src="logo_emblem.png" alt="Sundown Press Seal" class="seal-emblem-icon" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Flap Inner Face (visible when open, shows gold pattern lining) -->
+                <div class="flap-face flap-face-inner">
+                  <div class="flap-inner-tri">
+                    <div class="flap-gold-jaali-pattern"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Sparkle Particles around envelope -->
+            <div class="card-sparkles" id="cardSparkles"></div>
+
+            <!-- Interactive Action Hint Badge -->
+            <div class="suite-interactive-badge" id="cardTapHint">
+              <span class="badge-sparkle">✦</span>
+              <span class="badge-text" id="suiteBadgeText">Click to Open Invitation</span>
+              <span class="badge-sparkle">✦</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ Staggered Invitation Card Carousel ═══ -->
+      <div class="hero-carousel-wrap">
+        <div class="hero-carousel-label">
+          <span class="carousel-label-line"></span>
+          <span class="carousel-label-text">Our Creations</span>
+          <span class="carousel-label-line"></span>
+        </div>
+        <div class="hero-carousel" id="heroCarousel">
+          <div class="hero-carousel-track" id="heroCarouselTrack">
+            <!-- Group 1 -->
+            <div class="carousel-group">
+              <div class="carousel-card" style="--stagger-y: 0px;">
+                <img src="invite_card_1.jpg" alt="Wedding Invitation — Priya & Arjun" />
+                <div class="carousel-card-label">Wedding Suite</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: -26px;">
+                <img src="invite_card_2.jpg" alt="Birthday Greeting" />
+                <div class="carousel-card-label">Birthday</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: 16px;">
+                <img src="invite_card_3.jpg" alt="Diwali Greeting" />
+                <div class="carousel-card-label">Diwali</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: -20px;">
+                <img src="invite_card_4.jpg" alt="Engagement Invitation — Meera & Rohan" />
+                <div class="carousel-card-label">Engagement</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: 22px;">
+                <img src="invite_card_5.jpg" alt="Baby Shower Invitation" />
+                <div class="carousel-card-label">Baby Shower</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: -12px;">
+                <img src="invite_card_6.jpg" alt="Anniversary Celebration" />
+                <div class="carousel-card-label">Anniversary</div>
+              </div>
+            </div>
+            <!-- Group 2 (Clone 1 for seamless infinite loop) -->
+            <div class="carousel-group" aria-hidden="true">
+              <div class="carousel-card" style="--stagger-y: 0px;">
+                <img src="invite_card_1.jpg" alt="Wedding Invitation — Priya & Arjun" />
+                <div class="carousel-card-label">Wedding Suite</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: -26px;">
+                <img src="invite_card_2.jpg" alt="Birthday Greeting" />
+                <div class="carousel-card-label">Birthday</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: 16px;">
+                <img src="invite_card_3.jpg" alt="Diwali Greeting" />
+                <div class="carousel-card-label">Diwali</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: -20px;">
+                <img src="invite_card_4.jpg" alt="Engagement Invitation — Meera & Rohan" />
+                <div class="carousel-card-label">Engagement</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: 22px;">
+                <img src="invite_card_5.jpg" alt="Baby Shower Invitation" />
+                <div class="carousel-card-label">Baby Shower</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: -12px;">
+                <img src="invite_card_6.jpg" alt="Anniversary Celebration" />
+                <div class="carousel-card-label">Anniversary</div>
+              </div>
+            </div>
+            <!-- Group 3 (Clone 2 for wide viewport coverage) -->
+            <div class="carousel-group" aria-hidden="true">
+              <div class="carousel-card" style="--stagger-y: 0px;">
+                <img src="invite_card_1.jpg" alt="Wedding Invitation — Priya & Arjun" />
+                <div class="carousel-card-label">Wedding Suite</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: -26px;">
+                <img src="invite_card_2.jpg" alt="Birthday Greeting" />
+                <div class="carousel-card-label">Birthday</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: 16px;">
+                <img src="invite_card_3.jpg" alt="Diwali Greeting" />
+                <div class="carousel-card-label">Diwali</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: -20px;">
+                <img src="invite_card_4.jpg" alt="Engagement Invitation — Meera & Rohan" />
+                <div class="carousel-card-label">Engagement</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: 22px;">
+                <img src="invite_card_5.jpg" alt="Baby Shower Invitation" />
+                <div class="carousel-card-label">Baby Shower</div>
+              </div>
+              <div class="carousel-card" style="--stagger-y: -12px;">
+                <img src="invite_card_6.jpg" alt="Anniversary Celebration" />
+                <div class="carousel-card-label">Anniversary</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative floating elements -->
+      <div class="hero-decor">
+        <div class="decor-mandala decor-mandala-1"></div>
+        <div class="decor-mandala decor-mandala-2"></div>
+        <div class="decor-arch"></div>
+        <div class="decor-diya decor-diya-1">✦</div>
+        <div class="decor-diya decor-diya-2">✦</div>
+        <div class="decor-diya decor-diya-3">✧</div>
+        <div class="decor-diya decor-diya-4">✧</div>
+      </div>
+
+      <div class="scroll-indicator" data-animate="fade-up" data-delay="1.4">
+        <div class="scroll-line"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ MARQUEE SECTION ═══════════════════ -->
+    <section class="marquee-section">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>✦ Digital Greetings</span>
+          <span>✦ Wedding Invitations</span>
+          <span>✦ Photo Albums</span>
+          <span>✦ Photo Booth Rental</span>
+          <span>✦ Custom Playing Cards</span>
+          <span>✦ Printed Keepsakes</span>
+          <span>✦ Interactive Experiences</span>
+          <span>✦ Digital Greetings</span>
+          <span>✦ Wedding Invitations</span>
+          <span>✦ Photo Albums</span>
+          <span>✦ Photo Booth Rental</span>
+          <span>✦ Custom Playing Cards</span>
+          <span>✦ Printed Keepsakes</span>
+          <span>✦ Interactive Experiences</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ DIGITAL GREETINGS SECTION ═══════════════════ -->
+    <section id="greetings" class="section greetings-section">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">01 — Digital Greetings</span>
+          <h2 class="section-title">
+            Send Joy<br /><span class="accent">Instantly.</span>
+          </h2>
+          <p class="section-desc">
+            Browse stunning templates. Personalize with your message and photos. 
+            Share a magical link that bursts with interactive animations when opened.
+          </p>
+        </div>
+
+        <div class="greeting-showcase" data-animate="stagger-up">
+          <div class="greeting-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="card-image">
+              <div class="card-placeholder birthday">
+                <span class="card-emoji">🎂</span>
+                <div class="card-confetti"></div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Birthday</span>
+              <h3>Golden Birthday Wishes</h3>
+              <p>Tap the cake — watch candles light up with sparkling confetti.</p>
+            </div>
+          </div>
+          <div class="greeting-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="card-image">
+              <div class="card-placeholder anniversary">
+                <span class="card-emoji">💍</span>
+                <div class="card-confetti"></div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Anniversary</span>
+              <h3>Eternal Together</h3>
+              <p>A floating rose garden that blooms as they scroll through your message.</p>
+            </div>
+          </div>
+          <div class="greeting-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="card-image">
+              <div class="card-placeholder celebration">
+                <span class="card-emoji">🪔</span>
+                <div class="card-confetti"></div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Celebration</span>
+              <h3>Festival of Lights</h3>
+              <p>Tap each diya to illuminate — watch the rangoli come alive in color.</p>
+            </div>
+          </div>
+          <div class="greeting-card" data-tilt>
+            <div class="card-glow"></div>
+            <div class="card-image">
+              <div class="card-placeholder love">
+                <span class="card-emoji">💌</span>
+                <div class="card-confetti"></div>
+              </div>
+            </div>
+            <div class="card-info">
+              <span class="card-category">Love & Apology</span>
+              <h3>From My Heart</h3>
+              <p>An envelope that opens to reveal handwritten words with falling petals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ HOW IT WORKS PINNED SCROLL SECTION ══════════ -->
+    <!-- ══════════ HOW IT WORKS THREE STEP FLOW SECTION ══════════ -->
+    <section id="how-it-works" class="hiw-flow-section">
+      <div class="hiw-flow-container">
+
+        <!-- ─── STEP 01: CHOOSE ─── -->
+        <div class="hiw-step-block" id="hiwStep1">
+          <div class="hiw-card-shell">
+            <div class="hiw-top-label">
+              <div class="hiw-label-brand">
+                <span class="hiw-label-icon">✦</span>
+                <span class="hiw-label-tag">HOW IT WORKS</span>
+                <span class="hiw-label-sep">·</span>
+                <span class="hiw-label-sub">THREE STEPS. ZERO DESIGN SKILLS NEEDED.</span>
+              </div>
+              <div class="hiw-step-progress-track">
+                <a href="#hiwStep1" class="step-seg active">
+                  <span class="seg-dot"></span>
+                  <span class="seg-label">01 Choose</span>
+                </a>
+                <div class="seg-connector"></div>
+                <a href="#hiwStep2" class="step-seg">
+                  <span class="seg-dot"></span>
+                  <span class="seg-label">02 Create</span>
+                </a>
+                <div class="seg-connector"></div>
+                <a href="#hiwStep3" class="step-seg">
+                  <span class="seg-dot"></span>
+                  <span class="seg-label">03 Share</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="hiw-container">
+              <!-- Left Tabs -->
+              <div class="hiw-tabs">
+                <div class="hiw-tabs-track">
+                  <div class="hiw-tabs-glider glider-step1"></div>
+                </div>
+                <a href="#hiwStep1" class="hiw-tab active">
+                  <span class="hiw-tab-num">01</span>
+                  <span class="hiw-tab-label">Choose</span>
+                </a>
+                <a href="#hiwStep2" class="hiw-tab">
+                  <span class="hiw-tab-num">02</span>
+                  <span class="hiw-tab-label">We create it</span>
+                </a>
+                <a href="#hiwStep3" class="hiw-tab">
+                  <span class="hiw-tab-num">03</span>
+                  <span class="hiw-tab-label">Share one link</span>
+                </a>
+              </div>
+
+              <!-- Center Stage: Step 1 (Fanned Cards + Pricing Tiers) -->
+              <div class="hiw-stage">
+                <div class="fan-display-wrapper">
+                  <div class="fan-cards-stack" id="fanCardsStack">
+                    <div class="fan-card fan-card-1" style="--rot: -16deg; --tx: -75px;">
+                      <div class="fan-card-inner env-olive">
+                        <div class="fan-card-seal">C&amp;A</div>
+                        <div class="fan-shine-glare"></div>
+                      </div>
+                    </div>
+                    <div class="fan-card fan-card-2" style="--rot: -8deg; --tx: -38px;">
+                      <div class="fan-card-inner env-deep-teal">
+                        <div class="fan-card-seal">☼</div>
+                        <div class="fan-shine-glare"></div>
+                      </div>
+                    </div>
+                    <div class="fan-card fan-card-3 fan-card-hero" style="--rot: 0deg; --tx: 0px;">
+                      <div class="fan-card-inner card-hero-inner">
+                        <img src="invite_card_1.jpg" alt="Priya &amp; Arjun Invitation Suite" class="fan-hero-img" />
+                        <div class="fan-ribbon-bow">
+                          <span class="bow-center">✦</span>
+                        </div>
+                        <div class="fan-shine-glare"></div>
+                      </div>
+                    </div>
+                    <div class="fan-card fan-card-4" style="--rot: 8deg; --tx: 38px;">
+                      <div class="fan-card-inner env-cream">
+                        <div class="fan-card-seal wax-green">L&amp;F</div>
+                        <div class="fan-shine-glare"></div>
+                      </div>
+                    </div>
+                    <div class="fan-card fan-card-5" style="--rot: 16deg; --tx: 75px;">
+                      <div class="fan-card-inner env-sage">
+                        <div class="fan-card-seal gold-foil">SP</div>
+                        <div class="fan-shine-glare"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 3 Levels of Personalisation Bar -->
+                  <div class="fan-personalisation-footer">
+                    <p class="fp-title">A DESIGN FOR EVERY CELEBRATION · THREE LEVELS OF PERSONALISATION</p>
+                    <div class="fp-tiers">
+                      <div class="fp-tier active">
+                        <span class="tier-title">Essential</span>
+                        <span class="tier-desc">This design, with all your details</span>
+                        <span class="tier-price">₹4,999 · €175</span>
+                      </div>
+                      <div class="tier-sep"></div>
+                      <div class="fp-tier">
+                        <span class="tier-title">Premium</span>
+                        <span class="tier-desc">Redesigned around your theme</span>
+                        <span class="tier-price">₹9,999 · €350</span>
+                      </div>
+                      <div class="tier-sep"></div>
+                      <div class="fp-tier">
+                        <span class="tier-title">Excellence</span>
+                        <span class="tier-desc">Bespoke, designed from scratch</span>
+                        <span class="tier-price">Custom</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Sidebar: Step 1 Details -->
+              <div class="hiw-sidebar">
+                <div class="hiw-content-static">
+                  <div class="hiw-step-badge">
+                    <span class="badge-dot"></span>
+                    <span>STEP 1 OF 3 · SELECTION</span>
+                  </div>
+                  <h3 class="hiw-main-heading">Choose your<br /><em>design &amp; plan.</em></h3>
+                  <p class="hiw-body-copy">
+                    Pick a design and how personal you want it: as it is, fully redesigned around your wedding, or bespoke from scratch.
+                  </p>
+                  <div class="hiw-perks-list">
+                    <span class="perk-item">✓ 3 curated personalization tiers</span>
+                    <span class="perk-item">✓ Instant live preview &amp; transparent pricing</span>
+                  </div>
+                  <a href="#weddings" class="hiw-cta-link">Compare plans <span>→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── CONNECTOR 1 -> 2 ─── -->
+        <div class="hiw-flow-divider">
+          <div class="divider-line"></div>
+          <div class="divider-badge">
+            <span class="divider-sparkle">✦</span>
+            <span>STEP 02 BELOW</span>
+            <span class="divider-sparkle">✦</span>
+          </div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- ─── STEP 02: WE CREATE IT ─── -->
+        <div class="hiw-step-block" id="hiwStep2">
+          <div class="hiw-card-shell">
+            <div class="hiw-top-label">
+              <div class="hiw-label-brand">
+                <span class="hiw-label-icon">✦</span>
+                <span class="hiw-label-tag">HOW IT WORKS</span>
+                <span class="hiw-label-sep">·</span>
+                <span class="hiw-label-sub">THREE STEPS. ZERO DESIGN SKILLS NEEDED.</span>
+              </div>
+              <div class="hiw-step-progress-track">
+                <a href="#hiwStep1" class="step-seg completed">
+                  <span class="seg-dot"></span>
+                  <span class="seg-label">01 Choose</span>
+                </a>
+                <div class="seg-connector"></div>
+                <a href="#hiwStep2" class="step-seg active">
+                  <span class="seg-dot"></span>
+                  <span class="seg-label">02 Create</span>
+                </a>
+                <div class="seg-connector"></div>
+                <a href="#hiwStep3" class="step-seg">
+                  <span class="seg-dot"></span>
+                  <span class="seg-label">03 Share</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="hiw-container">
+              <!-- Left Tabs -->
+              <div class="hiw-tabs">
+                <div class="hiw-tabs-track">
+                  <div class="hiw-tabs-glider glider-step2"></div>
+                </div>
+                <a href="#hiwStep1" class="hiw-tab">
+                  <span class="hiw-tab-num">01</span>
+                  <span class="hiw-tab-label">Choose</span>
+                </a>
+                <a href="#hiwStep2" class="hiw-tab active">
+                  <span class="hiw-tab-num">02</span>
+                  <span class="hiw-tab-label">We create it</span>
+                </a>
+                <a href="#hiwStep3" class="hiw-tab">
+                  <span class="hiw-tab-num">03</span>
+                  <span class="hiw-tab-label">Share one link</span>
+                </a>
+              </div>
+
+              <!-- Center Stage: Step 2 (Looping Briefing Form -> Draft Preview) -->
+              <div class="hiw-stage">
+                <div class="step2-loop-container" id="step2LoopContainer">
+                  <!-- Part A: Your Briefing -->
+                  <div class="step2-card briefing-state active" id="briefingState">
+                    <div class="briefing-card-inner">
+                      <div class="briefing-header">
+                        <h4 class="briefing-heading">Your briefing</h4>
+                        <span class="briefing-saved-pill" id="briefingSavedPill">
+                          <span class="check-mark">✓</span> Saved automatically
+                        </span>
+                      </div>
+                      <div class="briefing-form">
+                        <div class="form-row">
+                          <span class="row-label">NAMES</span>
+                          <div class="row-value" id="briefingNames">Priya &amp; Arjun</div>
+                        </div>
+                        <div class="form-row">
+                          <span class="row-label">DATE</span>
+                          <div class="row-value" id="briefingDate">14 December 2024</div>
+                        </div>
+                        <div class="form-row">
+                          <span class="row-label">VENUE</span>
+                          <div class="row-value" id="briefingVenue">The Jeypore Palace, Jaipur</div>
+                        </div>
+                        <div class="form-row">
+                          <span class="row-label">PHOTOS &amp; MUSIC</span>
+                          <div class="photos-music-group">
+                            <div class="photo-thumbs">
+                              <span class="pthumb"><img src="invite_card_1.jpg" alt="thumb" /></span>
+                              <span class="pthumb"><img src="invite_card_4.jpg" alt="thumb" /></span>
+                              <span class="pthumb"><img src="invite_card_6.jpg" alt="thumb" /></span>
+                            </div>
+                            <div class="music-pill">
+                              <span class="music-note">♪</span>
+                              <span>Your song added</span>
+                              <span class="music-eq">
+                                <span></span><span></span><span></span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Part B: Your Draft Is Ready with Phone Mockup & Progress Track -->
+                  <div class="step2-card draft-state" id="draftState">
+                    <div class="draft-card-inner">
+                      <div class="draft-body">
+                        <div class="draft-phone-frame">
+                          <div class="phone-speaker"></div>
+                          <div class="phone-screen">
+                            <img src="invite_card_1.jpg" alt="Private Draft" class="phone-screen-img" />
+                          </div>
+                        </div>
+                        <div class="draft-meta">
+                          <h4 class="draft-heading">Your draft is ready.</h4>
+                          <p class="draft-sub">Review it privately in your portal before anyone sees it.</p>
+                          <div class="draft-btn-group">
+                            <button class="btn-approve">APPROVE</button>
+                            <button class="btn-request-changes">REQUEST CHANGES</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Progress Track filling up to completion -->
+                      <div class="draft-progress-row">
+                        <div class="prog-col step-complete">
+                          <div class="prog-bar-shell"><div class="prog-bar-fill fill-full"></div></div>
+                          <span class="prog-name">Details received</span>
+                        </div>
+                        <div class="prog-col step-running">
+                          <div class="prog-bar-shell"><div class="prog-bar-fill fill-animating" id="draftProgBarFill"></div></div>
+                          <span class="prog-name">Design &amp; proof</span>
+                          <span class="prog-note">Revisions included</span>
+                        </div>
+                        <div class="prog-col step-pending" id="progStepReady">
+                          <div class="prog-bar-shell"><div class="prog-bar-fill fill-zero" id="draftReadyFill"></div></div>
+                          <span class="prog-name">Ready</span>
+                          <span class="prog-note">Express option</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Sidebar: Step 2 Details -->
+              <div class="hiw-sidebar">
+                <div class="hiw-content-static">
+                  <div class="hiw-step-badge">
+                    <span class="badge-dot"></span>
+                    <span>STEP 2 OF 3 · CRAFTING</span>
+                  </div>
+                  <h3 class="hiw-main-heading">We create it<br /><em>with care.</em></h3>
+                  <p class="hiw-body-copy">
+                    Fill in a guided briefing at your own pace. A real designer crafts it and you review a private draft. Ready in 7–14 days, or 1–4 days with optional Express on Essential and Premium.
+                  </p>
+                  <div class="hiw-perks-list">
+                    <span class="perk-item">✓ Private draft portal &amp; unlimited revisions</span>
+                    <span class="perk-item">✓ Dedicated designer assigned to your celebration</span>
+                  </div>
+                  <div class="hiw-pill-tag">✦ Private Designer Portal</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─── CONNECTOR 2 -> 3 ─── -->
+        <div class="hiw-flow-divider">
+          <div class="divider-line"></div>
+          <div class="divider-badge">
+            <span class="divider-sparkle">✦</span>
+            <span>STEP 03 BELOW</span>
+            <span class="divider-sparkle">✦</span>
+          </div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- ─── STEP 03: SHARE ONE LINK ─── -->
+        <div class="hiw-step-block" id="hiwStep3">
+          <div class="hiw-card-shell">
+            <div class="hiw-top-label">
+              <div class="hiw-label-brand">
+                <span class="hiw-label-icon">✦</span>
+                <span class="hiw-label-tag">HOW IT WORKS</span>
+                <span class="hiw-label-sep">·</span>
+                <span class="hiw-label-sub">THREE STEPS. ZERO DESIGN SKILLS NEEDED.</span>
+              </div>
+              <div class="hiw-step-progress-track">
+                <a href="#hiwStep1" class="step-seg completed">
+                  <span class="seg-dot"></span>
+                  <span class="seg-label">01 Choose</span>
+                </a>
+                <div class="seg-connector"></div>
+                <a href="#hiwStep2" class="step-seg completed">
+                  <span class="seg-dot"></span>
+                  <span class="seg-label">02 Create</span>
+                </a>
+                <div class="seg-connector"></div>
+                <a href="#hiwStep3" class="step-seg active">
+                  <span class="seg-dot"></span>
+                  <span class="seg-label">03 Share</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="hiw-container">
+              <!-- Left Tabs -->
+              <div class="hiw-tabs">
+                <div class="hiw-tabs-track">
+                  <div class="hiw-tabs-glider glider-step3"></div>
+                </div>
+                <a href="#hiwStep1" class="hiw-tab">
+                  <span class="hiw-tab-num">01</span>
+                  <span class="hiw-tab-label">Choose</span>
+                </a>
+                <a href="#hiwStep2" class="hiw-tab">
+                  <span class="hiw-tab-num">02</span>
+                  <span class="hiw-tab-label">We create it</span>
+                </a>
+                <a href="#hiwStep3" class="hiw-tab active">
+                  <span class="hiw-tab-num">03</span>
+                  <span class="hiw-tab-label">Share one link</span>
+                </a>
+              </div>
+
+              <!-- Center Stage: Step 3 (WhatsApp UI + Live RSVP Counter) -->
+              <div class="hiw-stage">
+                <div class="step3-whatsapp-wrap">
+                  <!-- WhatsApp Chat UI -->
+                  <div class="wa-chat-window">
+                    <div class="wa-chat-header">
+                      <div class="wa-contact-avatar">
+                        <img src="logo_emblem.png" alt="Sundown Press" />
+                      </div>
+                      <div class="wa-chat-titles">
+                        <span class="wa-group-name">Wedding Guests (150)</span>
+                        <span class="wa-app-name">WhatsApp</span>
+                      </div>
+                      <div class="wa-header-actions">
+                        <span class="wa-call-btn">📞</span>
+                        <span class="wa-more-btn">⋮</span>
+                      </div>
+                    </div>
+
+                    <div class="wa-chat-body">
+                      <!-- Message 1: Host sharing link -->
+                      <div class="wa-msg-bubble wa-out" id="waMsg1">
+                        <div class="wa-card-preview">
+                          <img src="invite_card_1.jpg" alt="Wedding Invite Preview" class="wa-preview-img" />
+                          <div class="wa-card-desc">
+                            <strong class="wa-card-title">Priya &amp; Arjun | 14 December 2024</strong>
+                            <p class="wa-card-caption">Join us to celebrate our wedding. Timeline, venue, details &amp; RSVP inside.</p>
+                            <span class="wa-card-domain">sundownpress.com/priya-arjun</span>
+                          </div>
+                        </div>
+                        <div class="wa-time-meta">
+                          <span>10:24 AM</span>
+                          <span class="blue-ticks">✓✓</span>
+                        </div>
+                      </div>
+
+                      <!-- Typing bubble indicator -->
+                      <div class="wa-msg-bubble wa-in wa-typing-indicator" id="waTypingBubble" style="display: none;">
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                      </div>
+
+                      <!-- Message 2: Guest excited reply -->
+                      <div class="wa-msg-bubble wa-in" id="waMsg2">
+                        <p class="wa-reply-text">OMG this is the most stunning invitation I've ever seen!! 😍✨ Can't wait! Counting down the days! 🥂🎉</p>
+                        <div class="wa-time-meta">
+                          <span>10:25 AM</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Your RSVPs • LIVE Card -->
+                  <div class="live-rsvps-card" id="liveRsvpsCard">
+                    <div class="rsvps-card-header">
+                      <h4 class="rsvps-card-title">Your RSVPs</h4>
+                      <span class="live-dot-pill"><span class="green-dot"></span> LIVE</span>
+                    </div>
+                    <div class="rsvps-card-body">
+                      <div class="rsvp-metric-row">
+                        <span class="metric-label">Joyfully accepts</span>
+                        <span class="metric-val" id="rsvpAcceptsMetric">2 guests</span>
+                      </div>
+                      <div class="rsvp-metric-row">
+                        <span class="metric-label">Joyfully accepts <span class="metric-diet">- gluten-free</span></span>
+                        <span class="metric-val" id="rsvpDietMetric">1 guest</span>
+                      </div>
+                      <div class="rsvp-metric-row">
+                        <span class="metric-label">Regretfully declines</span>
+                        <span class="metric-val">—</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Sidebar: Step 3 Details -->
+              <div class="hiw-sidebar">
+                <div class="hiw-content-static">
+                  <div class="hiw-step-badge">
+                    <span class="badge-dot"></span>
+                    <span>STEP 3 OF 3 · CELEBRATION</span>
+                  </div>
+                  <h3 class="hiw-main-heading">Share one link.<br /><em>Track live.</em></h3>
+                  <p class="hiw-body-copy">
+                    Send it by WhatsApp or email. Guests reply in seconds and every RSVP lands directly in your private portal with live headcount and dietary tracker.
+                  </p>
+                  <div class="hiw-perks-list">
+                    <span class="perk-item">✓ Zero apps for guests to install</span>
+                    <span class="perk-item">✓ Live dietary &amp; headcount automatic sync</span>
+                  </div>
+                  <div class="hiw-pill-tag">✦ Instant RSVP Tracking</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════ PARALLAX DIVIDER 1 ═══════════════════ -->
+    <section class="parallax-divider parallax-1">
+      <div class="parallax-content">
+        <p class="parallax-quote">
+          <span class="pq-line">"The memory of your celebration</span>
+          <span class="pq-line pq-accent">doesn't start on the day.</span>
+          <span class="pq-line">It starts the moment they</span>
+          <span class="pq-line pq-accent">open your greeting."</span>
+        </p>
+      </div>
+      <div class="parallax-overlay"></div>
+    </section>
+
+    <!-- ═══════════════════ PRINTED KEEPSAKES SECTION ═══════════════════ -->
+    <section id="keepsakes" class="section keepsakes-section">
+      <div class="section-container">
+        <div class="keepsakes-layout">
+          <div class="keepsakes-info" data-animate="fade-right">
+            <span class="section-tag">02 — Printed Keepsakes</span>
+            <h2 class="section-title">
+              Hold Your<br /><span class="accent">Memories.</span>
+            </h2>
+            <p class="section-desc">
+              Photo albums, birthday greeting sheets, custom playing cards — 
+              personalized online, printed in stunning quality, delivered to your doorstep.
+            </p>
+            <ul class="keepsakes-features">
+              <li data-animate="fade-right" data-delay="0.2">
+                <span class="feature-icon">📸</span>
+                <div>
+                  <strong>Photo Albums</strong>
+                  <span>Upload your cherished photos into beautifully crafted layouts</span>
+                </div>
+              </li>
+              <li data-animate="fade-right" data-delay="0.4">
+                <span class="feature-icon">🃏</span>
+                <div>
+                  <strong>Custom Playing Cards</strong>
+                  <span>Turn family faces into a deck of cards — the ultimate party gift</span>
+                </div>
+              </li>
+              <li data-animate="fade-right" data-delay="0.6">
+                <span class="feature-icon">🎨</span>
+                <div>
+                  <strong>Birthday & Anniversary Sheets</strong>
+                  <span>Frameable art pieces with your photos and personalized messages</span>
+                </div>
+              </li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" data-animate="fade-right" data-delay="0.8">
+              <span>Start Creating</span>
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+          <div class="keepsakes-visual" data-animate="fade-left">
+            <div class="visual-stack">
+              <div class="visual-card visual-card-1">
+                <div class="visual-placeholder">
+                  <span>Photo Album</span>
+                  <div class="visual-shimmer"></div>
+                </div>
+              </div>
+              <div class="visual-card visual-card-2">
+                <div class="visual-placeholder">
+                  <span>Playing Cards</span>
+                  <div class="visual-shimmer"></div>
+                </div>
+              </div>
+              <div class="visual-card visual-card-3">
+                <div class="visual-placeholder">
+                  <span>Greeting Sheet</span>
+                  <div class="visual-shimmer"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ WEDDING INVITATIONS SECTION ═══════════════════ -->
+    <section id="weddings" class="section weddings-section">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">03 — Wedding Invitations</span>
+          <h2 class="section-title">
+            Your Love Story,<br /><span class="accent">Elegantly Told.</span>
+          </h2>
+          <p class="section-desc">
+            Bespoke digital wedding invitations with gentle animations, 
+            envelope reveals, and built-in RSVP — shared with a single link.
+          </p>
+        </div>
+
+        <div class="wedding-showcase" data-animate="stagger-up">
+          <div class="wedding-card">
+            <div class="wedding-card-inner">
+              <div class="wedding-visual royal">
+                <div class="wedding-shimmer"></div>
+                <span class="wedding-badge">Popular</span>
+                <div class="wedding-motif">
+                  <span>✧</span>
+                </div>
+              </div>
+              <div class="wedding-info">
+                <h3>Royal Heritage</h3>
+                <p>Regal motifs, gold foil accents, and a grand envelope reveal</p>
+                <span class="wedding-price">From ₹2,999</span>
+              </div>
+            </div>
+          </div>
+          <div class="wedding-card">
+            <div class="wedding-card-inner">
+              <div class="wedding-visual botanical">
+                <div class="wedding-shimmer"></div>
+                <div class="wedding-motif">
+                  <span>❀</span>
+                </div>
+              </div>
+              <div class="wedding-info">
+                <h3>Botanical Garden</h3>
+                <p>Watercolor florals with gentle petal-fall animations</p>
+                <span class="wedding-price">From ₹2,499</span>
+              </div>
+            </div>
+          </div>
+          <div class="wedding-card">
+            <div class="wedding-card-inner">
+              <div class="wedding-visual minimal">
+                <div class="wedding-shimmer"></div>
+                <span class="wedding-badge">New</span>
+                <div class="wedding-motif">
+                  <span>◇</span>
+                </div>
+              </div>
+              <div class="wedding-info">
+                <h3>Modern Minimal</h3>
+                <p>Clean typography with subtle motion and sophistication</p>
+                <span class="wedding-price">From ₹1,999</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wedding-features" data-animate="fade-up">
+          <div class="wf-item">
+            <div class="wf-icon">💌</div>
+            <span>Animated Envelope Reveal</span>
+          </div>
+          <div class="wf-item">
+            <div class="wf-icon">📍</div>
+            <span>Venue Map & Directions</span>
+          </div>
+          <div class="wf-item">
+            <div class="wf-icon">✓</div>
+            <span>Built-in RSVP</span>
+          </div>
+          <div class="wf-item">
+            <div class="wf-icon">🎵</div>
+            <span>Background Music</span>
+          </div>
+          <div class="wf-item">
+            <div class="wf-icon">📅</div>
+            <span>Countdown Timer</span>
+          </div>
+          <div class="wf-item">
+            <div class="wf-icon">🌐</div>
+            <span>Multi-language Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ PARALLAX DIVIDER 2 ═══════════════════ -->
+    <section class="parallax-divider parallax-2">
+      <div class="parallax-content">
+        <div class="parallax-stats-row">
+          <div class="parallax-stat">
+            <span class="ps-number" data-count="500">0</span><span class="ps-plus">+</span>
+            <span class="ps-label">Events Served</span>
+          </div>
+          <div class="parallax-stat">
+            <span class="ps-number" data-count="50">0</span><span class="ps-plus">+</span>
+            <span class="ps-label">Unique Templates</span>
+          </div>
+          <div class="parallax-stat">
+            <span class="ps-number" data-count="4">0</span><span class="ps-dot">.9</span>
+            <span class="ps-label">Client Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="parallax-overlay"></div>
+    </section>
+
+    <!-- ═══════════════════ PHOTO BOOTH SECTION ═══════════════════ -->
+    <section id="photobooth" class="section photobooth-section">
+      <div class="section-container">
+        <div class="photobooth-layout">
+          <div class="photobooth-visual" data-animate="fade-right">
+            <div class="booth-frame">
+              <div class="booth-screen">
+                <div class="booth-flash"></div>
+                <div class="booth-strip">
+                  <div class="strip-photo strip-1"></div>
+                  <div class="strip-photo strip-2"></div>
+                  <div class="strip-photo strip-3"></div>
+                  <div class="strip-photo strip-4"></div>
+                </div>
+              </div>
+              <div class="booth-lights">
+                <span class="bl bl-1"></span>
+                <span class="bl bl-2"></span>
+                <span class="bl bl-3"></span>
+                <span class="bl bl-4"></span>
+                <span class="bl bl-5"></span>
+              </div>
+            </div>
+          </div>
+          <div class="photobooth-info" data-animate="fade-left">
+            <span class="section-tag">04 — Photo Booth Rental</span>
+            <h2 class="section-title">
+              Capture the<br /><span class="accent">Celebration.</span>
+            </h2>
+            <p class="section-desc">
+              Our premium photo booth brings the party to life. Instant prints, 
+              digital sharing, props galore — perfect for weddings, birthdays, and corporate events.
+            </p>
+            <div class="booth-features">
+              <div class="bf-item" data-animate="fade-left" data-delay="0.2">
+                <span class="bf-check">✓</span>
+                <span>High-quality instant prints</span>
+              </div>
+              <div class="bf-item" data-animate="fade-left" data-delay="0.3">
+                <span class="bf-check">✓</span>
+                <span>Fun props & backdrops included</span>
+              </div>
+              <div class="bf-item" data-animate="fade-left" data-delay="0.4">
+                <span class="bf-check">✓</span>
+                <span>Digital copies via QR code</span>
+              </div>
+              <div class="bf-item" data-animate="fade-left" data-delay="0.5">
+                <span class="bf-check">✓</span>
+                <span>Branded overlays for corporate events</span>
+              </div>
+              <div class="bf-item" data-animate="fade-left" data-delay="0.6">
+                <span class="bf-check">✓</span>
+                <span>Professional setup & attendant</span>
+              </div>
+            </div>
+            <div class="booth-cta" data-animate="fade-left" data-delay="0.7">
+              <a href="#contact" class="btn btn-primary">
+                <span>Book Your Booth</span>
+                <span class="btn-arrow">→</span>
+              </a>
+              <a href="https://wa.me/919876543210" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                <span>💬 WhatsApp Us</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ TESTIMONIALS SECTION ═══════════════════ -->
+    <section class="section testimonials-section">
+      <div class="section-container">
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-tag">What People Say</span>
+          <h2 class="section-title">
+            Stories of<br /><span class="accent">Delight.</span>
+          </h2>
+        </div>
+        <div class="testimonials-grid" data-animate="stagger-up">
+          <div class="testimonial-card">
+            <div class="tc-stars">★★★★★</div>
+            <blockquote>
+              "The digital birthday greeting for my mom was absolutely magical. When she tapped the cake and the candles lit up with confetti — she was in tears! Worth every rupee."
+            </blockquote>
+            <div class="tc-author">
+              <div class="tc-avatar">P</div>
+              <div>
+                <strong>Priya Sharma</strong>
+                <span>Birthday Greeting</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="tc-stars">★★★★★</div>
+            <blockquote>
+              "Our wedding invitation was stunning. Guests kept telling us it was the most beautiful invite they'd ever received. The envelope reveal animation was pure magic."
+            </blockquote>
+            <div class="tc-author">
+              <div class="tc-avatar">R</div>
+              <div>
+                <strong>Rahul & Meera</strong>
+                <span>Wedding Invitation</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="tc-stars">★★★★★</div>
+            <blockquote>
+              "The photo booth was the highlight of our office party! Everyone loved the instant prints and the QR code sharing was so convenient. Booking was seamless."
+            </blockquote>
+            <div class="tc-author">
+              <div class="tc-avatar">A</div>
+              <div>
+                <strong>Ananya Patel</strong>
+                <span>Photo Booth Rental</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ CTA / CONTACT SECTION ═══════════════════ -->
+    <section id="contact" class="section contact-section">
+      <div class="section-container">
+        <div class="contact-content" data-animate="fade-up">
+          <div class="contact-glow"></div>
+          <span class="section-tag">Let's Create Together</span>
+          <h2 class="section-title contact-title">
+            Ready to Make<br /><span class="accent">Something Beautiful?</span>
+          </h2>
+          <p class="section-desc">
+            Whether it's a birthday surprise, a wedding masterpiece, or a celebration to remember — 
+            we're here to bring your vision to life.
+          </p>
+          <div class="contact-actions">
+            <a href="https://wa.me/919876543210" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+              <span>💬 Chat on WhatsApp</span>
+            </a>
+            <a href="mailto:hello@sundownpress.com" class="btn btn-secondary btn-lg">
+              <span>✉ hello@sundownpress.com</span>
+            </a>
+          </div>
+          <div class="contact-socials">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo-icon">☼</span>
+          <span class="footer-logo-text">Sundown Press</span>
+          <p class="footer-tagline">Where every moment becomes a masterpiece.</p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="#greetings">Digital Greetings</a>
+            <a href="#keepsakes">Printed Keepsakes</a>
+            <a href="#weddings">Wedding Invitations</a>
+            <a href="#photobooth">Photo Booth</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Our Story</a>
+            <a href="#">Careers</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Sundown Press. All rights reserved.</p>
+        <p>Made with ♥ in India</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Persistent Floating Bottom Bar -->
+  <div class="persistent-cta-bar" id="persistentCtaBar">
+    <div class="pcta-inner">
+      <span class="pcta-text">Your invitation, designed by hand</span>
+      <a href="#weddings" class="pcta-btn">START MY INVITATION</a>
+    </div>
+  </div>
+
+  <!-- Persistent Floating WhatsApp Button -->
+  <a href="https://wa.me/?text=Hi%20Sundown%20Press,%20I'd%20like%20to%20learn%20more%20about%20personalized%20invitations!" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" id="floatingWhatsappBtn" aria-label="Chat on WhatsApp">
+    <svg class="wa-svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.771.895 2.796.896h.005c3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.765-5.766zm9.969 5.766c-.002 5.519-4.49 9.998-10.01 9.998-1.725 0-3.393-.454-4.867-1.312l-5.623 1.474 1.5-5.474c-.95-1.536-1.45-3.308-1.452-5.186.002-5.519 4.49-10.001 10.01-10.001 5.521 0 10.04 4.482 10.042 10.001z"/>
+    </svg>
+    <span class="wa-tooltip">Chat with a designer</span>
+    <span class="wa-ripple"></span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>

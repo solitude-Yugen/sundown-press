@@ -1,0 +1,151 @@
+﻿/* â”€â”€â”€ WEDDINGS SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.weddings-section {
+  background: var(--cream);
+}
+
+.wedding-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.wedding-card {
+  perspective: 1000px;
+}
+
+.wedding-card-inner {
+  background: var(--cream-white);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 160, 60, 0.12);
+  transition: all 0.5s var(--ease-smooth);
+}
+
+.wedding-card-inner:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 70px rgba(15, 61, 62, 0.12);
+  border-color: rgba(212, 160, 60, 0.3);
+}
+
+.wedding-visual {
+  height: 280px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wedding-visual.royal {
+  background: linear-gradient(135deg, var(--teal), #1B4A4B);
+}
+
+.wedding-visual.botanical {
+  background: linear-gradient(135deg, #2C5F4A, #3A7D5D);
+}
+
+.wedding-visual.minimal {
+  background: linear-gradient(135deg, #2D2D2D, #4A4A4A);
+}
+
+.wedding-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    rgba(212, 160, 60, 0.08) 37%,
+    transparent 63%
+  );
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+.wedding-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: var(--font-accent);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--teal);
+}
+
+.wedding-motif {
+  font-size: 64px;
+  color: rgba(212, 160, 60, 0.25);
+  animation: float 6s ease-in-out infinite;
+}
+
+.wedding-info {
+  padding: 24px;
+}
+
+.wedding-info h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+
+.wedding-info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.wedding-price {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold-dark);
+}
+
+/* Wedding Features */
+.wedding-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+  background: var(--cream-white);
+  border-radius: 24px;
+  border: 1px solid rgba(212, 160, 60, 0.12);
+}
+
+.wf-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.wf-item:hover {
+  background: var(--cream);
+}
+
+.wf-icon {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 160, 60, 0.08);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.wf-item span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--teal);
+}

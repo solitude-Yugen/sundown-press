@@ -1,0 +1,304 @@
+﻿/* â”€â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (max-width: 1100px) {
+  .hero-split {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 110px 24px 20px;
+  }
+
+  .hero-text-side {
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text-side .hero-title {
+    text-align: center;
+  }
+
+  .hero-text-side .hero-subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-text-side .hero-ctas {
+    justify-content: center;
+  }
+
+  .hero-text-side .hero-stats {
+    justify-content: center;
+  }
+
+  .greeting-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wedding-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wedding-showcase .wedding-card:last-child {
+    grid-column: span 2;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --section-pad: 80px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .keepsakes-layout,
+  .photobooth-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .photobooth-layout {
+    direction: ltr;
+  }
+
+  .photobooth-visual {
+    order: -1;
+  }
+
+  .wedding-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .parallax-stats-row {
+    gap: 40px;
+  }
+
+  .ps-number {
+    font-size: 48px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-divider {
+    width: 40px;
+    height: 1px;
+  }
+
+  .greeting-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-connector {
+    transform: rotate(90deg);
+    padding: 0;
+  }
+
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .footer-links-group {
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .keepsakes-info .section-tag,
+  .keepsakes-info .section-title,
+  .keepsakes-info .section-desc,
+  .photobooth-info .section-tag,
+  .photobooth-info .section-title,
+  .photobooth-info .section-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-pad: 60px;
+  }
+
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  .nav-logo-img {
+    height: 44px;
+  }
+
+  .nav-logo-text {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+
+  #main-nav.scrolled .nav-logo-img {
+    height: 38px;
+  }
+
+  #main-nav.scrolled .nav-logo-text {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+
+  .section-container {
+    padding: 0 20px;
+  }
+
+  .greeting-showcase {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  .wedding-showcase {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wedding-showcase .wedding-card:last-child {
+    grid-column: span 1;
+    max-width: none;
+  }
+
+  .wedding-features {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .hero-split {
+    padding: 85px 16px 16px;
+    gap: 30px;
+  }
+
+  .hero-text-side .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-3d-card {
+    width: 250px;
+    height: 350px;
+  }
+
+  .card-envelope {
+    width: 250px;
+    height: 150px;
+  }
+
+  .envelope-body {
+    height: 120px;
+  }
+
+  .envelope-flap {
+    height: 65px;
+  }
+
+  .card-book {
+    width: 220px;
+    height: 320px;
+  }
+
+  .hero-3d-card.opened .card-book {
+    transform: translateX(-50%) translateY(-50px);
+  }
+
+  .card-front-names {
+    font-size: 24px;
+  }
+
+  .carousel-card {
+    width: 140px;
+  }
+
+  .carousel-card img {
+    height: 200px;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .parallax-stats-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .keepsakes-visual {
+    height: 400px;
+  }
+
+  .visual-card-1 {
+    width: 200px;
+    height: 260px;
+  }
+
+  .visual-card-2 {
+    width: 190px;
+    height: 240px;
+    right: 0;
+  }
+
+  .visual-card-3 {
+    width: 180px;
+    height: 220px;
+    left: 30px;
+  }
+
+  .booth-features {
+    align-items: center;
+  }
+
+  .booth-cta {
+    justify-content: center;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .floating-cta .fcta-text {
+    display: none;
+  }
+}
+
+/* â”€â”€â”€ CUSTOM CURSOR (Optional, desktop only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@media (hover: hover) and (pointer: fine) {
+  .greeting-card,
+  .wedding-card-inner,
+  .testimonial-card,
+  .visual-card,
+  .btn {
+    cursor: pointer;
+  }
+}

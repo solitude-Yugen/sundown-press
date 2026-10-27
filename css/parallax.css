@@ -1,0 +1,82 @@
+﻿/* â”€â”€â”€ PARALLAX DIVIDER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.parallax-divider {
+  position: relative;
+  z-index: 2;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.parallax-1 {
+  background: var(--teal);
+}
+
+.parallax-2 {
+  background: linear-gradient(135deg, var(--teal), #0D3233);
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(212, 160, 60, 0.06), transparent 70%);
+  pointer-events: none;
+}
+
+.parallax-quote {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--cream-white);
+}
+
+.pq-line {
+  display: block;
+}
+
+.pq-accent {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.parallax-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.parallax-stat {
+  text-align: center;
+}
+
+.ps-number {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.ps-plus, .ps-dot {
+  font-family: var(--font-display);
+  font-size: 40px;
+  color: var(--gold);
+}
+
+.ps-label {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 253, 247, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 8px;
+}

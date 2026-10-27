@@ -1,0 +1,110 @@
+﻿/* â”€â”€â”€ DIGITAL GREETINGS SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.greetings-section {
+  background: var(--cream);
+}
+
+.greeting-showcase {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-bottom: 80px;
+}
+
+.greeting-card {
+  position: relative;
+  background: var(--cream-white);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s var(--ease-smooth);
+  cursor: pointer;
+  border: 1px solid rgba(212, 160, 60, 0.1);
+}
+
+.greeting-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(15, 61, 62, 0.12), 0 0 0 1px rgba(212, 160, 60, 0.2);
+}
+
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(212, 160, 60, 0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.greeting-card:hover .card-glow {
+  opacity: 1;
+}
+
+.card-image {
+  padding: 20px 20px 0;
+}
+
+.card-placeholder {
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-placeholder.birthday {
+  background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+}
+
+.card-placeholder.anniversary {
+  background: linear-gradient(135deg, #FCE4EC, #F8BBD0);
+}
+
+.card-placeholder.celebration {
+  background: linear-gradient(135deg, var(--cream-dark), #E8D5B7);
+}
+
+.card-placeholder.love {
+  background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
+}
+
+.card-emoji {
+  font-size: 48px;
+  z-index: 1;
+  animation: emojiFloat 3s ease-in-out infinite;
+}
+
+@keyframes emojiFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.05); }
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-category {
+  font-family: var(--font-accent);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gold-dark);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card-info h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--teal);
+  margin: 8px 0;
+}
+
+.card-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}

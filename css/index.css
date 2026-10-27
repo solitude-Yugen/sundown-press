@@ -1,0 +1,27 @@
+/* ──────────────────────────────────────────────────────────────
+   CSS entry point — imports every partial in the correct order.
+   Each @import maps 1-to-1 with a feature module.
+
+   Dev workflow:
+     • Edit only the relevant partial, not this file.
+     • Browsers that don't support @import can use the compiled
+       style.css at the project root (unchanged legacy fallback).
+   ────────────────────────────────────────────────────────────── */
+
+@import './base.css';
+@import './preloader.css';
+@import './navigation.css';
+@import './hero.css';
+@import './carousel.css';
+@import './greetings.css';
+@import './how-it-works.css';
+@import './persistent-cta.css';
+@import './parallax.css';
+@import './keepsakes.css';
+@import './weddings.css';
+@import './photobooth.css';
+@import './testimonials.css';
+@import './contact.css';
+@import './footer.css';
+@import './responsive.css';
+
