@@ -1,0 +1,71 @@
+/* ─── FLOATING CTA (Mobile — legacy `.floating-cta` class) ──── */
+.floating-cta {
+  position: fixed;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 12px 12px 24px;
+  background: rgba(15, 61, 62, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 100px;
+  border: 1px solid rgba(212, 160, 60, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.5s var(--ease-smooth);
+}
+
+.floating-cta.show {
+  bottom: 24px;
+}
+
+.fcta-text {
+  font-family: var(--font-accent);
+  font-size: 13px;
+  color: rgba(255, 253, 247, 0.7);
+  white-space: nowrap;
+}
+
+.fcta-btn {
+  font-family: var(--font-accent);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal);
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  padding: 10px 20px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.fcta-btn:hover {
+  box-shadow: 0 4px 15px rgba(212, 160, 60, 0.4);
+}
+
+/* ─── ANIMATIONS — Initial states for GSAP (must load before JS) */
+[data-animate="fade-up"] {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+[data-animate="fade-right"] {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+[data-animate="fade-left"] {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+[data-animate="stagger-up"] > * {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+[data-animate="hero-title"] .title-line {
+  opacity: 0;
+  transform: translateY(80px);
+}
