@@ -220,8 +220,70 @@ async function runStep3Sequence() {
   isStep3Running = false;
 }
 
+// ── Active Step Controller ────────────────────────────────────────
+let currentStep = 1;
+
 /**
- * Main entry point — wires up all 3 steps.
+ * Switch active step (1, 2, or 3) smoothly.
+ * Card shell remains fixed; inner stage, text, glider, and progress morph.
+ */
+export function goToStep(step, force = false) {
+  if (step === currentStep && !force) return;
+  currentStep = step;
+
+  // 1. Update left tabs glider position
+  const tabsContainer = document.querySelector('.hiw-tabs');
+  if (tabsContainer) {
+    tabsContainer.setAttribute('data-active', String(step));
+  }
+  document.querySelectorAll('.hiw-tab').forEach((tab) => {
+    const s = parseInt(tab.dataset.step, 10);
+    tab.classList.toggle('active', s === step);
+  });
+
+  // 2. Update top progress track indicators
+  document.querySelectorAll('.step-seg').forEach((seg) => {
+    const s = parseInt(seg.dataset.step, 10);
+    seg.classList.toggle('active', s === step);
+    seg.classList.toggle('completed', s < step);
+  });
+
+  // 3. Center Stage cross-fade
+  document.querySelectorAll('.hiw-stage-panel').forEach((panel) => {
+    panel.classList.remove('active');
+  });
+  const activePanel = document.getElementById(`hiwStage${step}`);
+  if (activePanel) {
+    activePanel.classList.add('active');
+  }
+
+  // 4. Right Sidebar content cross-fade
+  document.querySelectorAll('.hiw-content-item').forEach((item) => {
+    item.classList.remove('active');
+  });
+  const activeContent = document.getElementById(`hiwContent${step}`);
+  if (activeContent) {
+    activeContent.classList.add('active');
+  }
+
+  // 5. Trigger or pause animations for active step
+  if (step === 2) {
+    isStep2Active = true;
+    runStep2Loop();
+  } else {
+    isStep2Active = false;
+  }
+
+  if (step === 3) {
+    isStep3Active = true;
+    runStep3Sequence();
+  } else {
+    isStep3Active = false;
+  }
+}
+
+/**
+ * Main entry point — wires up all 3 steps with pinned scroll driver.
  * Must be called after the DOM is ready.
  */
 export function initHowItWorks() {
@@ -230,39 +292,78 @@ export function initHowItWorks() {
 
   initStep1();
 
-  // IntersectionObserver drives steps 2 & 3
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.target.id === 'hiwStep2') {
-          isStep2Active = entry.isIntersecting;
-          if (isStep2Active) runStep2Loop();
-        } else if (entry.target.id === 'hiwStep3') {
-          isStep3Active = entry.isIntersecting;
-          if (isStep3Active) runStep3Sequence();
-        }
-      });
-    }, { threshold: 0.15 });
+  // Scroll to step helper when clicking tabs or progress segments
+  const scrollSteps = (targetStep) => {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top + window.pageYOffset;
+    const maxScroll = section.offsetHeight - window.innerHeight;
+    let targetY = sectionTop;
+    if (targetStep === 1) targetY = sectionTop;
+    else if (targetStep === 2) targetY = sectionTop + maxScroll * 0.5;
+    else if (targetStep === 3) targetY = sectionTop + maxScroll * 0.95;
 
-    const s2 = document.getElementById('hiwStep2');
-    const s3 = document.getElementById('hiwStep3');
-    if (s2) observer.observe(s2);
-    if (s3) observer.observe(s3);
-  } else {
-    // Fallback
-    isStep2Active = true;
-    isStep3Active = true;
-    runStep2Loop();
-    runStep3Sequence();
-  }
+    window.scrollTo({
+      top: targetY,
+      behavior: 'smooth',
+    });
+  };
 
-  // Smooth scroll for all HIW section internal tab / progress links
-  section.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (!target) return;
+  // Wire tab & segment click events
+  document.querySelectorAll('.hiw-tab, .step-seg').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+      const s = parseInt(btn.dataset.step, 10);
+      if (s) {
+        goToStep(s);
+        scrollSteps(s);
+      }
     });
   });
+
+  // GSAP ScrollTrigger setup
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.create({
+      trigger: '#how-it-works',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      onUpdate: (self) => {
+        const p = self.progress;
+        let step = 1;
+        if (p < 0.33) {
+          step = 1;
+        } else if (p < 0.67) {
+          step = 2;
+        } else {
+          step = 3;
+        }
+        goToStep(step);
+      },
+    });
+  }
+
+  // Native scroll handler fallback / backup for zero-latency response
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const rect = section.getBoundingClientRect();
+      const scrollable = section.offsetHeight - window.innerHeight;
+      if (scrollable > 0 && rect.top <= 10 && rect.bottom >= window.innerHeight - 10) {
+        const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
+        let step = 1;
+        if (progress < 0.33) step = 1;
+        else if (progress < 0.67) step = 2;
+        else step = 3;
+        goToStep(step);
+      }
+      ticking = false;
+    });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Initial step setup
+  goToStep(1, true);
 }
+

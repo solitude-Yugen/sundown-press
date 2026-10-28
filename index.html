@@ -408,60 +408,59 @@
     </section>
 
     <!-- ══════════ HOW IT WORKS PINNED SCROLL SECTION ══════════ -->
-    <!-- ══════════ HOW IT WORKS THREE STEP FLOW SECTION ══════════ -->
-    <section id="how-it-works" class="hiw-flow-section">
-      <div class="hiw-flow-container">
+    <section id="how-it-works" class="hiw-pinned-section">
+      <div class="hiw-sticky-wrapper">
+        <div class="hiw-card-shell">
+          <!-- Top Persistent Label & Progress Track -->
+          <div class="hiw-top-label">
+            <div class="hiw-label-brand">
+              <span class="hiw-label-icon">✦</span>
+              <span class="hiw-label-tag">HOW IT WORKS</span>
+              <span class="hiw-label-sep">·</span>
+              <span class="hiw-label-sub">THREE STEPS. ZERO DESIGN SKILLS NEEDED.</span>
+            </div>
+            <div class="hiw-step-progress-track">
+              <button type="button" class="step-seg active" data-step="1" id="segStep1" aria-label="Step 1: Choose">
+                <span class="seg-dot"></span>
+                <span class="seg-label">01 Choose</span>
+              </button>
+              <div class="seg-connector"></div>
+              <button type="button" class="step-seg" data-step="2" id="segStep2" aria-label="Step 2: Create">
+                <span class="seg-dot"></span>
+                <span class="seg-label">02 Create</span>
+              </button>
+              <div class="seg-connector"></div>
+              <button type="button" class="step-seg" data-step="3" id="segStep3" aria-label="Step 3: Share">
+                <span class="seg-dot"></span>
+                <span class="seg-label">03 Share</span>
+              </button>
+            </div>
+          </div>
 
-        <!-- ─── STEP 01: CHOOSE ─── -->
-        <div class="hiw-step-block" id="hiwStep1">
-          <div class="hiw-card-shell">
-            <div class="hiw-top-label">
-              <div class="hiw-label-brand">
-                <span class="hiw-label-icon">✦</span>
-                <span class="hiw-label-tag">HOW IT WORKS</span>
-                <span class="hiw-label-sep">·</span>
-                <span class="hiw-label-sub">THREE STEPS. ZERO DESIGN SKILLS NEEDED.</span>
+          <div class="hiw-container">
+            <!-- Left Tabs with Glider Track -->
+            <div class="hiw-tabs" data-active="1">
+              <div class="hiw-tabs-track">
+                <div class="hiw-tabs-glider" id="hiwGlider"></div>
               </div>
-              <div class="hiw-step-progress-track">
-                <a href="#hiwStep1" class="step-seg active">
-                  <span class="seg-dot"></span>
-                  <span class="seg-label">01 Choose</span>
-                </a>
-                <div class="seg-connector"></div>
-                <a href="#hiwStep2" class="step-seg">
-                  <span class="seg-dot"></span>
-                  <span class="seg-label">02 Create</span>
-                </a>
-                <div class="seg-connector"></div>
-                <a href="#hiwStep3" class="step-seg">
-                  <span class="seg-dot"></span>
-                  <span class="seg-label">03 Share</span>
-                </a>
-              </div>
+              <button type="button" class="hiw-tab active" data-step="1" id="hiwTab1">
+                <span class="hiw-tab-num">01</span>
+                <span class="hiw-tab-label">Choose</span>
+              </button>
+              <button type="button" class="hiw-tab" data-step="2" id="hiwTab2">
+                <span class="hiw-tab-num">02</span>
+                <span class="hiw-tab-label">We create it</span>
+              </button>
+              <button type="button" class="hiw-tab" data-step="3" id="hiwTab3">
+                <span class="hiw-tab-num">03</span>
+                <span class="hiw-tab-label">Share one link</span>
+              </button>
             </div>
 
-            <div class="hiw-container">
-              <!-- Left Tabs -->
-              <div class="hiw-tabs">
-                <div class="hiw-tabs-track">
-                  <div class="hiw-tabs-glider glider-step1"></div>
-                </div>
-                <a href="#hiwStep1" class="hiw-tab active">
-                  <span class="hiw-tab-num">01</span>
-                  <span class="hiw-tab-label">Choose</span>
-                </a>
-                <a href="#hiwStep2" class="hiw-tab">
-                  <span class="hiw-tab-num">02</span>
-                  <span class="hiw-tab-label">We create it</span>
-                </a>
-                <a href="#hiwStep3" class="hiw-tab">
-                  <span class="hiw-tab-num">03</span>
-                  <span class="hiw-tab-label">Share one link</span>
-                </a>
-              </div>
-
-              <!-- Center Stage: Step 1 (Fanned Cards + Pricing Tiers) -->
-              <div class="hiw-stage">
+            <!-- Center Stage: 3 Layered Panels (Cross-fade & morph on scroll) -->
+            <div class="hiw-stage">
+              <!-- Stage 1: Fanned Cards + Pricing Tiers -->
+              <div class="hiw-stage-panel active" id="hiwStage1">
                 <div class="fan-display-wrapper">
                   <div class="fan-cards-stack" id="fanCardsStack">
                     <div class="fan-card fan-card-1" style="--rot: -16deg; --tx: -75px;">
@@ -525,89 +524,8 @@
                 </div>
               </div>
 
-              <!-- Right Sidebar: Step 1 Details -->
-              <div class="hiw-sidebar">
-                <div class="hiw-content-static">
-                  <div class="hiw-step-badge">
-                    <span class="badge-dot"></span>
-                    <span>STEP 1 OF 3 · SELECTION</span>
-                  </div>
-                  <h3 class="hiw-main-heading">Choose your<br /><em>design &amp; plan.</em></h3>
-                  <p class="hiw-body-copy">
-                    Pick a design and how personal you want it: as it is, fully redesigned around your wedding, or bespoke from scratch.
-                  </p>
-                  <div class="hiw-perks-list">
-                    <span class="perk-item">✓ 3 curated personalization tiers</span>
-                    <span class="perk-item">✓ Instant live preview &amp; transparent pricing</span>
-                  </div>
-                  <a href="#weddings" class="hiw-cta-link">Compare plans <span>→</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ─── CONNECTOR 1 -> 2 ─── -->
-        <div class="hiw-flow-divider">
-          <div class="divider-line"></div>
-          <div class="divider-badge">
-            <span class="divider-sparkle">✦</span>
-            <span>STEP 02 BELOW</span>
-            <span class="divider-sparkle">✦</span>
-          </div>
-          <div class="divider-line"></div>
-        </div>
-
-        <!-- ─── STEP 02: WE CREATE IT ─── -->
-        <div class="hiw-step-block" id="hiwStep2">
-          <div class="hiw-card-shell">
-            <div class="hiw-top-label">
-              <div class="hiw-label-brand">
-                <span class="hiw-label-icon">✦</span>
-                <span class="hiw-label-tag">HOW IT WORKS</span>
-                <span class="hiw-label-sep">·</span>
-                <span class="hiw-label-sub">THREE STEPS. ZERO DESIGN SKILLS NEEDED.</span>
-              </div>
-              <div class="hiw-step-progress-track">
-                <a href="#hiwStep1" class="step-seg completed">
-                  <span class="seg-dot"></span>
-                  <span class="seg-label">01 Choose</span>
-                </a>
-                <div class="seg-connector"></div>
-                <a href="#hiwStep2" class="step-seg active">
-                  <span class="seg-dot"></span>
-                  <span class="seg-label">02 Create</span>
-                </a>
-                <div class="seg-connector"></div>
-                <a href="#hiwStep3" class="step-seg">
-                  <span class="seg-dot"></span>
-                  <span class="seg-label">03 Share</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="hiw-container">
-              <!-- Left Tabs -->
-              <div class="hiw-tabs">
-                <div class="hiw-tabs-track">
-                  <div class="hiw-tabs-glider glider-step2"></div>
-                </div>
-                <a href="#hiwStep1" class="hiw-tab">
-                  <span class="hiw-tab-num">01</span>
-                  <span class="hiw-tab-label">Choose</span>
-                </a>
-                <a href="#hiwStep2" class="hiw-tab active">
-                  <span class="hiw-tab-num">02</span>
-                  <span class="hiw-tab-label">We create it</span>
-                </a>
-                <a href="#hiwStep3" class="hiw-tab">
-                  <span class="hiw-tab-num">03</span>
-                  <span class="hiw-tab-label">Share one link</span>
-                </a>
-              </div>
-
-              <!-- Center Stage: Step 2 (Looping Briefing Form -> Draft Preview) -->
-              <div class="hiw-stage">
+              <!-- Stage 2: Briefing Form -> Draft Preview Loop -->
+              <div class="hiw-stage-panel" id="hiwStage2">
                 <div class="step2-loop-container" id="step2LoopContainer">
                   <!-- Part A: Your Briefing -->
                   <div class="step2-card briefing-state active" id="briefingState">
@@ -666,8 +584,8 @@
                           <h4 class="draft-heading">Your draft is ready.</h4>
                           <p class="draft-sub">Review it privately in your portal before anyone sees it.</p>
                           <div class="draft-btn-group">
-                            <button class="btn-approve">APPROVE</button>
-                            <button class="btn-request-changes">REQUEST CHANGES</button>
+                            <button type="button" class="btn-approve">APPROVE</button>
+                            <button type="button" class="btn-request-changes">REQUEST CHANGES</button>
                           </div>
                         </div>
                       </div>
@@ -694,89 +612,8 @@
                 </div>
               </div>
 
-              <!-- Right Sidebar: Step 2 Details -->
-              <div class="hiw-sidebar">
-                <div class="hiw-content-static">
-                  <div class="hiw-step-badge">
-                    <span class="badge-dot"></span>
-                    <span>STEP 2 OF 3 · CRAFTING</span>
-                  </div>
-                  <h3 class="hiw-main-heading">We create it<br /><em>with care.</em></h3>
-                  <p class="hiw-body-copy">
-                    Fill in a guided briefing at your own pace. A real designer crafts it and you review a private draft. Ready in 7–14 days, or 1–4 days with optional Express on Essential and Premium.
-                  </p>
-                  <div class="hiw-perks-list">
-                    <span class="perk-item">✓ Private draft portal &amp; unlimited revisions</span>
-                    <span class="perk-item">✓ Dedicated designer assigned to your celebration</span>
-                  </div>
-                  <div class="hiw-pill-tag">✦ Private Designer Portal</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ─── CONNECTOR 2 -> 3 ─── -->
-        <div class="hiw-flow-divider">
-          <div class="divider-line"></div>
-          <div class="divider-badge">
-            <span class="divider-sparkle">✦</span>
-            <span>STEP 03 BELOW</span>
-            <span class="divider-sparkle">✦</span>
-          </div>
-          <div class="divider-line"></div>
-        </div>
-
-        <!-- ─── STEP 03: SHARE ONE LINK ─── -->
-        <div class="hiw-step-block" id="hiwStep3">
-          <div class="hiw-card-shell">
-            <div class="hiw-top-label">
-              <div class="hiw-label-brand">
-                <span class="hiw-label-icon">✦</span>
-                <span class="hiw-label-tag">HOW IT WORKS</span>
-                <span class="hiw-label-sep">·</span>
-                <span class="hiw-label-sub">THREE STEPS. ZERO DESIGN SKILLS NEEDED.</span>
-              </div>
-              <div class="hiw-step-progress-track">
-                <a href="#hiwStep1" class="step-seg completed">
-                  <span class="seg-dot"></span>
-                  <span class="seg-label">01 Choose</span>
-                </a>
-                <div class="seg-connector"></div>
-                <a href="#hiwStep2" class="step-seg completed">
-                  <span class="seg-dot"></span>
-                  <span class="seg-label">02 Create</span>
-                </a>
-                <div class="seg-connector"></div>
-                <a href="#hiwStep3" class="step-seg active">
-                  <span class="seg-dot"></span>
-                  <span class="seg-label">03 Share</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="hiw-container">
-              <!-- Left Tabs -->
-              <div class="hiw-tabs">
-                <div class="hiw-tabs-track">
-                  <div class="hiw-tabs-glider glider-step3"></div>
-                </div>
-                <a href="#hiwStep1" class="hiw-tab">
-                  <span class="hiw-tab-num">01</span>
-                  <span class="hiw-tab-label">Choose</span>
-                </a>
-                <a href="#hiwStep2" class="hiw-tab">
-                  <span class="hiw-tab-num">02</span>
-                  <span class="hiw-tab-label">We create it</span>
-                </a>
-                <a href="#hiwStep3" class="hiw-tab active">
-                  <span class="hiw-tab-num">03</span>
-                  <span class="hiw-tab-label">Share one link</span>
-                </a>
-              </div>
-
-              <!-- Center Stage: Step 3 (WhatsApp UI + Live RSVP Counter) -->
-              <div class="hiw-stage">
+              <!-- Stage 3: WhatsApp UI + Live RSVP Counter -->
+              <div class="hiw-stage-panel" id="hiwStage3">
                 <div class="step3-whatsapp-wrap">
                   <!-- WhatsApp Chat UI -->
                   <div class="wa-chat-window">
@@ -851,29 +688,63 @@
                   </div>
                 </div>
               </div>
+            </div>
 
-              <!-- Right Sidebar: Step 3 Details -->
-              <div class="hiw-sidebar">
-                <div class="hiw-content-static">
-                  <div class="hiw-step-badge">
-                    <span class="badge-dot"></span>
-                    <span>STEP 3 OF 3 · CELEBRATION</span>
-                  </div>
-                  <h3 class="hiw-main-heading">Share one link.<br /><em>Track live.</em></h3>
-                  <p class="hiw-body-copy">
-                    Send it by WhatsApp or email. Guests reply in seconds and every RSVP lands directly in your private portal with live headcount and dietary tracker.
-                  </p>
-                  <div class="hiw-perks-list">
-                    <span class="perk-item">✓ Zero apps for guests to install</span>
-                    <span class="perk-item">✓ Live dietary &amp; headcount automatic sync</span>
-                  </div>
-                  <div class="hiw-pill-tag">✦ Instant RSVP Tracking</div>
+            <!-- Right Sidebar: 3 Content Items (Layered, smooth transition) -->
+            <div class="hiw-sidebar">
+              <!-- Content 1 -->
+              <div class="hiw-content-item active" id="hiwContent1">
+                <div class="hiw-step-badge">
+                  <span class="badge-dot"></span>
+                  <span>STEP 1 OF 3 · SELECTION</span>
                 </div>
+                <h3 class="hiw-main-heading">Choose your<br /><em>design &amp; plan.</em></h3>
+                <p class="hiw-body-copy">
+                  Pick a design and how personal you want it: as it is, fully redesigned around your wedding, or bespoke from scratch.
+                </p>
+                <div class="hiw-perks-list">
+                  <span class="perk-item">✓ 3 curated personalization tiers</span>
+                  <span class="perk-item">✓ Instant live preview &amp; transparent pricing</span>
+                </div>
+                <a href="#weddings" class="hiw-cta-link">Compare plans <span>→</span></a>
+              </div>
+
+              <!-- Content 2 -->
+              <div class="hiw-content-item" id="hiwContent2">
+                <div class="hiw-step-badge">
+                  <span class="badge-dot"></span>
+                  <span>STEP 2 OF 3 · CRAFTING</span>
+                </div>
+                <h3 class="hiw-main-heading">We create it<br /><em>with care.</em></h3>
+                <p class="hiw-body-copy">
+                  Fill in a guided briefing at your own pace. A real designer crafts it and you review a private draft. Ready in 7–14 days, or 1–4 days with optional Express on Essential and Premium.
+                </p>
+                <div class="hiw-perks-list">
+                  <span class="perk-item">✓ Private draft portal &amp; unlimited revisions</span>
+                  <span class="perk-item">✓ Dedicated designer assigned to your celebration</span>
+                </div>
+                <div class="hiw-pill-tag">✦ Private Designer Portal</div>
+              </div>
+
+              <!-- Content 3 -->
+              <div class="hiw-content-item" id="hiwContent3">
+                <div class="hiw-step-badge">
+                  <span class="badge-dot"></span>
+                  <span>STEP 3 OF 3 · CELEBRATION</span>
+                </div>
+                <h3 class="hiw-main-heading">Share one link.<br /><em>Track live.</em></h3>
+                <p class="hiw-body-copy">
+                  Send it by WhatsApp or email. Guests reply in seconds and every RSVP lands directly in your private portal with live headcount and dietary tracker.
+                </p>
+                <div class="hiw-perks-list">
+                  <span class="perk-item">✓ Zero apps for guests to install</span>
+                  <span class="perk-item">✓ Live dietary &amp; headcount automatic sync</span>
+                </div>
+                <div class="hiw-pill-tag">✦ Instant RSVP Tracking</div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
