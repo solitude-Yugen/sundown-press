@@ -106,7 +106,8 @@
   border-radius: 100px;
   background: transparent;
   border: none;
-  cursor: pointer;
+  cursor: default;
+  pointer-events: none;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -214,7 +215,8 @@
   padding: 12px 18px;
   background: transparent;
   border: none;
-  cursor: pointer;
+  cursor: default;
+  pointer-events: none;
   text-align: left;
   text-decoration: none;
   border-radius: 100px;

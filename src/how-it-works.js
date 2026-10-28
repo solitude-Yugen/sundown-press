@@ -292,32 +292,10 @@ export function initHowItWorks() {
 
   initStep1();
 
-  // Scroll to step helper when clicking tabs or progress segments
-  const scrollSteps = (targetStep) => {
-    const rect = section.getBoundingClientRect();
-    const sectionTop = rect.top + window.pageYOffset;
-    const maxScroll = section.offsetHeight - window.innerHeight;
-    let targetY = sectionTop;
-    if (targetStep === 1) targetY = sectionTop;
-    else if (targetStep === 2) targetY = sectionTop + maxScroll * 0.5;
-    else if (targetStep === 3) targetY = sectionTop + maxScroll * 0.95;
-
-    window.scrollTo({
-      top: targetY,
-      behavior: 'smooth',
-    });
-  };
-
-  // Wire tab & segment click events
+  // Tabs and step-segs are scroll-driven indicators only — no click navigation.
+  // Prevent any default link/button action so clicks don't scroll the page.
   document.querySelectorAll('.hiw-tab, .step-seg').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const s = parseInt(btn.dataset.step, 10);
-      if (s) {
-        goToStep(s);
-        scrollSteps(s);
-      }
-    });
+    btn.addEventListener('click', (e) => e.preventDefault());
   });
 
   // Register ScrollTrigger if GSAP + plugin are available
