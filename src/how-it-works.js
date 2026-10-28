@@ -320,8 +320,10 @@ export function initHowItWorks() {
     });
   });
 
-  // GSAP ScrollTrigger setup
-  if (typeof ScrollTrigger !== 'undefined') {
+  // Register ScrollTrigger if GSAP + plugin are available
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
     ScrollTrigger.create({
       trigger: '#how-it-works',
       start: 'top top',
@@ -330,19 +332,15 @@ export function initHowItWorks() {
       onUpdate: (self) => {
         const p = self.progress;
         let step = 1;
-        if (p < 0.33) {
-          step = 1;
-        } else if (p < 0.67) {
-          step = 2;
-        } else {
-          step = 3;
-        }
+        if (p < 0.33) step = 1;
+        else if (p < 0.67) step = 2;
+        else step = 3;
         goToStep(step);
       },
     });
   }
 
-  // Native scroll handler fallback / backup for zero-latency response
+  // Native scroll handler — primary driver (covers all cases without conditions)
   let ticking = false;
   const onScroll = () => {
     if (ticking) return;
@@ -350,7 +348,11 @@ export function initHowItWorks() {
     requestAnimationFrame(() => {
       const rect = section.getBoundingClientRect();
       const scrollable = section.offsetHeight - window.innerHeight;
-      if (scrollable > 0 && rect.top <= 10 && rect.bottom >= window.innerHeight - 10) {
+
+      // Only run while we are inside the pinned scroll zone
+      if (scrollable > 0 && rect.top < window.innerHeight && rect.bottom > 0) {
+        // rect.top starts at sectionOffsetTop, drops to 0 at entry, goes negative inside
+        // progress = how far we've scrolled INTO the section / total scrollable range
         const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
         let step = 1;
         if (progress < 0.33) step = 1;
@@ -358,6 +360,7 @@ export function initHowItWorks() {
         else step = 3;
         goToStep(step);
       }
+
       ticking = false;
     });
   };
@@ -365,5 +368,7 @@ export function initHowItWorks() {
 
   // Initial step setup
   goToStep(1, true);
-}
 
+  // Re-run once on first scroll to catch in-view state on page load
+  requestAnimationFrame(onScroll);
+}
