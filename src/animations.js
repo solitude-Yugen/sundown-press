@@ -95,63 +95,6 @@ export function initGSAPAnimations() {
     });
   });
 
-  // ── Hero decor parallax ───────────────────────────────────────
-  gsap.to('.hero-decor', {
-    y: -150,
-    scrollTrigger: { trigger: '.hero-section', start: 'top top', end: 'bottom top', scrub: 2 },
-  });
-
-  // ── Hero text side fade on scroll ────────────────────────────
-  gsap.to('.hero-text-side', {
-    y: -80, opacity: 0.3,
-    scrollTrigger: { trigger: '.hero-section', start: 'top top', end: 'bottom top', scrub: 1.5 },
-  });
-
-  gsap.to('.hero-card-side', {
-    y: -40, opacity: 0.5,
-    scrollTrigger: { trigger: '.hero-section', start: 'top top', end: 'bottom top', scrub: 2 },
-  });
-
-  // ── Hero 3D card entrance ─────────────────────────────────────
-  const hero3dCard = document.getElementById('hero3dCard');
-  if (hero3dCard) {
-    gsap.fromTo(
-      hero3dCard,
-      { y: 120, opacity: 0, rotateX: 15, rotateY: -10, scale: 0.8 },
-      { y: 0,   opacity: 1, rotateX: 0,  rotateY: 0,  scale: 1, duration: 1.6, delay: 0.5, ease: 'power3.out' }
-    );
-
-    gsap.to(hero3dCard, { y: '-=10', duration: 3.2, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 2.2 });
-
-    // Toggle open / close on click
-    const badgeText = document.getElementById('suiteBadgeText');
-    hero3dCard.addEventListener('click', () => {
-      const opening = !hero3dCard.classList.contains('opened');
-      hero3dCard.classList.toggle('opened');
-      if (badgeText) badgeText.textContent = opening ? 'Click to Close' : 'Click to Open Invitation';
-    });
-
-    hero3dCard.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hero3dCard.click(); }
-    });
-
-    // Subtle 3D mouse tilt on the envelope
-    const suiteElem = hero3dCard.querySelector('.envelope-suite');
-    if (suiteElem) {
-      hero3dCard.addEventListener('mousemove', (e) => {
-        const rect = hero3dCard.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width  - 0.5;
-        const y = (e.clientY - rect.top)  / rect.height - 0.5;
-        suiteElem.style.setProperty('--tilt-x', `${-y * 12}deg`);
-        suiteElem.style.setProperty('--tilt-y', `${x  * 12}deg`);
-      });
-      hero3dCard.addEventListener('mouseleave', () => {
-        suiteElem.style.setProperty('--tilt-x', '0deg');
-        suiteElem.style.setProperty('--tilt-y', '0deg');
-      });
-    }
-  }
-
   // ── Carousel card entrance ───────────────────────────────────
   const carouselCards = document.querySelectorAll('.carousel-card');
   if (carouselCards.length) {

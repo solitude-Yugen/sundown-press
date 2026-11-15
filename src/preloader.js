@@ -12,10 +12,15 @@
  * @param {Function} onComplete - Called once preloader fades out
  */
 export function initPreloader(onComplete) {
-  window.addEventListener('load', () => {
+  const finish = () => {
+    window.sundownLoaded = true;
+    window.dispatchEvent(new Event('sundown:loaded'));
+    onComplete?.();
+  };
+  const start = () => {
     const preloader = document.getElementById('preloader');
     if (!preloader) {
-      onComplete && onComplete();
+      finish();
       return;
     }
 
@@ -23,8 +28,10 @@ export function initPreloader(onComplete) {
       preloader.classList.add('hide');
       setTimeout(() => {
         preloader.style.display = 'none';
-        onComplete && onComplete();
+        finish();
       }, 800);
     }, 2400);
-  });
+  };
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start, { once: true });
 }

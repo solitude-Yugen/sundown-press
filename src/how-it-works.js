@@ -220,70 +220,8 @@ async function runStep3Sequence() {
   isStep3Running = false;
 }
 
-// ── Active Step Controller ────────────────────────────────────────
-let currentStep = 1;
-
 /**
- * Switch active step (1, 2, or 3) smoothly.
- * Card shell remains fixed; inner stage, text, glider, and progress morph.
- */
-export function goToStep(step, force = false) {
-  if (step === currentStep && !force) return;
-  currentStep = step;
-
-  // 1. Update left tabs glider position
-  const tabsContainer = document.querySelector('.hiw-tabs');
-  if (tabsContainer) {
-    tabsContainer.setAttribute('data-active', String(step));
-  }
-  document.querySelectorAll('.hiw-tab').forEach((tab) => {
-    const s = parseInt(tab.dataset.step, 10);
-    tab.classList.toggle('active', s === step);
-  });
-
-  // 2. Update top progress track indicators
-  document.querySelectorAll('.step-seg').forEach((seg) => {
-    const s = parseInt(seg.dataset.step, 10);
-    seg.classList.toggle('active', s === step);
-    seg.classList.toggle('completed', s < step);
-  });
-
-  // 3. Center Stage cross-fade
-  document.querySelectorAll('.hiw-stage-panel').forEach((panel) => {
-    panel.classList.remove('active');
-  });
-  const activePanel = document.getElementById(`hiwStage${step}`);
-  if (activePanel) {
-    activePanel.classList.add('active');
-  }
-
-  // 4. Right Sidebar content cross-fade
-  document.querySelectorAll('.hiw-content-item').forEach((item) => {
-    item.classList.remove('active');
-  });
-  const activeContent = document.getElementById(`hiwContent${step}`);
-  if (activeContent) {
-    activeContent.classList.add('active');
-  }
-
-  // 5. Trigger or pause animations for active step
-  if (step === 2) {
-    isStep2Active = true;
-    runStep2Loop();
-  } else {
-    isStep2Active = false;
-  }
-
-  if (step === 3) {
-    isStep3Active = true;
-    runStep3Sequence();
-  } else {
-    isStep3Active = false;
-  }
-}
-
-/**
- * Main entry point — wires up all 3 steps with pinned scroll driver.
+ * Main entry point — wires up all 3 steps.
  * Must be called after the DOM is ready.
  */
 export function initHowItWorks() {
@@ -292,61 +230,36 @@ export function initHowItWorks() {
 
   initStep1();
 
-  // Tabs and step-segs are scroll-driven indicators only — no click navigation.
-  // Prevent any default link/button action so clicks don't scroll the page.
-  document.querySelectorAll('.hiw-tab, .step-seg').forEach((btn) => {
-    btn.addEventListener('click', (e) => e.preventDefault());
-  });
-
-  // Register ScrollTrigger if GSAP + plugin are available
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-
-    ScrollTrigger.create({
-      trigger: '#how-it-works',
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: true,
-      onUpdate: (self) => {
-        const p = self.progress;
-        let step = 1;
-        if (p < 0.33) step = 1;
-        else if (p < 0.67) step = 2;
-        else step = 3;
-        goToStep(step);
-      },
+  const panels = [...section.querySelectorAll('.hiw-step-block')];
+  const stage = section.querySelector('.hiw-flow-container');
+  section.classList.add('hiw-scroll-scene');
+  let active = -1;
+  function update() {
+    const progress = Math.max(0, Math.min(1, -section.getBoundingClientRect().top / Math.max(1, section.offsetHeight - innerHeight)));
+    const index = Math.min(2, Math.floor(progress * 3));
+    stage.style.setProperty('--hiw-progress', progress);
+    if (index === active) return;
+    active = index;
+    panels.forEach((panel, i) => {
+      panel.classList.toggle('is-current', i === index);
+      panel.inert = i !== index;
+      panel.setAttribute('aria-hidden', String(i !== index));
     });
+    isStep2Active = index === 1;
+    isStep3Active = index === 2;
+    if (isStep2Active) runStep2Loop();
+    if (isStep3Active) runStep3Sequence();
   }
-
-  // Native scroll handler — primary driver (covers all cases without conditions)
-  let ticking = false;
-  const onScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const rect = section.getBoundingClientRect();
-      const scrollable = section.offsetHeight - window.innerHeight;
-
-      // Only run while we are inside the pinned scroll zone
-      if (scrollable > 0 && rect.top < window.innerHeight && rect.bottom > 0) {
-        // rect.top starts at sectionOffsetTop, drops to 0 at entry, goes negative inside
-        // progress = how far we've scrolled INTO the section / total scrollable range
-        const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
-        let step = 1;
-        if (progress < 0.33) step = 1;
-        else if (progress < 0.67) step = 2;
-        else step = 3;
-        goToStep(step);
-      }
-
-      ticking = false;
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+  section.querySelectorAll('a[href^="#hiwStep"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      const index = panels.findIndex(panel => '#' + panel.id === anchor.getAttribute('href'));
+      if (index < 0) return;
+      const top = section.getBoundingClientRect().top + scrollY;
+      window.scrollTo({ top: top + (section.offsetHeight - innerHeight) * (index / 3 + 0.04), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     });
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  // Initial step setup
-  goToStep(1, true);
-
-  // Re-run once on first scroll to catch in-view state on page load
-  requestAnimationFrame(onScroll);
+  });
 }

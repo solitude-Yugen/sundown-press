@@ -1,28 +1,30 @@
-/* ─── HOW IT WORKS PINNED SCROLL SECTION ──────────────────────── */
-.hiw-pinned-section {
+/* â”€â”€â”€ HOW IT WORKS PINNED SCROLL SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* â”€â”€â”€ HOW IT WORKS THREE STEP FLOW SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.hiw-flow-section {
   position: relative;
   width: 100%;
-  height: 300vh;
+  padding: 80px 24px 100px;
   background: linear-gradient(180deg, #F5F0E8 0%, #FAF7F2 15%, #FAF7F2 85%, #F5F0E8 100%);
   z-index: 15;
 }
 
-.hiw-sticky-wrapper {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
+.hiw-flow-container {
   display: flex;
+  flex-direction: column;
+  gap: 36px;
   align-items: center;
-  justify-content: center;
-  padding: 30px 24px;
-  box-sizing: border-box;
-  overflow: hidden;
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+.hiw-step-block {
+  width: 100%;
+  scroll-margin-top: 100px;
 }
 
 .hiw-card-shell {
   width: 100%;
-  max-width: 1480px;
   background: #FFFDF9;
   border-radius: 30px;
   border: 1px solid rgba(212, 160, 60, 0.28);
@@ -30,10 +32,10 @@
     0 28px 80px rgba(15, 61, 62, 0.08),
     0 4px 16px rgba(0, 0, 0, 0.02),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  padding: 30px 44px 28px;
+  padding: 34px 48px 30px;
   position: relative;
   box-sizing: border-box;
-  transition: box-shadow 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .hiw-card-shell:hover {
@@ -102,12 +104,8 @@
   font-weight: 600;
   letter-spacing: 1px;
   color: #A39688;
-  padding: 5px 14px;
+  padding: 4px 12px;
   border-radius: 100px;
-  background: transparent;
-  border: none;
-  cursor: default;
-  pointer-events: none;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -143,7 +141,6 @@
 
 .step-seg.completed .seg-dot {
   background: #2E7D32;
-  box-shadow: 0 0 6px rgba(46, 125, 50, 0.4);
 }
 
 .seg-connector {
@@ -151,6 +148,44 @@
   height: 1.5px;
   background: rgba(15, 61, 62, 0.12);
   border-radius: 2px;
+}
+
+/* Flow Connectors Between Cards */
+.hiw-flow-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 160, 60, 0.45), transparent);
+}
+
+.divider-badge {
+  font-family: var(--font-accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8B6914;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(212, 160, 60, 0.3);
+  border-radius: 100px;
+  box-shadow: 0 4px 14px rgba(15, 61, 62, 0.05);
+}
+
+.divider-sparkle {
+  color: var(--gold);
+  font-size: 11px;
 }
 
 .hiw-container {
@@ -161,7 +196,7 @@
   min-height: 480px;
 }
 
-/* ─── Left Tabs with Vertical Glider Track ─── */
+/* â”€â”€â”€ Left Tabs with Vertical Glider Track â”€â”€â”€ */
 .hiw-tabs {
   display: flex;
   flex-direction: column;
@@ -184,29 +219,16 @@
 .hiw-tabs-glider {
   position: absolute;
   left: 0;
-  top: 0;
   width: 100%;
   height: 33.333%;
   background: #4A121A;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(74, 18, 26, 0.4);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.hiw-tabs[data-active="1"] .hiw-tabs-glider,
-.glider-step1 {
-  transform: translateY(0%);
-}
-
-.hiw-tabs[data-active="2"] .hiw-tabs-glider,
-.glider-step2 {
-  transform: translateY(100%);
-}
-
-.hiw-tabs[data-active="3"] .hiw-tabs-glider,
-.glider-step3 {
-  transform: translateY(200%);
-}
+.glider-step1 { top: 0; }
+.glider-step2 { top: 33.333%; }
+.glider-step3 { top: 66.666%; }
 
 .hiw-tab {
   display: flex;
@@ -215,14 +237,12 @@
   padding: 12px 18px;
   background: transparent;
   border: none;
-  cursor: default;
-  pointer-events: none;
+  cursor: pointer;
   text-align: left;
   text-decoration: none;
   border-radius: 100px;
   transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
-  width: 100%;
 }
 
 .hiw-tab-num {
@@ -263,39 +283,24 @@
   color: var(--teal);
 }
 
-/* ─── Center Stage ─── */
+/* â”€â”€â”€ Center Stage â”€â”€â”€ */
 .hiw-stage {
   position: relative;
   min-height: 480px;
-  height: 480px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
 }
 
-.hiw-stage-panel {
-  position: absolute;
-  inset: 0;
+.hiw-content-static {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(18px) scale(0.97);
-  filter: blur(4px);
-  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-              visibility 0.5s ease;
-  pointer-events: none;
+  flex-direction: column;
 }
 
-.hiw-stage-panel.active {
+.hiw-panel.active {
   opacity: 1;
   visibility: visible;
   transform: translateY(0) scale(1);
-  filter: blur(0px);
   pointer-events: auto;
 }
 
@@ -1130,11 +1135,10 @@
   color: #2E7D32;
 }
 
-/* ─── Right Details Panel ─── */
+/* â”€â”€â”€ Right Details Panel â”€â”€â”€ */
 .hiw-sidebar {
   position: relative;
-  min-height: 380px;
-  height: 380px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1265,80 +1269,15 @@
   width: fit-content;
 }
 
-/* ─── Responsive Media Queries ───────────────────────────────────── */
-@media (max-width: 1024px) {
-  .hiw-container {
-    grid-template-columns: 160px 1fr 300px;
-    gap: 28px;
-  }
-  .hiw-card-shell {
-    padding: 24px 28px;
-  }
-}
-
-@media (max-width: 900px) {
-  .hiw-pinned-section {
-    height: auto;
-    min-height: auto;
-    padding: 50px 16px;
-  }
-  .hiw-sticky-wrapper {
-    position: relative;
-    height: auto;
-    padding: 0;
-    overflow: visible;
-  }
-  .hiw-card-shell {
-    padding: 24px 20px;
-    border-radius: 22px;
-  }
-  .hiw-container {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .hiw-tabs {
-    flex-direction: row;
-    justify-content: center;
-    padding-left: 0;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .hiw-tabs-track {
-    display: none;
-  }
-  .hiw-tab {
-    width: auto;
-    padding: 8px 14px;
-  }
-  .hiw-stage {
-    min-height: 420px;
-    height: auto;
-  }
-  .hiw-stage-panel {
-    position: relative;
-    display: none;
-    opacity: 0;
-  }
-  .hiw-stage-panel.active {
-    display: flex;
-    opacity: 1;
-  }
-  .hiw-sidebar {
-    min-height: auto;
-    height: auto;
-  }
-  .hiw-content-item {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    display: none;
-    opacity: 0;
-  }
-  .hiw-content-item.active {
-    display: block;
-    opacity: 1;
-    transform: none;
-  }
-}
-
+/* One continuous pinned scene, with three interchangeable parts. */
+.hiw-flow-section.hiw-scroll-scene{height:360svh;padding:0 24px;background:#FAF7F2}
+.hiw-scroll-scene .hiw-flow-container{position:sticky;top:0;height:100svh;display:grid;align-items:center;gap:0;padding:85px 0 24px;max-width:1450px}
+.hiw-scroll-scene .hiw-flow-divider{display:none}
+.hiw-scroll-scene .hiw-step-block{grid-area:1 / 1;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(24px);transition:opacity .45s ease,transform .6s ease,visibility .45s;min-width:0}
+.hiw-scroll-scene .hiw-step-block.is-current{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.hiw-scroll-scene .hiw-card-shell{background:transparent;border:0;border-radius:0;box-shadow:none;padding:24px 20px}
+.hiw-scroll-scene .hiw-card-shell:hover{box-shadow:none}
+.hiw-scroll-scene .hiw-flow-container:after{content:'';position:absolute;left:20px;right:20px;bottom:18px;height:2px;background:#b58b46;transform:scaleX(var(--hiw-progress,0));transform-origin:left}
+@media(max-width:900px){.hiw-scroll-scene .hiw-container{grid-template-columns:1fr 1fr;gap:20px;min-height:0}.hiw-scroll-scene .hiw-tabs{display:none}.hiw-scroll-scene .hiw-label-sub,.hiw-scroll-scene .hiw-label-sep{display:none}}
+@media(max-width:600px){.hiw-flow-section.hiw-scroll-scene{padding:0 16px;height:400svh}.hiw-scroll-scene .hiw-flow-container{padding:78px 0 20px}.hiw-scroll-scene .hiw-card-shell{padding:10px 0}.hiw-scroll-scene .hiw-top-label{flex-wrap:wrap;gap:12px;margin-bottom:12px;padding-bottom:10px}.hiw-scroll-scene .hiw-container{display:flex;flex-direction:column;gap:14px}.hiw-scroll-scene .hiw-stage{min-height:280px;height:36svh;width:100%;transform:scale(.85);transform-origin:center}.hiw-scroll-scene .hiw-sidebar{width:100%;min-height:205px}.hiw-scroll-scene .hiw-main-heading{font-size:26px}.hiw-scroll-scene .hiw-body-copy{font-size:12px;margin-bottom:10px}.hiw-scroll-scene .hiw-perks-list{margin-bottom:10px}.hiw-scroll-scene .hiw-step-badge{margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){.hiw-scroll-scene .hiw-step-block{transition:none;transform:none}}
