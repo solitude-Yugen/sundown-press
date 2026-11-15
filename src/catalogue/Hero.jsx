@@ -5,11 +5,11 @@ import { clamp, END, pageTurn, paperStrip, catalogueState } from './timeline.js'
 import './catalogue.css';
 
 const services = [
-  { name: 'Digital', subtitle: 'A little magic. Instantly delivered.', text: 'Thoughtfully designed invitations, made for screens and shared with the people who matter.', color: '#0f3d3e', paper: '#b9d6cf', ink: '#123c39', image: 'invite_card_1.jpg', label: 'YOU’RE INVITED', type: 'phone', link: '#greetings' },
-  { name: 'Printable', subtitle: 'Your celebration, beautifully on paper.', text: 'Personalised, print-ready designs. Choose your paper, print your way, and make it yours.', color: '#745244', paper: '#f5f0e1', ink: '#654331', image: 'invite_card_2.jpg', label: 'SAVE THE DATE', type: 'print', link: '#keepsakes' },
-  { name: 'Printed', subtitle: 'Something wonderful to hold.', text: 'Rich colour, tactile details and keepsake-worthy invitations, crafted with care.', color: '#4a121a', paper: '#ead7bb', ink: '#651c29', image: 'invite_card_3.jpg', label: 'THE ART OF GATHERING', type: 'traditional', link: '#keepsakes' },
-  { name: 'Wedding', subtitle: 'The first chapter of your forever.', text: 'An invitation suite as individual as your love story. From the first announcement to the final detail.', color: '#536455', paper: '#e8eadf', ink: '#314c3c', image: 'invite_card_4.jpg', label: 'TOGETHER, ALWAYS', type: 'wedding', link: '#weddings' },
-  { name: 'Custom', subtitle: 'Dream it. We’ll make it personal.', text: 'A colour, a memory, an idea. Let’s turn your story into an invitation that could only be yours.', color: '#614e72', paper: '#ddd0e7', ink: '#4b335c', image: 'invite_card_5.jpg', label: 'ONE OF A KIND', type: 'custom', link: '#contact' },
+  { name: 'Digital', subtitle: 'A little magic. Instantly delivered.', text: 'Thoughtfully designed invitations, made for screens and shared with the people who matter.', color: '#0f3d3e', paper: '#b9d6cf', ink: '#123c39', image: 'invite_card_1.jpg', label: 'YOU’RE INVITED', type: 'phone', link: 'digital-greetings.html' },
+  { name: 'Printable', subtitle: 'Your celebration, beautifully on paper.', text: 'Personalised, print-ready designs. Choose your paper, print your way, and make it yours.', color: '#745244', paper: '#f5f0e1', ink: '#654331', image: 'invite_card_2.jpg', label: 'SAVE THE DATE', type: 'print', link: 'printed-keepsakes.html' },
+  { name: 'Printed', subtitle: 'Something wonderful to hold.', text: 'Rich colour, tactile details and keepsake-worthy invitations, crafted with care.', color: '#4a121a', paper: '#ead7bb', ink: '#651c29', image: 'invite_card_3.jpg', label: 'THE ART OF GATHERING', type: 'traditional', link: 'printed-keepsakes.html' },
+  { name: 'Wedding', subtitle: 'The first chapter of your forever.', text: 'An invitation suite as individual as your love story. From the first announcement to the final detail.', color: '#536455', paper: '#e8eadf', ink: '#314c3c', image: 'invite_card_4.jpg', label: 'TOGETHER, ALWAYS', type: 'wedding', link: 'weddings.html' },
+  { name: 'Custom', subtitle: 'Dream it. We’ll make it personal.', text: 'A colour, a memory, an idea. Let’s turn your story into an invitation that could only be yours.', color: '#614e72', paper: '#ddd0e7', ink: '#4b335c', image: 'invite_card_5.jpg', label: 'ONE OF A KIND', type: 'custom', link: 'contact.html' },
 ];
 
 function PageFront({ service, index }) {
