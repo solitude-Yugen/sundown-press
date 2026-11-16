@@ -54,3 +54,6 @@ initCardConfetti();
 initCursorGlow();
 initHowItWorks();
 initPersistentCta();
+
+import { initServiceShowcases } from './service-showcases.js';
+initServiceShowcases();
