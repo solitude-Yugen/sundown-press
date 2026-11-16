@@ -22,6 +22,7 @@
 
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="/css/service-showcases.css" />
+  <link rel="stylesheet" href="/css/photobooth-3d.css" />
 </head>
 <body>
 
@@ -703,26 +704,32 @@
     <section id="photobooth" class="section photobooth-section">
       <div class="section-container">
         <div class="photobooth-layout">
-          <div class="photobooth-visual" data-animate="fade-right">
-            <div class="booth-frame">
-              <div class="booth-screen">
-                <div class="booth-flash"></div>
-                <div class="booth-strip">
-                  <div class="strip-photo strip-1"></div>
-                  <div class="strip-photo strip-2"></div>
-                  <div class="strip-photo strip-3"></div>
-                  <div class="strip-photo strip-4"></div>
+            <div class="photobooth-visual booth-scene">
+              <div class="booth-machine">
+                <div class="booth-cabinet">
+                  <div class="booth-marquee"><span>SUNDOWN</span><em>The memory booth</em><span>PRESS</span></div>
+                  <div class="booth-camera" aria-hidden="true"><span class="booth-lens"></span><span class="booth-status-light"></span></div>
+                  <div class="booth-gallery-bezel">
+                    <div class="booth-gallery" id="booth-gallery" role="region" tabindex="0" aria-label="Infinite photo booth gallery" aria-describedby="booth-gallery-help">
+                      <div class="booth-gallery-tiles" aria-hidden="true"></div>
+                      <span class="booth-gallery-badge" aria-hidden="true">THE GOOD TIMES, ON REPEAT</span>
+                      <span class="booth-gallery-fallback">Portraits are loading. Drag to explore the gallery.</span>
+                    </div>
+                    <div class="booth-gallery-controls" aria-label="Photo gallery controls">
+                      <button type="button" data-booth-action="zoom-out" aria-label="Zoom out of photo gallery">−</button>
+                      <button type="button" data-booth-action="zoom-in" aria-label="Zoom into photo gallery">+</button>
+                      <button type="button" data-booth-action="reset" aria-label="Reset photo gallery">Reset</button>
+                      <button type="button" data-booth-action="pause" aria-pressed="false">Pause</button>
+                    </div>
+                  </div>
+                  <div class="booth-output" aria-hidden="true"><span class="booth-output-slot"></span><span class="booth-paper-strip"><span></span><span></span><span></span><small>KEEP THIS FEELING.</small></span></div>
+                  <div class="booth-cabinet-footer"><span>MAKE A MEMORY</span><span>TAKE IT WITH YOU ↗</span></div>
                 </div>
+                <div class="booth-plinth" aria-hidden="true"></div>
               </div>
-              <div class="booth-lights">
-                <span class="bl bl-1"></span>
-                <span class="bl bl-2"></span>
-                <span class="bl bl-3"></span>
-                <span class="bl bl-4"></span>
-                <span class="bl bl-5"></span>
-              </div>
+              <p class="booth-gallery-help" id="booth-gallery-help">Drag to explore · + / − to zoom · Arrow keys to move</p>
+              <p class="booth-stock-note">Illustrative stock portraits · <a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer">Pexels</a></p>
             </div>
-          </div>
           <div class="photobooth-info" data-animate="fade-left">
             <span class="section-tag">04 — Photo Booth Rental</span>
             <h2 class="section-title">
