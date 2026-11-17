@@ -1,0 +1,7 @@
+/* Utilities for the installed Originkit components, without a global reset. */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@source "../src/components/originkit";
+@source "../src/photobooth.jsx";
+@source "../src/wedding-heading.jsx";

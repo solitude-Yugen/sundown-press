@@ -638,9 +638,9 @@
       <div class="section-container">
         <div class="section-header" data-animate="fade-up">
           <span class="section-tag">03 — Wedding Invitations</span>
-          <h2 class="section-title">
-            Your Love Story,<br /><span class="accent">Elegantly Told.</span>
-          </h2>
+          <div id="wedding-bloom-heading">
+            <h2 class="section-title">Your Love Story,<br /><span class="accent">Elegantly Told.</span></h2>
+          </div>
           <p class="section-desc">
             Bespoke digital wedding invitations with gentle animations, 
             envelope reveals, and built-in RSVP — shared with a single link.
@@ -710,24 +710,15 @@
                   <div class="booth-marquee"><span>SUNDOWN</span><em>The memory booth</em><span>PRESS</span></div>
                   <div class="booth-camera" aria-hidden="true"><span class="booth-lens"></span><span class="booth-status-light"></span></div>
                   <div class="booth-gallery-bezel">
-                    <div class="booth-gallery" id="booth-gallery" role="region" tabindex="0" aria-label="Infinite photo booth gallery" aria-describedby="booth-gallery-help">
-                      <div class="booth-gallery-tiles" aria-hidden="true"></div>
-                      <span class="booth-gallery-badge" aria-hidden="true">THE GOOD TIMES, ON REPEAT</span>
-                      <span class="booth-gallery-fallback">Portraits are loading. Drag to explore the gallery.</span>
-                    </div>
-                    <div class="booth-gallery-controls" aria-label="Photo gallery controls">
-                      <button type="button" data-booth-action="zoom-out" aria-label="Zoom out of photo gallery">−</button>
-                      <button type="button" data-booth-action="zoom-in" aria-label="Zoom into photo gallery">+</button>
-                      <button type="button" data-booth-action="reset" aria-label="Reset photo gallery">Reset</button>
-                      <button type="button" data-booth-action="pause" aria-pressed="false">Pause</button>
-                    </div>
+                    <div id="booth-gallery-root"></div>
+
                   </div>
                   <div class="booth-output" aria-hidden="true"><span class="booth-output-slot"></span><span class="booth-paper-strip"><span></span><span></span><span></span><small>KEEP THIS FEELING.</small></span></div>
                   <div class="booth-cabinet-footer"><span>MAKE A MEMORY</span><span>TAKE IT WITH YOU ↗</span></div>
                 </div>
                 <div class="booth-plinth" aria-hidden="true"></div>
               </div>
-              <p class="booth-gallery-help" id="booth-gallery-help">Drag to explore · + / − to zoom · Arrow keys to move</p>
+              <p class="booth-gallery-help" id="booth-gallery-help">Drag to explore · Scroll or + / − to zoom</p>
               <p class="booth-stock-note">Illustrative stock portraits · <a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer">Pexels</a></p>
             </div>
           <div class="photobooth-info" data-animate="fade-left">
