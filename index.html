@@ -650,31 +650,13 @@
         <div class="invitation-stack-wrap"><button class="stack-toggle" aria-expanded="false" aria-controls="invitation-layers">Explore the invitation collection <span aria-hidden="true">↗</span></button><p class="component-hint">Hover, focus or tap to unfold. Select a design to make it yours.</p><div class="invitation-stack" id="invitation-layers"><a class="invitation-layer" href="weddings.html" style="--layer:0;--tilt:-9deg"><img src="invite_card_1.jpg" alt="Royal Heritage invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 01</small><strong>Royal Heritage</strong><em>Personalise this design ↗</em></span></a><a class="invitation-layer" href="weddings.html" style="--layer:1;--tilt:7deg"><img src="invite_card_2.jpg" alt="Botanical Garden invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 02</small><strong>Botanical Garden</strong><em>Personalise this design ↗</em></span></a><a class="invitation-layer" href="weddings.html" style="--layer:2;--tilt:-5deg"><img src="invite_card_3.jpg" alt="Modern Minimal invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 03</small><strong>Modern Minimal</strong><em>Personalise this design ↗</em></span></a><a class="invitation-layer" href="weddings.html" style="--layer:3;--tilt:10deg"><img src="invite_card_4.jpg" alt="The Palace Edit invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 04</small><strong>The Palace Edit</strong><em>Personalise this design ↗</em></span></a><a class="invitation-layer" href="weddings.html" style="--layer:4;--tilt:-2deg"><img src="invite_card_5.jpg" alt="A Golden Evening invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 05</small><strong>A Golden Evening</strong><em>Personalise this design ↗</em></span></a></div></div>
 
 
-        <div class="wedding-features" data-animate="fade-up">
-          <div class="wf-item">
-            <div class="wf-icon">💌</div>
-            <span>Animated Envelope Reveal</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">📍</div>
-            <span>Venue Map & Directions</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">✓</div>
-            <span>Built-in RSVP</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">🎵</div>
-            <span>Background Music</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">📅</div>
-            <span>Countdown Timer</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">🌐</div>
-            <span>Multi-language Support</span>
-          </div>
+        <div class="wedding-features" aria-label="Wedding invitation features">
+          <div class="wf-item"><span class="wf-icon wf-envelope" aria-hidden="true"></span><span>Animated envelope reveal</span></div>
+          <div class="wf-item"><span class="wf-icon wf-map" aria-hidden="true"></span><span>Venue map &amp; directions</span></div>
+          <div class="wf-item"><span class="wf-icon wf-rsvp" aria-hidden="true"></span><span>Built-in RSVP</span></div>
+          <div class="wf-item"><span class="wf-icon wf-music" aria-hidden="true"></span><span>Background music</span></div>
+          <div class="wf-item"><span class="wf-icon wf-clock" aria-hidden="true"></span><span>Countdown timer</span></div>
+          <div class="wf-item"><span class="wf-icon wf-language" aria-hidden="true"></span><span>Multi-language support</span></div>
         </div>
       </div>
     </section>
@@ -710,7 +692,7 @@
                   <div class="booth-marquee"><span>SUNDOWN</span><em>The memory booth</em><span>PRESS</span></div>
                   <div class="booth-camera" aria-hidden="true"><span class="booth-lens"></span><span class="booth-status-light"></span></div>
                   <div class="booth-gallery-bezel">
-                    <div id="booth-gallery-root"></div>
+                    <div class="booth-gallery" id="booth-gallery" role="region" tabindex="0" aria-label="Infinite photo booth gallery" aria-describedby="booth-gallery-help"><div class="booth-gallery-tiles" aria-hidden="true"></div><span class="booth-gallery-badge" aria-hidden="true">THE GOOD TIMES, ON REPEAT</span><span class="booth-gallery-fallback">Portraits are loading. Drag to explore the gallery.</span></div><div class="booth-gallery-controls" aria-label="Photo gallery controls"><button type="button" data-booth-action="zoom-out" aria-label="Zoom out of photo gallery">−</button><button type="button" data-booth-action="zoom-in" aria-label="Zoom into photo gallery">+</button><button type="button" data-booth-action="reset" aria-label="Reset photo gallery">Reset</button><button type="button" data-booth-action="pause" aria-pressed="false">Pause</button></div>
 
                   </div>
                   <div class="booth-output" aria-hidden="true"><span class="booth-output-slot"></span><span class="booth-paper-strip"><span></span><span></span><span></span><small>KEEP THIS FEELING.</small></span></div>

@@ -149,3 +149,23 @@
   font-weight: 500;
   color: var(--teal);
 }
+/* A compact feature strip with drawn, animated details. */
+#weddings .wedding-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:16px 24px;background:#fdf9ef;border:1px solid #c8b98f;border-radius:6px;box-shadow:0 12px 35px #173d3720}
+#weddings .wf-item{position:relative;min-height:100px;padding:20px 18px;border-radius:0;border-right:1px solid #c5b99966;gap:18px;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease,background .3s ease;transition-delay:calc(var(--i) * 90ms)}
+#weddings .wf-item:nth-child(3n){border-right:0}
+#weddings .wf-item:nth-child(-n+3){border-bottom:1px solid #c5b99966}
+#weddings .wedding-features.is-visible .wf-item{opacity:1;transform:translateY(0)}
+#weddings .wf-item:nth-child(1){--i:0}#weddings .wf-item:nth-child(2){--i:1}#weddings .wf-item:nth-child(3){--i:2}#weddings .wf-item:nth-child(4){--i:3}#weddings .wf-item:nth-child(5){--i:4}#weddings .wf-item:nth-child(6){--i:5}
+#weddings .wf-item span:not(.wf-icon){font:500 clamp(18px,1.9vw,24px)/1.05 var(--font-display);max-width:175px}
+#weddings .wf-icon{position:relative;width:44px;height:44px;flex:none;background:none;border-radius:0;color:#a47a3d}
+#weddings .wf-icon:before,#weddings .wf-icon:after{content:'';position:absolute;display:block;box-sizing:border-box;transition:transform .5s ease}
+#weddings .wf-envelope:before{inset:10px 5px;border:1.5px solid currentColor;border-radius:2px}#weddings .wf-envelope:after{left:10px;top:4px;width:25px;height:25px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) scale(.75)}#weddings .wf-item:hover .wf-envelope:after{transform:translateY(-6px) rotate(45deg) scale(.75)}
+#weddings .wf-map:before{inset:6px 12px 11px;border:1.5px solid currentColor;border-radius:50% 50% 50% 0;transform:rotate(-45deg)}#weddings .wf-map:after{width:7px;height:7px;left:19px;top:15px;border:1.5px solid currentColor;border-radius:50%}
+#weddings .wf-rsvp:before{inset:5px 8px;border:1.5px solid currentColor;transform:rotate(-8deg)}#weddings .wf-rsvp:after{width:17px;height:10px;left:15px;top:15px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg)}
+#weddings .wf-music:before{width:2px;height:25px;left:25px;top:6px;background:currentColor;transform:rotate(-9deg)}#weddings .wf-music:after{width:16px;height:10px;left:10px;top:26px;border:2px solid currentColor;border-radius:50%}
+#weddings .wf-clock:before{inset:5px;border:1.5px solid currentColor;border-radius:50%}#weddings .wf-clock:after{width:11px;height:13px;left:21px;top:10px;border-left:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:skewY(-20deg)}
+#weddings .wf-language:before{inset:5px;border:1.5px solid currentColor;border-radius:50%}#weddings .wf-language:after{inset:5px 15px;border:1.5px solid currentColor;border-radius:50%}
+#weddings .wf-item:hover .wf-icon{animation:wf-lift .55s ease both}@keyframes wf-lift{50%{transform:translateY(-5px) rotate(5deg)}}
+@media(max-width:800px){#weddings .wedding-features{grid-template-columns:repeat(2,minmax(0,1fr))}#weddings .wf-item:nth-child(n){border-right:0;border-bottom:1px solid #c5b99966}#weddings .wf-item:nth-child(odd){border-right:1px solid #c5b99966}#weddings .wf-item:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:520px){#weddings .wedding-features{padding:10px;grid-template-columns:1fr}#weddings .wf-item:nth-child(n){min-height:72px;padding:12px 15px;border-right:0;border-bottom:1px solid #c5b99966}#weddings .wf-item:last-child{border-bottom:0}}
+@media(prefers-reduced-motion:reduce){#weddings .wf-item{opacity:1;transform:none;transition:none}#weddings .wf-item:hover .wf-icon{animation:none}}

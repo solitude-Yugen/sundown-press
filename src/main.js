@@ -58,7 +58,7 @@ initPersistentCta();
 import { initServiceShowcases } from './service-showcases.js';
 initServiceShowcases();
 
-import { initPhotoBooth } from './photobooth.jsx';
+import { initPhotoBooth } from './photobooth.js';
 initPhotoBooth();
 
 import { initWeddingHeading } from './wedding-heading.jsx';
