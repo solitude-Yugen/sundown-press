@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // Existing lower sections and the catalogue use root-relative brand assets.
 export default defineConfig({
+  base: '/sundown-press/',
   build: { rollupOptions: { input: Object.fromEntries(
     ['index', 'digital-greetings', 'printed-keepsakes', 'weddings', 'photo-booth', 'contact', 'invitation-studio', 'royal-story', 'invites']
       .map(page => [page, resolve(`${page}.html`)])) } },
