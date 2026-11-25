@@ -1278,6 +1278,26 @@
 .hiw-scroll-scene .hiw-card-shell{background:transparent;border:0;border-radius:0;box-shadow:none;padding:24px 20px}
 .hiw-scroll-scene .hiw-card-shell:hover{box-shadow:none}
 .hiw-scroll-scene .hiw-flow-container:after{content:'';position:absolute;left:20px;right:20px;bottom:18px;height:2px;background:#b58b46;transform:scaleX(var(--hiw-progress,0));transform-origin:left}
-@media(max-width:900px){.hiw-scroll-scene .hiw-container{grid-template-columns:1fr 1fr;gap:20px;min-height:0}.hiw-scroll-scene .hiw-tabs{display:none}.hiw-scroll-scene .hiw-label-sub,.hiw-scroll-scene .hiw-label-sep{display:none}}
-@media(max-width:600px){.hiw-flow-section.hiw-scroll-scene{padding:0 16px;height:400svh}.hiw-scroll-scene .hiw-flow-container{padding:78px 0 20px}.hiw-scroll-scene .hiw-card-shell{padding:10px 0}.hiw-scroll-scene .hiw-top-label{flex-wrap:wrap;gap:12px;margin-bottom:12px;padding-bottom:10px}.hiw-scroll-scene .hiw-container{display:flex;flex-direction:column;gap:14px}.hiw-scroll-scene .hiw-stage{min-height:280px;height:36svh;width:100%;transform:scale(.85);transform-origin:center}.hiw-scroll-scene .hiw-sidebar{width:100%;min-height:205px}.hiw-scroll-scene .hiw-main-heading{font-size:26px}.hiw-scroll-scene .hiw-body-copy{font-size:12px;margin-bottom:10px}.hiw-scroll-scene .hiw-perks-list{margin-bottom:10px}.hiw-scroll-scene .hiw-step-badge{margin-bottom:8px}}
+@media(max-width:900px){
+  .hiw-flow-section,.hiw-flow-section.hiw-scroll-scene{padding:0 16px;overflow-x:clip}
+  .hiw-flow-section.hiw-scroll-scene{height:340svh}
+  .hiw-scroll-scene .hiw-flow-container{padding:78px 0 24px;height:100svh;align-content:center}
+  .hiw-flow-section .hiw-card-shell,.hiw-scroll-scene .hiw-card-shell{padding:12px 0;max-width:100%}
+  .hiw-flow-section .hiw-top-label,.hiw-scroll-scene .hiw-top-label{flex-wrap:wrap;gap:10px;margin-bottom:14px;padding-bottom:10px}
+  .hiw-flow-section .hiw-label-sub,.hiw-flow-section .hiw-label-sep,.hiw-scroll-scene .hiw-label-sub,.hiw-scroll-scene .hiw-label-sep{display:none}
+  .hiw-flow-section .hiw-tabs,.hiw-scroll-scene .hiw-tabs{display:none}
+  .hiw-flow-section .hiw-container,.hiw-scroll-scene .hiw-container{display:flex;flex-direction:column;gap:16px;min-height:0;width:100%;max-width:100%}
+  .hiw-flow-section .hiw-stage,.hiw-scroll-scene .hiw-stage{min-height:240px;height:auto;width:100%;max-width:100%;overflow:hidden}
+  .hiw-flow-section .hiw-sidebar,.hiw-scroll-scene .hiw-sidebar{width:100%;max-width:100%;min-height:0}
+  .hiw-scroll-scene .hiw-main-heading{font-size:clamp(24px,6vw,34px)}
+  .hiw-scroll-scene .hiw-body-copy{font-size:13px;margin-bottom:10px}
+  .hiw-scroll-scene .hiw-perks-list{margin-bottom:10px}
+  .hiw-scroll-scene .hiw-step-badge{margin-bottom:8px}
+}
+@media(max-width:600px){
+  .hiw-flow-section.hiw-scroll-scene{height:360svh}
+  .hiw-scroll-scene .hiw-stage{min-height:220px;transform:scale(.85);transform-origin:center top;margin-bottom:-28px}
+  .hiw-scroll-scene .hiw-main-heading{font-size:24px}
+  .hiw-scroll-scene .hiw-body-copy{font-size:12px}
+}
 @media(prefers-reduced-motion:reduce){.hiw-scroll-scene .hiw-step-block{transition:none;transform:none}}
