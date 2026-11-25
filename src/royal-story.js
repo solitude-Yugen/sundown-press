@@ -5,7 +5,7 @@ document.title = `${style.name} | Sundown Press`;
 document.querySelector('.editor .eyebrow').textContent = `${style.category.toUpperCase()} / INTERACTIVE INVITATION`;
 document.querySelector('.editor h1').textContent = style.name;
 document.querySelector('.site-bar span').textContent = `SUNDOWN PRESS / ${style.name.toUpperCase()}`;
-document.querySelector('.preview-footnote a').href = `/royal-story.html?style=${style.id}&view=full`;
+document.querySelector('.preview-footnote a').href = `royal-story.html?style=${style.id}&view=full`;
 document.querySelector('.scene-intro>div>p:first-of-type').textContent = style.category === 'Weddings' ? 'TOGETHER WITH THEIR FAMILIES' : 'YOU ARE INVITED';
 document.querySelector('.scene-portraits .scene-label').textContent = style.category === 'Weddings' || style.category === 'Engagements' ? 'A STORY WRITTEN TOGETHER' : 'THE PEOPLE BEHIND THE CELEBRATION';
 document.querySelector('.scene-portraits h2').textContent = style.category === 'Weddings' || style.category === 'Engagements' ? 'Two hearts, one beginning.' : 'Made for unforgettable moments.';

@@ -17,7 +17,7 @@ document.querySelector('.editor h1').textContent = style.name;
 document.querySelector('.editor .eyebrow').textContent = `${style.category.toUpperCase()} / INTERACTIVE STORY`;
 document.querySelector('.editor .lead').textContent = 'Tap to open. The story plays automatically and pauses for your reveals. Scroll inside the preview to explore at your own pace.';
 document.querySelector('.site-bar span').textContent = `SUNDOWN PRESS / ${style.name.toUpperCase()}`;
-document.querySelector('.preview-footnote a').href = `/royal-story.html?style=${style.id}&view=full`;
+document.querySelector('.preview-footnote a').href = `royal-story.html?style=${style.id}&view=full`;
 document.querySelector('.preview-heading span:last-child').textContent = 'TAP TO BEGIN';
 form.querySelector('[name="bridePhoto"]').closest('label').firstChild.textContent = 'First portrait';
 form.querySelector('[name="groomPhoto"]').closest('label').firstChild.textContent = 'Second portrait';
@@ -359,7 +359,7 @@ function showPhoto(index, blob) {
   if (state.photoUrls[index]) URL.revokeObjectURL(state.photoUrls[index]);
   state.photoUrls[index] = blob?.type.startsWith('image/') ? URL.createObjectURL(blob) : null;
   stage.querySelectorAll(`[data-photo="${index ? 'groom' : 'bride'}"]`).forEach(image => {
-    image.src = state.photoUrls[index] || `/images/invites/sample-${index ? 'groom' : 'bride'}.svg`;
+    image.src = state.photoUrls[index] || `images/invites/sample-${index ? 'groom' : 'bride'}.svg`;
   });
 }
 async function persistPhoto(index, blob) {

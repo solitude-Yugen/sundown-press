@@ -153,7 +153,7 @@ export function initImmersive() {
   const previewMessage = document.querySelector('.album-preview-message');
   const previewImage = document.querySelector('.album-preview-photo img');
   const previewShell = document.querySelector('.album-preview-shell');
-  const photoSet = ['/images/photobooth/4307635.avif','/images/photobooth/30723691.avif','/images/photobooth/37572244.avif','/images/photobooth/26423890.avif','/images/photobooth/19119341.avif','/images/photobooth/16902222.avif','/images/photobooth/18107912.avif','/images/photobooth/9271168.avif','/images/photobooth/29153202.avif'];
+  const photoSet = ['images/photobooth/4307635.avif','images/photobooth/30723691.avif','images/photobooth/37572244.avif','images/photobooth/26423890.avif','images/photobooth/19119341.avif','images/photobooth/16902222.avif','images/photobooth/18107912.avif','images/photobooth/9271168.avif','images/photobooth/29153202.avif'];
   const pageImages = [[0,1,2,3],[4,5,6],[7,8,0,1],[2,3,4]];
   let activeAlbumPage = 0;
   let albumTurning = false;

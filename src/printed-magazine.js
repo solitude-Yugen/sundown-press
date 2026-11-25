@@ -7,7 +7,7 @@ const stage = document.querySelector('.magazine-stage');
 const indicator = document.querySelector('#page-indicator');
 const upload = document.querySelector('#magazine-photos');
 const photoList = document.querySelector('#photo-list');
-const sampleImages = [4307635, 30723691, 37572244, 26423890, 19119341, 16902222].map(id => `/images/photobooth/${id}.avif`);
+const sampleImages = [4307635, 30723691, 37572244, 26423890, 19119341, 16902222].map(id => `images/photobooth/${id}.avif`);
 const names = { editorial:'The Editorial', heirloom:'The Heirloom', modern:'The Modern', journal:'The Journal' };
 let template = 'editorial';
 let page = 0;

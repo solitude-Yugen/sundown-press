@@ -27,7 +27,7 @@ function render() {
     const title = document.createElement('h3'); title.textContent = style.name;
     const description = document.createElement('p'); description.textContent = style.description;
     const interactions = document.createElement('span'); interactions.className = 'interactions'; interactions.textContent = `${style.opening} · ${style.reveal}`;
-    const link = document.createElement('a'); link.href = `/royal-story.html?style=${encodeURIComponent(style.id)}`; link.textContent = 'Experience this invitation';
+    const link = document.createElement('a'); link.href = `royal-story.html?style=${encodeURIComponent(style.id)}`; link.textContent = 'Experience this invitation';
     content.append(category, title, description, interactions, link); article.append(art, content); list.append(article);
   }
 }
