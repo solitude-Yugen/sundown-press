@@ -32,7 +32,7 @@ import { initPersistentCta }  from './persistent-cta.js';
 
 // ── Boot order ────────────────────────────────────────────────────
 // Three.js scene starts immediately (runs its own rAF loop)
-const threeScene = initThreeScene();
+const threeScene = document.body.classList.contains("immersive-home") ? null : initThreeScene();
 
 // Push scrollY into Three.js shader uniforms every frame
 window.addEventListener('scroll', () => {
@@ -47,7 +47,7 @@ initPreloader(() => {
 // DOM-ready initialisations (don't need to wait for images)
 initNavigation();
 initCounters();
-initFloatingParticles();
+if (!document.body.classList.contains("immersive-home")) initFloatingParticles();
 initCardSparkles();
 initCardTilt();
 initCardConfetti();
@@ -58,8 +58,11 @@ initPersistentCta();
 import { initServiceShowcases } from './service-showcases.js';
 initServiceShowcases();
 
-import { initPhotoBooth } from './photobooth.jsx';
+import { initPhotoBooth } from './photobooth.js';
 initPhotoBooth();
 
 import { initWeddingHeading } from './wedding-heading.jsx';
 initWeddingHeading();
+
+import { initImmersive } from "./immersive.js";
+initImmersive();

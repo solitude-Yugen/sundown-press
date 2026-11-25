@@ -101,3 +101,9 @@ body:has(.catalogue-hero[data-in-view="true"]) #main-nav.scrolled{
 .cat-book-visibility{perspective:calc(1600px + 800px * var(--opening,0))}
 .cat-arrival-dark{inset:-15%;background:radial-gradient(ellipse,#02090bf2 15%,#02090b88 45%,transparent 72%)}
 .cat-paper .cat-front:before{background:linear-gradient(90deg,#152b2a40,transparent 8%,#fff2 44%,transparent 72%,#0b171819)}
+/* Reserve distinct space for the closed cover and its introduction. */
+.catalogue-hero:not(.is-open){--closed-w:min(34vw,45svh,370px);--closed-h:min(45vw,60svh,490px)}
+.catalogue-hero:not(.is-open) .cat-content{padding-bottom:32px}
+.catalogue-hero:not(.is-open) .cat-caption{flex-shrink:0;max-width:690px;padding:8px 14px 16px;background:linear-gradient(90deg,transparent,#06191be8 12%,#06191be8 88%,transparent)}
+@media(max-width:600px){.catalogue-hero:not(.is-open){--closed-w:min(66vw,34svh);--closed-h:min(88vw,45svh)}.catalogue-hero:not(.is-open) .cat-content{padding-bottom:24px}.catalogue-hero:not(.is-open) .cat-caption h1{font-size:clamp(23px,6vw,30px)}}
+@media(max-height:700px){.catalogue-hero:not(.is-open){--closed-w:min(30vw,32svh);--closed-h:min(40vw,43svh)}.catalogue-hero:not(.is-open) .cat-pin{padding-top:75px}}

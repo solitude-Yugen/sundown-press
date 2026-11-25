@@ -1,4 +1,13 @@
 export function initServiceShowcases() {
+  const featureStrip = document.querySelector('.wedding-features');
+  if (featureStrip) {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      featureStrip.classList.add('is-visible');
+      observer.disconnect();
+    }, { threshold: 0.2 });
+    observer.observe(featureStrip);
+  }
   const books = [...document.querySelectorAll('.occasion-book')];
   books.forEach(book => book.addEventListener('click', () => {
     const opening = !book.classList.contains('is-open');

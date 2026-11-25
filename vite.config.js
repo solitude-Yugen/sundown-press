@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // Existing lower sections and the catalogue use root-relative brand assets.
 export default defineConfig({
   build: { rollupOptions: { input: Object.fromEntries(
-    ['index', 'digital-greetings', 'printed-keepsakes', 'weddings', 'photo-booth', 'contact']
+    ['index', 'digital-greetings', 'printed-keepsakes', 'weddings', 'photo-booth', 'contact', 'invitation-studio', 'royal-story', 'invites']
       .map(page => [page, resolve(`${page}.html`)])) } },
   plugins: [tailwindcss(), { name: 'preserve-brand-assets', closeBundle() {
     for (const file of readdirSync('.')) {
@@ -14,3 +14,4 @@ export default defineConfig({
     }
   } }],
 });
+

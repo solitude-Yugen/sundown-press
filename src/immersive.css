@@ -1,0 +1,71 @@
+.immersive-home{--ink:#173d37;--paper:#f0eadb;--rose:#e0a99a;overflow-x:clip}
+.immersive-home #three-canvas,.immersive-home #particles-overlay{display:none}
+.immersive-home main{overflow:visible}
+.immersive-home:has(.catalogue-hero.is-open) main{overflow:visible}
+.immersive-home .scene{position:relative;isolation:isolate;scroll-margin-top:80px}
+.scene-label{font:500 13px/1.5 var(--font-body);letter-spacing:.15em;text-transform:uppercase}
+.scene-title{font:500 clamp(64px,9vw,142px)/.85 var(--font-display);letter-spacing:-.055em;text-align:center}
+.scene-title em{font-weight:400}
+.scene-link{display:inline-block;padding:15px 25px;border:1px solid currentColor;border-radius:50px;font:500 14px var(--font-body);transition:background .25s,color .25s,transform .25s}
+.scene-link:hover{background:var(--ink);color:var(--paper);transform:translateY(-4px)}
+.scene button:focus-visible,.scene a:focus-visible{outline:3px solid #af6a32;outline-offset:6px}
+.letter-scene{background:var(--paper);color:var(--ink);padding:95px 5vw 70px;text-align:center;overflow:clip}
+.letter-scene .scene-title{margin:25px 0 36px}
+.occasion-switch{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;position:relative;z-index:5}
+.occasion-switch button{padding:10px 18px;border:1px solid #173d3740;background:none;border-radius:30px;color:inherit;font:14px var(--font-body);cursor:pointer;transition:.3s}
+.occasion-switch button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.letter-instruction{font:14px/1.5 var(--font-body);margin:0}
+.letter-scene{background:radial-gradient(ellipse at 50% 70%,#fffaf1 0,transparent 65%),#e8dfcb}
+.letter-scene .scene-title{font-size:clamp(65px,7.8vw,112px);margin-bottom:28px}
+.stationery-stage{--card-ink:#904e48;position:relative;max-width:1000px;height:560px;margin:15px auto 0;perspective:1600px;display:grid;place-items:center}
+.stationery-stage:before{content:'';position:absolute;inset:45% 9% 8%;border-radius:50%;background:#65513d20;filter:blur(35px);transform:rotate(-8deg);pointer-events:none}
+.art-card{position:relative;width:310px;height:430px;background:none;border:0;padding:0;color:var(--card-ink);cursor:pointer;perspective:1600px;transform:rotate(-5deg);transition:transform .8s cubic-bezier(.2,.8,.2,1);z-index:3}
+.art-card:hover{transform:rotate(-2deg) translateY(-10px)}
+.art-card-front,.art-card-back{position:absolute;inset:0;display:flex;align-items:center;flex-direction:column;backface-visibility:hidden;-webkit-backface-visibility:hidden;background-color:#fff7e7;background-image:repeating-linear-gradient(5deg,#8c714707 0 1px,transparent 1px 3px),repeating-linear-gradient(95deg,#8c714707 0 1px,transparent 1px 4px);box-shadow:1px 2px 0 #d8c5a8,3px 5px 0 #e2d4b8,8px 22px 40px #49382730;transition:transform 1.1s cubic-bezier(.2,.75,.2,1),color .6s;padding:30px 25px}
+.art-card-border{position:absolute;inset:13px;border:1px solid currentColor;opacity:.6;pointer-events:none}.art-card-border:after{content:'';position:absolute;inset:5px;border:1px solid currentColor;border-radius:95px 95px 0 0}
+.art-edition{font:9px/1.4 var(--font-body);letter-spacing:.16em;position:relative;margin-top:8px}
+.art-sun{width:148px;height:96px;position:relative;margin-top:30px;overflow:hidden;flex-shrink:0}
+.art-sun:before{content:'';position:absolute;width:146px;height:146px;border:1px solid currentColor;border-radius:50%;left:1px;top:0;background:repeating-conic-gradient(from 0deg,currentColor 0deg 1deg,transparent 1deg 12deg);mask:radial-gradient(circle,transparent 0 37%,#000 38% 67%,transparent 68%)}
+.art-sun span{position:absolute;width:74px;height:74px;left:37px;top:37px;border:1px solid currentColor;border-radius:50%;background:linear-gradient(130deg,#cf9d50,#ebcd8f 45%,#aa7b3c)}
+.art-cover-title{font:500 52px/.92 var(--font-display);letter-spacing:-.035em;position:relative;margin:12px 0 14px;max-width:100%;overflow-wrap:normal}.art-cover-title em{font-weight:400}
+.art-rule{height:1px;width:60px;background:currentColor;margin:5px 0 13px;opacity:.6}.art-occasion{font:11px var(--font-body);letter-spacing:.2em;text-transform:uppercase}.art-imprint{margin-top:auto;font:9px var(--font-body);letter-spacing:.2em}
+.art-card-back{transform:rotateY(180deg);justify-content:center;padding:44px 37px}.art-card-back .art-card-border:after{border-radius:0}.art-back-label{font:10px var(--font-body);letter-spacing:.14em;margin-top:15px}.art-message{font:italic 39px/1.08 var(--font-display);margin:auto 0 25px}.art-signature{font:italic 22px var(--font-display)}.art-monogram{border:1px solid currentColor;border-radius:50%;width:45px;height:45px;display:grid;place-items:center;font:20px var(--font-display);margin:25px 0}.art-card-back .art-imprint{margin-top:auto}
+.art-card.is-turned{transform:rotate(3deg)}.is-turned .art-card-front{transform:rotateY(-180deg)}.is-turned .art-card-back{transform:rotateY(0)}
+.stationery-note{position:absolute;width:225px;height:320px;left:calc(50% - 340px);top:130px;background:#294d40;color:#e7d8aa;transform:rotate(-17deg);padding:30px 20px;outline:1px solid #d9c99d80;outline-offset:-12px;box-shadow:8px 20px 35px #49382724;display:flex;flex-direction:column;justify-content:space-between;transition:transform 1s}
+.stationery-note span{font:9px var(--font-body);letter-spacing:.15em}.stationery-note strong{font:400 46px/.95 var(--font-display)}
+.stationery-photo{position:absolute;left:calc(50% + 110px);top:130px;width:225px;height:300px;padding:12px 12px 20px;background:#fff9ed;transform:rotate(14deg);box-shadow:6px 18px 30px #49382726;transition:transform 1s}.stationery-photo img{width:100%;height:230px;object-fit:cover}.stationery-photo span{display:block;font:italic 17px var(--font-display);margin-top:10px;color:#6c5346}
+.stationery-caption{position:absolute;bottom:25px;right:50px;text-align:left;font:italic 22px/1.1 var(--font-display);color:#73624d}
+.is-revealed .stationery-note{transform:translateX(-20px) rotate(-21deg)}.is-revealed .stationery-photo{transform:translateX(20px) rotate(19deg)}
+.stationery-footer{max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:25px;border-top:1px solid #173d3730;padding-top:25px}
+@media(max-width:700px){.stationery-stage{height:455px;margin-top:15px}.art-card{width:248px;height:355px}.art-card-front,.art-card-back{padding:25px 22px}.art-edition{font-size:8px}.art-sun{margin-top:22px;width:120px;height:78px;transform:scale(.82);transform-origin:top center;margin-bottom:-15px}.art-sun:before{left:-13px}.art-sun span{left:23px}.art-cover-title{font-size:42px;margin-top:15px}.art-message{font-size:31px}.art-monogram{margin:16px 0}.art-imprint{font-size:8px}.stationery-note{width:180px;height:260px;left:calc(50% - 190px);top:100px;padding:25px 15px}.stationery-note strong{font-size:35px}.stationery-photo{width:180px;height:240px;left:calc(50% + 10px);top:110px}.stationery-photo img{height:180px}.stationery-caption{display:none}.stationery-footer{flex-direction:column;gap:18px}.art-back-label{font-size:9px}.art-signature{font-size:20px}.is-revealed .stationery-note{transform:translateX(-7px) rotate(-19deg)}.is-revealed .stationery-photo{transform:translateX(7px) rotate(17deg)}}
+.wedding-scene{height:220svh;background:#213e35;color:#eee8d6;--progress:0}
+.wedding-pin{position:sticky;top:0;height:100svh;min-height:650px;overflow:clip;display:flex;align-items:center;flex-direction:column;padding:90px 3vw 30px}
+.wedding-pin .scene-title{margin:25px 0 0;font-size:clamp(60px,10vw,150px);z-index:1}
+.wedding-fan{position:relative;flex:1;width:100%;min-height:290px;perspective:1200px}
+.wedding-specimen{position:absolute;left:calc(50% - 105px);top:25px;width:210px;height:290px;background:#f5efdf;padding:10px;box-shadow:0 12px 25px #0004;transform:translateX(calc(var(--i) * (45px + var(--progress) * 100px))) translateY(calc(var(--rise) * (1 - var(--progress)))) rotate(calc(var(--i) * (9deg - var(--progress) * 5deg)));transition:box-shadow .3s;transform-origin:50% 120%;color:#173d37}
+.wedding-specimen img{width:100%;height:235px;object-fit:cover}.wedding-specimen span{display:block;font:italic 20px var(--font-display);text-align:center;margin-top:7px}
+.wedding-specimen:hover,.wedding-specimen:focus-visible{z-index:10;box-shadow:0 25px 60px #0008;filter:brightness(1.08)}
+.wedding-scene .scene-link:hover{background:#eee8d6;color:#213e35}
+.wedding-bottom{display:flex;align-items:center;justify-content:space-between;gap:25px;width:100%;position:relative;z-index:12;font:14px var(--font-body)}
+.wedding-bottom p{max-width:270px}.wedding-scroll{opacity:.65}
+.memory-scene{background:#dcb29e;color:#452e2b;padding:90px 0 75px;overflow:hidden}
+.memory-head{padding:0 6vw;display:flex;justify-content:space-between;gap:30px;align-items:end}.memory-head .scene-title{text-align:left;font-size:clamp(60px,8vw,120px);margin-top:25px}.memory-head p{max-width:240px;font-size:16px}
+.memory-rail{display:flex;gap:35px;overflow-x:auto;scroll-snap-type:x mandatory;padding:65px 8vw 55px;scrollbar-width:thin;scrollbar-color:#6c494a #dcb29e}
+.memory-card{position:relative;flex:0 0 280px;height:350px;perspective:1200px;border:0;background:transparent;cursor:pointer;color:#452e2b;scroll-snap-align:center;transform:rotate(var(--angle));transition:transform .5s}
+.memory-card:hover{transform:rotate(0) translateY(-10px)}.memory-front,.memory-back{position:absolute;inset:0;backface-visibility:hidden;transition:transform .8s cubic-bezier(.2,.7,.2,1);background:#fff7e9;padding:14px;box-shadow:0 15px 30px #51382b24;display:flex;flex-direction:column;align-items:center}
+.memory-front img{width:100%;height:270px;object-fit:cover}.memory-front span{font:italic 27px var(--font-display);margin-top:12px}.memory-back{transform:rotateY(180deg);justify-content:center;gap:25px;padding:30px;border:9px double #b98a71}.memory-back strong{font:36px/1 var(--font-display)}.memory-back span{font:16px/1.6 var(--font-body)}.is-flipped .memory-front{transform:rotateY(-180deg)}.is-flipped .memory-back{transform:rotateY(0)}
+.memory-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:30px 6vw 0}.gallery-controls{display:flex;gap:10px}.gallery-controls button{border:1px solid currentColor;border-radius:50px;background:transparent;color:inherit;padding:13px 20px;cursor:pointer;font:14px var(--font-body)}
+.immersive-home .parallax-divider{display:none}
+.immersive-home .photobooth-layout{display:flex;flex-direction:column-reverse;gap:35px}.immersive-home .photobooth-info{text-align:center;max-width:850px;transform:none!important;opacity:1!important}.immersive-home .photobooth-info .section-desc{margin:20px auto}.immersive-home .booth-features{display:none}.immersive-home .booth-cta{justify-content:center}.immersive-home .photobooth-section{background:#172d2a;color:#f0eadb;padding:90px 0}.immersive-home .photobooth-info .section-title{font-size:clamp(60px,8vw,110px);line-height:.9}.immersive-home .photobooth-info .section-desc{color:#d4d5c7}.immersive-home .photobooth-visual{width:min(740px,100%)}
+.immersive-home .testimonials-grid{gap:0}.immersive-home .testimonial-card{border-radius:0;background:transparent;box-shadow:none;border:0;border-left:1px solid #173d3740}.immersive-home .contact-section{background:#dcb29e}.immersive-home .contact-glow{display:none}
+.motion-toggle{position:fixed;bottom:18px;left:18px;z-index:95;border:1px solid #f0eadb70;background:#173d37;color:#f0eadb;border-radius:30px;padding:10px 15px;font:12px var(--font-body);cursor:pointer}
+.immersive-home #persistentCtaBar{display:none!important}
+.scene .scene-title{transition:transform 1.2s cubic-bezier(.2,.8,.2,1),opacity 1s}
+.scene:not(.scene-entered) .scene-title{transform:translateY(55px);opacity:.2}
+.scene.scene-entered .scene-title{transform:translateY(0);opacity:1}
+.immersive-home .cat-book-visibility{transform:rotateY(var(--pointer-x,0deg)) rotateX(var(--pointer-y,0deg));transition:transform .5s ease-out}
+.motion-paused .cat-book-visibility{transform:none}
+.immersive-home .cat-watermark{opacity:.2;font-weight:400}.immersive-home .cat-topline,.immersive-home .cat-navigation{font-size:12px}.immersive-home .cat-caption h1{font-size:clamp(30px,3vw,46px)}.immersive-home .cat-description{font-size:15px}.immersive-home .cat-eyebrow{font-size:12px}.immersive-home .cat-open,.immersive-home .cat-explore{font-size:14px!important}
+.motion-paused *{animation-play-state:paused!important;scroll-behavior:auto!important}.motion-paused .wedding-scene{--progress:.5!important}.motion-paused .scene *{transition-duration:0s!important}
+@media(max-width:700px){.scene-title{font-size:65px}.letter-scene{padding-top:70px}.occasion-switch button{padding:9px 12px}.wedding-scene{height:auto}.wedding-pin{position:relative;height:auto;min-height:0;padding:70px 20px 45px}.wedding-pin .scene-title{font-size:64px}.wedding-fan{display:flex;gap:18px;overflow-x:auto;padding:35px 10px;min-height:0;scroll-snap-type:x mandatory}.wedding-specimen{position:relative;left:auto;top:auto;flex:0 0 210px;transform:rotate(0);scroll-snap-align:center}.wedding-bottom{flex-direction:column;text-align:center}.wedding-scroll{display:none}.memory-head{display:block}.memory-head p{margin-top:25px;max-width:320px}.memory-card{flex-basis:240px;height:320px}.memory-front img{height:240px}.memory-rail{padding-top:40px;gap:25px}.memory-bottom{flex-wrap:wrap}.memory-head .scene-title{font-size:64px}.immersive-home .testimonials-grid{display:block}.immersive-home .cat-topline,.immersive-home .cat-navigation{font-size:10px}.immersive-home .cat-caption h1{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.immersive-home *{animation:none!important;scroll-behavior:auto!important}.scene *{transition:none!important}.wedding-scene{height:auto}.wedding-pin{position:relative;height:auto;min-height:720px}.wedding-scene{--progress:.5!important}}

@@ -1,0 +1,155 @@
+﻿HOW TO CREATE A DIGITAL WEDDING INVITATION USING AI BY @EDITZ.SABYY 
+STEP 1 : OPEN CLAUDE
+1. Visit https://claude.ai
+2. Start a new chat.
+3. Select the most capable available model.
+4. Upload your wedding photographs and MP3 using the (+) attachment button.
+5. Copy the complete prompt below.
+6. Replace all information inside [brackets] with your wedding details.
+7. Paste the prompt into Claude and send it.
+8. Wait for Claude to create your invitation.
+STEP 2 : COMPLETE WEDDING INVITATION PROMPT
+Copy the entire prompt below, fill in your details and paste it into Claude.
+PROMPT -
+Create a complete, beautiful and interactive wedding invitation website using HTML, CSS and JavaScript. The website should be designed mainly for mobile phones and should look like a premium Indian wedding invitation. Use the details, photographs and music that I have uploaded.
+1. COUPLE AND FAMILY DETAILS
+Groom’s Name: [Groom’s Full Name]
+Groom’s Father: [Father’s Name]
+Groom’s Mother: [Mother’s Name]
+Bride’s Name: [Bride’s Full Name]
+Bride’s Father: [Father’s Name]
+Bride’s Mother: [Mother’s Name]
+Family Closing Message: [With love, the ___ and ___ families]
+2. WEDDING DETAILS
+Wedding Date: [Day, Date, Month, Year]
+Muhurat Time: [Time]
+Wedding Venue: [Venue Name]
+Full Address: [Complete Address]
+Google Maps Link: [Paste Google Maps Link]
+3. WEDDING FUNCTIONS
+Include the following functions. Remove any function that is not required.
+Mata Pujan: [Date, Time, Venue, Dress Code, Colour]
+Haldi: [Date, Time, Venue, Dress Code, Colour]
+Mehendi: [Date, Time, Venue, Dress Code, Colour]
+Sangeet: [Date, Time, Venue, Dress Code, Colour]
+Baraat: [Date, Time, Venue, Dress Code, Colour]
+Wedding and Pheras: [Date, Time, Venue, Dress Code, Colour]
+Reception: [Date, Time, Venue, Dress Code, Colour]
+4. PHOTOGRAPHS
+I have uploaded [Number] photographs. Use photo number 1 as the background behind the couple’s names on the first page. Add a soft blur and slow zoom effect to the background photo. Use all uploaded photographs in a beautiful photo gallery called “Our Story”. Add short and romantic captions to the photographs.
+5. MUSIC
+Choose one of these options:
+OPTION 1: I have uploaded an MP3 song. Play it softly when the guest opens the invitation. Add a fade-in effect, repeat the song and include a small play/pause button. Start playback after the guest interacts with the invitation because mobile browsers may block automatic music playback.
+OPTION 2: If I have not uploaded an MP3, add an “Our Song” button that opens this YouTube link: [Paste YouTube Link]
+6. LANGUAGE
+Use: [English / Hindi / Hinglish]. Use simple, beautiful and correct language throughout the invitation.
+7. WEBSITE DESIGN AND PAGES
+Create the following pages and sections in this exact order.
+PAGE 1: OPENING BOOK
+   * Create a beautiful 3D wine-coloured velvet invitation book.
+   * Add a golden border and Ganesh Ji symbol on the cover.
+   * Use a soft blush-pink background.
+   * Add beautiful 3D roses around the book.
+   * Show the message “Tap the Book to Open”.
+   * When someone taps the book, animate it opening.
+   * Show falling flower petals and start the background music after interaction.
+PAGE 2: WEDDING INVITATION
+Show the following details:
+   * Golden Ganesh Ji symbol.
+   * “Together with Their Families”.
+   * Groom’s name.
+   * “Son of” followed by his parents’ names.
+   * An elegant “&” symbol.
+   * Bride’s name.
+   * “Daughter of” followed by her parents’ names.
+   * A beautiful wedding invitation message.
+Make the names appear slowly with an elegant typing animation. Keep the complete invitation visible on one mobile screen.
+PAGE 3: SAVE THE DATE
+      * Create a beautiful golden scroll with a hanging tassel.
+      * Show an animated finger indicating that the tassel can be pulled.
+      * Allow guests to tap or drag the tassel.
+      * When opened, reveal the wedding date and Muhurat time.
+      * Add Ganesh Ji, golden borders and rose decorations.
+      * Add falling petals and confetti.
+      * Show a live countdown with days, hours, minutes and seconds.
+      * Add a working “Add to Calendar” button.
+PAGE 4: WEDDING FUNCTIONS
+Create a beautiful swipeable 3D card carousel. Show one function card at a time. Each card should display:
+      * Function name.
+      * Date and day.
+      * Time.
+      * Venue.
+      * Dress code.
+      * Theme colour.
+Use beautiful illustrations for each function:
+      * Haldi: Yellow flowers and marigolds.
+      * Mehendi: Mehendi-decorated hands.
+      * Sangeet: Dancing couples and musical decorations.
+      * Wedding: Mandap and sacred fire.
+      * Reception: Beautiful wedding decorations.
+Make the cards easy to swipe on mobile phones.
+PAGE 5: OUR STORY
+         * Create a beautiful photo gallery.
+         * Include all uploaded photographs.
+         * Add romantic captions.
+         * Allow guests to swipe through the photographs.
+         * Add navigation dots.
+PAGE 6: GRAND RECEPTION
+         * Use a deep wine-coloured background.
+         * Add elegant golden text.
+         * Include beautiful flowers and sparkling effects.
+         * Display reception date, time and venue.
+PAGE 7: WEDDING LOCATION
+         * Create a beautiful location card.
+         * Show the venue name and complete address.
+         * Add an illustrated map and location pin.
+         * Make the map clickable.
+         * Open my supplied Google Maps link when clicked.
+         * Add a “Get Directions” button.
+         * Add a working “Copy Address” button.
+PAGE 8: CLOSING PAGE
+Display: “WE CAN’T WAIT TO CELEBRATE WITH YOU!”
+Add Ganesh Ji, family names and beautiful floral decorations.
+         8. COLOUR AND DESIGN
+Use a premium Indian wedding theme. Main colours: Ivory, blush pink, wine colour (#6e1f2f) and champagne gold. Use Playfair Display for names and headings, Montserrat for small text, beautiful golden borders, elegant floral decorations, 3D roses around the screen, hanging marigold flowers, smooth animations, beautiful transitions and soft text animations. The website should look like a luxury wedding invitation book.
+         9. MOBILE PERFORMANCE
+            * Make the website work properly on Android and iPhone.
+            * Make it responsive on computers too.
+            * Keep animations smooth.
+            * Optimise photographs and other files.
+            * Make all buttons work properly.
+            * Make the website easy to use.
+            * Avoid unnecessary heavy animations.
+            * Make sure text is clear and readable.
+            * Handle music playback restrictions on mobile browsers.
+            10. FINAL INSTRUCTIONS
+Create a complete working website, not just a design or picture. Use HTML, CSS and JavaScript. Keep the website in a single HTML file wherever possible. Use my uploaded photographs and music. Make sure all sections, buttons, animations, countdowns and links work correctly. Do not leave any sample or placeholder information in the final website. Show me the complete website preview so I can check it. I may ask you to make changes after seeing the preview.
+STEP 4: DOWNLOAD THE WEBSITE AS A ZIP FILE
+ After the invitation is complete, send this message to Claude:
+“My wedding invitation website is complete. Now give me the complete website as a downloadable ZIP file. The ZIP file should contain:
+               1. index.html – Complete working website.
+               2. photos folder – All my uploaded photographs.
+               3. song.mp3 – My uploaded music file, if applicable.
+Make sure all file names and folder paths are correct. Use relative file paths so the website works properly after uploading to Netlify. Do not leave out any images, music or required files. Test everything and give me the final downloadable ZIP file.”
+STEP 5: UPLOAD YOUR WEBSITE TO NETLIFY
+                  1. Visit https://www.netlify.com/
+                  2. Create a free account.
+                  3. Visit https://app.netlify.com/drop
+                  4. Upload your ZIP file or extracted website folder.
+                  5. Wait for Netlify to publish your website.
+                  6. Copy your live website link.
+STEP 6: CHANGE YOUR WEBSITE NAME
+                  1. Open your Netlify dashboard.
+                  2. Open your website project.
+                  3. Go to Site Configuration or Project Configuration.
+                  4. Select Change Site Name.
+                  5. Enter your preferred name.
+Example: aarav-weds-ananya
+Your website link will look like:
+https://aarav-weds-ananya.netlify.app
+STEP 7: TEST AND SHARE
+                  1. Open your website on your mobile phone.
+                  2. Check photographs and music.
+                  3. Test all animations and buttons.
+                  4. Check the Google Maps link.
+                  5. Share your website link with family and friends through WhatsApp.

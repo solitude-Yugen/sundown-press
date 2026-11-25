@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/service-showcases.css" />
   <link rel="stylesheet" href="/css/photobooth-3d.css" />
 </head>
-<body>
+<body class="immersive-home">
 
   <!-- Three.js Canvas Background -->
   <canvas id="three-canvas"></canvas>
@@ -51,9 +51,9 @@
         <span class="nav-logo-text">Sundown Press</span>
       </a>
       <div class="nav-links" id="nav-links">
-        <a href="digital-greetings.html" class="nav-link">Digital Greetings</a>
+        <a href="invites.html" class="nav-link">Invites</a>
         <a href="printed-keepsakes.html" class="nav-link">Printed Keepsakes</a>
-        <a href="weddings.html" class="nav-link">Weddings</a>
+        
         <a href="photo-booth.html" class="nav-link">Photo Booth</a>
         <a href="contact.html" class="nav-link nav-cta">Get in Touch</a>
       </div>
@@ -66,9 +66,9 @@
   <!-- Mobile Menu Overlay -->
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-inner">
-      <a href="digital-greetings.html" class="mobile-link">Digital Greetings</a>
+      <a href="invites.html" class="mobile-link">Invites</a>
       <a href="printed-keepsakes.html" class="mobile-link">Printed Keepsakes</a>
-      <a href="weddings.html" class="mobile-link">Weddings</a>
+      
       <a href="photo-booth.html" class="mobile-link">Photo Booth</a>
       <a href="contact.html" class="mobile-link mobile-cta">Get in Touch</a>
     </div>
@@ -77,7 +77,7 @@
   <main>
 
     <!-- ═══════════════════ HERO SECTION ═══════════════════ -->
-    <div id="catalogue-root"><section id="hero" style="min-height:100vh;display:grid;place-items:center;background:#0f3d3e;color:#f5f0e1;text-align:center"><div><h1>Sundown Press</h1><p>Personalised invitations for beautiful beginnings.</p><a href="digital-greetings.html">Explore our collections ↓</a></div></section></div>
+    <div id="catalogue-root"><section id="hero" style="min-height:100vh;display:grid;place-items:center;background:#0f3d3e;color:#f5f0e1;text-align:center"><div><h1>Sundown Press</h1><p>Personalised invitations for beautiful beginnings.</p><a href="invites.html">Explore our collections ↓</a></div></section></div>
 
     <!-- ═══════════════════ MARQUEE SECTION ═══════════════════ -->
     <section class="marquee-section" tabindex="-1">
@@ -102,7 +102,20 @@
     </section>
 
     <!-- ═══════════════════ DIGITAL GREETINGS SECTION ═══════════════════ -->
-    <section id="greetings" class="section greetings-section"><div class="section-container greetings-editorial"><div class="section-header"><span class="section-tag">01 — Digital Greetings</span><h2 class="section-title">Send Joy<br><span class="accent">Instantly.</span></h2><p class="section-desc">A little library of big feelings. Choose an occasion and turn its spine to discover a greeting made for the moment.</p><p class="component-hint">Select a spine to reveal your sample.</p><a class="btn btn-primary" href="digital-greetings.html">Create a greeting <span aria-hidden="true">↗</span></a></div><div class="bookshelf" aria-label="Greeting samples by occasion"><button class="occasion-book is-open" style="--book-color:#294f4a" aria-expanded="true" aria-label="Preview Birthday greeting"><span class="book-object"><span class="book-spine"><span>Birthday</span><small>SP / 01</small></span><span class="book-cover"><small>SUNDOWN PRESS / 01</small><span class="book-ornament" aria-hidden="true">✳</span><strong>Another year,<br>all your magic.</strong><span class="book-message">Wishing you a day full of little wonders.</span><em>Birthday</em></span></span></button><button class="occasion-book" style="--book-color:#783f4c" aria-expanded="false" aria-label="Preview Anniversary greeting"><span class="book-object"><span class="book-spine"><span>Anniversary</span><small>SP / 02</small></span><span class="book-cover"><small>SUNDOWN PRESS / 02</small><span class="book-ornament" aria-hidden="true">✳</span><strong>Always,<br>and all over again.</strong><span class="book-message">Here is to every chapter still to come.</span><em>Anniversary</em></span></span></button><button class="occasion-book" style="--book-color:#ac7136" aria-expanded="false" aria-label="Preview Celebration greeting"><span class="book-object"><span class="book-spine"><span>Celebration</span><small>SP / 03</small></span><span class="book-cover"><small>SUNDOWN PRESS / 03</small><span class="book-ornament" aria-hidden="true">✳</span><strong>Let there<br>be light.</strong><span class="book-message">A little joy, sent your way.</span><em>Celebration</em></span></span></button><button class="occasion-book" style="--book-color:#3d4964" aria-expanded="false" aria-label="Preview Love & Apology greeting"><span class="book-object"><span class="book-spine"><span>Love & Apology</span><small>SP / 04</small></span><span class="book-cover"><small>SUNDOWN PRESS / 04</small><span class="book-ornament" aria-hidden="true">✳</span><strong>Words from<br>the heart.</strong><span class="book-message">Some things deserve more than a message.</span><em>Love & Apology</em></span></span></button></div></div></section>
+    <section id="greetings" class="scene letter-scene" data-scene>
+<p class="scene-label">Small gestures. Big feelings.</p><h2 class="scene-title">Not just sent.<br><em>Felt.</em></h2>
+<div class="occasion-switch" aria-label="Choose a greeting occasion">
+<button type="button" data-occasion data-message="Another year. All your magic." data-color="#9b5050" aria-pressed="true">Birthday</button><button type="button" data-occasion data-message="Always. And all over again." data-color="#426050" aria-pressed="false">Anniversary</button><button type="button" data-occasion data-message="Here is to your next beautiful chapter." data-color="#9b7439" aria-pressed="false">Celebration</button><button type="button" data-occasion data-message="You make the ordinary feel extraordinary." data-color="#6c597b" aria-pressed="false">Just because</button></div>
+<div class="stationery-stage" data-occasion-theme="Birthday">
+<div class="stationery-note" aria-hidden="true"><span>THE LITTLE THINGS</span><strong>Worth<br><em>keeping.</em></strong><span>A NOTE. A MOMENT. A MEMORY.</span></div>
+<div class="stationery-photo" aria-hidden="true"><img src="invite_card_2.jpg" alt="" loading="lazy"><span>made for your moment</span></div>
+<button class="art-card" type="button" aria-label="Turn greeting card over to read the message" aria-pressed="false">
+<span class="art-card-front"><span class="art-card-border"></span><span class="art-edition">THE SUNDOWN PAPER COLLECTION</span><span class="art-sun" aria-hidden="true"><span></span></span><span class="art-cover-title">A little<br>more <em>joy.</em></span><span class="art-rule" aria-hidden="true"></span><span class="art-occasion">Birthday</span><span class="art-imprint">SUNDOWN PRESS</span></span>
+<span class="art-card-back"><span class="art-card-border"></span><span class="art-back-label">A NOTE, JUST FOR YOU</span><span class="art-message">Another year. All your magic.</span><span class="art-signature">With love, always.</span><span class="art-monogram">SP</span><span class="art-imprint">WORDS TO COME BACK TO</span></span>
+</button>
+<span class="stationery-caption">Thoughtfully composed.<br>Made personal.</span>
+</div>
+<div class="stationery-footer"><p class="letter-instruction" aria-live="polite">A card worth turning over. Tap to read.</p><a class="scene-link" href="invites.html">Create your greeting</a></div></section>
 
     <!-- ══════════ HOW IT WORKS PINNED SCROLL SECTION ══════════ -->
     <!-- ══════════ HOW IT WORKS THREE STEP FLOW SECTION ══════════ -->
@@ -237,7 +250,7 @@
                     <span class="perk-item">✓ 3 curated personalization tiers</span>
                     <span class="perk-item">✓ Instant live preview &amp; transparent pricing</span>
                   </div>
-                  <a href="weddings.html" class="hiw-cta-link">Compare plans <span>→</span></a>
+                  <a href="invites.html" class="hiw-cta-link">Compare plans <span>→</span></a>
                 </div>
               </div>
             </div>
@@ -588,96 +601,10 @@
     </section>
 
     <!-- ═══════════════════ PRINTED KEEPSAKES SECTION ═══════════════════ -->
-    <section id="keepsakes" class="section keepsakes-section">
-      <div class="section-container">
-        <div class="keepsakes-layout">
-          <div class="keepsakes-info" data-animate="fade-right">
-            <span class="section-tag">02 — Printed Keepsakes</span>
-            <h2 class="section-title">
-              Hold Your<br /><span class="accent">Memories.</span>
-            </h2>
-            <p class="section-desc">
-              Photo albums, birthday greeting sheets, custom playing cards — 
-              personalized online, printed in stunning quality, delivered to your doorstep.
-            </p>
-            <ul class="keepsakes-features">
-              <li data-animate="fade-right" data-delay="0.2">
-                <span class="feature-icon">📸</span>
-                <div>
-                  <strong>Photo Albums</strong>
-                  <span>Upload your cherished photos into beautifully crafted layouts</span>
-                </div>
-              </li>
-              <li data-animate="fade-right" data-delay="0.4">
-                <span class="feature-icon">🃏</span>
-                <div>
-                  <strong>Custom Playing Cards</strong>
-                  <span>Turn family faces into a deck of cards — the ultimate party gift</span>
-                </div>
-              </li>
-              <li data-animate="fade-right" data-delay="0.6">
-                <span class="feature-icon">🎨</span>
-                <div>
-                  <strong>Birthday & Anniversary Sheets</strong>
-                  <span>Frameable art pieces with your photos and personalized messages</span>
-                </div>
-              </li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary" data-animate="fade-right" data-delay="0.8">
-              <span>Start Creating</span>
-              <span class="btn-arrow">→</span>
-            </a>
-          </div>
-          <div class="keepsakes-visual sample-turntable"><div class="sample-ring" aria-label="Printed keepsake samples"><figure class="ring-card" style="--sample:0"><img src="invite_card_1.jpg" alt="The memory album" loading="lazy"><figcaption>The memory album</figcaption></figure><figure class="ring-card" style="--sample:1"><img src="invite_card_2.jpg" alt="A deck of your favourites" loading="lazy"><figcaption>A deck of your favourites</figcaption></figure><figure class="ring-card" style="--sample:2"><img src="invite_card_3.jpg" alt="A birthday to frame" loading="lazy"><figcaption>A birthday to frame</figcaption></figure><figure class="ring-card" style="--sample:3"><img src="invite_card_4.jpg" alt="Notes worth keeping" loading="lazy"><figcaption>Notes worth keeping</figcaption></figure><figure class="ring-card" style="--sample:4"><img src="invite_card_5.jpg" alt="The anniversary edition" loading="lazy"><figcaption>The anniversary edition</figcaption></figure><figure class="ring-card" style="--sample:5"><img src="invite_card_6.jpg" alt="A celebration in print" loading="lazy"><figcaption>A celebration in print</figcaption></figure></div><button class="rotation-toggle" type="button" aria-pressed="false">Pause rotation</button><p class="component-hint">A few things you can hold on to.</p>
-        </div>
-      </div>
-    </section>
+<section id="keepsakes" class="scene album-library-section" data-scene><div class="album-library-heading"><p class="scene-label">Made to be kept</p><h2 class="scene-title">A shelf full of<br><em>your stories.</em></h2><p>Photo albums that make a home for the moments worth returning to.</p></div><div class="album-library" aria-label="Continuously moving photo album shelves"><div class="library-shelf shelf-one"><div class="shelf-track"><button type="button" class="album-spine-button" data-album="The summer album" data-message="Warm afternoons, kept close." data-image="/images/photobooth/4307635.avif" style="--spine:#0f3d3e;--spine-text:#e8d2a0;--spine-h:116px" aria-label="Open The summer album album"><span>The summer album</span></button><button type="button" class="album-spine-button" data-album="Home, together" data-message="The everyday, made unforgettable." data-image="/images/photobooth/30723691.avif" style="--spine:#b8860b;--spine-text:#fff8df;--spine-h:95px" aria-label="Open Home, together album"><span>Home, together</span></button><button type="button" class="album-spine-button" data-album="A little life" data-message="The people, the places, the feeling." data-image="/images/photobooth/37572244.avif" style="--spine:#7c4550;--spine-text:#fff0dc;--spine-h:108px" aria-label="Open A little life album"><span>A little life</span></button><button type="button" class="album-spine-button" data-album="Our forever" data-message="A love story in pages." data-image="/images/photobooth/26423890.avif" style="--spine:#294f4a;--spine-text:#e6d6a6;--spine-h:92px" aria-label="Open Our forever album"><span>Our forever</span></button><button type="button" class="album-spine-button" data-album="All the good days" data-message="A shelf for the memories." data-image="/images/photobooth/19119341.avif" style="--spine:#43586a;--spine-text:#f1e5ca;--spine-h:113px" aria-label="Open All the good days album"><span>All the good days</span></button><button type="button" class="album-spine-button" data-album="You were here" data-message="The gathering, held still." data-image="/images/photobooth/16902222.avif" style="--spine:#94583a;--spine-text:#fff2d2;--spine-h:98px" aria-label="Open You were here album"><span>You were here</span></button><button type="button" class="album-spine-button" data-album="Made of moments" data-message="A collection for later." data-image="/images/photobooth/18107912.avif" style="--spine:#4d6655;--spine-text:#e8dcb8;--spine-h:119px" aria-label="Open Made of moments album"><span>Made of moments</span></button><button type="button" class="album-spine-button" data-album="Keep this feeling" data-message="Small proof of a beautiful day." data-image="/images/photobooth/9271168.avif" style="--spine:#552d38;--spine-text:#efcf9b;--spine-h:90px" aria-label="Open Keep this feeling album"><span>Keep this feeling</span></button><button type="button" class="album-spine-button" data-album="The family edit" data-message="A place for all of us." data-image="/images/photobooth/29153202.avif" style="--spine:#32606a;--spine-text:#d9ecdf;--spine-h:105px" aria-label="Open The family edit album"><span>The family edit</span></button><button type="button" class="album-spine-button" data-album="The summer album" data-message="Warm afternoons, kept close." data-image="/images/photobooth/4307635.avif" style="--spine:#0f3d3e;--spine-text:#e8d2a0;--spine-h:116px" aria-label="Open The summer album album"><span>The summer album</span></button><button type="button" class="album-spine-button" data-album="Home, together" data-message="The everyday, made unforgettable." data-image="/images/photobooth/30723691.avif" style="--spine:#b8860b;--spine-text:#fff8df;--spine-h:95px" aria-label="Open Home, together album"><span>Home, together</span></button><button type="button" class="album-spine-button" data-album="A little life" data-message="The people, the places, the feeling." data-image="/images/photobooth/37572244.avif" style="--spine:#7c4550;--spine-text:#fff0dc;--spine-h:108px" aria-label="Open A little life album"><span>A little life</span></button><button type="button" class="album-spine-button" data-album="Our forever" data-message="A love story in pages." data-image="/images/photobooth/26423890.avif" style="--spine:#294f4a;--spine-text:#e6d6a6;--spine-h:92px" aria-label="Open Our forever album"><span>Our forever</span></button><button type="button" class="album-spine-button" data-album="All the good days" data-message="A shelf for the memories." data-image="/images/photobooth/19119341.avif" style="--spine:#43586a;--spine-text:#f1e5ca;--spine-h:113px" aria-label="Open All the good days album"><span>All the good days</span></button><button type="button" class="album-spine-button" data-album="You were here" data-message="The gathering, held still." data-image="/images/photobooth/16902222.avif" style="--spine:#94583a;--spine-text:#fff2d2;--spine-h:98px" aria-label="Open You were here album"><span>You were here</span></button><button type="button" class="album-spine-button" data-album="Made of moments" data-message="A collection for later." data-image="/images/photobooth/18107912.avif" style="--spine:#4d6655;--spine-text:#e8dcb8;--spine-h:119px" aria-label="Open Made of moments album"><span>Made of moments</span></button><button type="button" class="album-spine-button" data-album="Keep this feeling" data-message="Small proof of a beautiful day." data-image="/images/photobooth/9271168.avif" style="--spine:#552d38;--spine-text:#efcf9b;--spine-h:90px" aria-label="Open Keep this feeling album"><span>Keep this feeling</span></button><button type="button" class="album-spine-button" data-album="The family edit" data-message="A place for all of us." data-image="/images/photobooth/29153202.avif" style="--spine:#32606a;--spine-text:#d9ecdf;--spine-h:105px" aria-label="Open The family edit album"><span>The family edit</span></button></div></div><div class="library-shelf shelf-two"><div class="shelf-track"><button type="button" class="album-spine-button" data-album="Our forever" data-message="A love story in pages." data-image="/images/photobooth/26423890.avif" style="--spine:#294f4a;--spine-text:#e6d6a6;--spine-h:92px" aria-label="Open Our forever album"><span>Our forever</span></button><button type="button" class="album-spine-button" data-album="All the good days" data-message="A shelf for the memories." data-image="/images/photobooth/19119341.avif" style="--spine:#43586a;--spine-text:#f1e5ca;--spine-h:113px" aria-label="Open All the good days album"><span>All the good days</span></button><button type="button" class="album-spine-button" data-album="You were here" data-message="The gathering, held still." data-image="/images/photobooth/16902222.avif" style="--spine:#94583a;--spine-text:#fff2d2;--spine-h:98px" aria-label="Open You were here album"><span>You were here</span></button><button type="button" class="album-spine-button" data-album="Made of moments" data-message="A collection for later." data-image="/images/photobooth/18107912.avif" style="--spine:#4d6655;--spine-text:#e8dcb8;--spine-h:119px" aria-label="Open Made of moments album"><span>Made of moments</span></button><button type="button" class="album-spine-button" data-album="Keep this feeling" data-message="Small proof of a beautiful day." data-image="/images/photobooth/9271168.avif" style="--spine:#552d38;--spine-text:#efcf9b;--spine-h:90px" aria-label="Open Keep this feeling album"><span>Keep this feeling</span></button><button type="button" class="album-spine-button" data-album="The family edit" data-message="A place for all of us." data-image="/images/photobooth/29153202.avif" style="--spine:#32606a;--spine-text:#d9ecdf;--spine-h:105px" aria-label="Open The family edit album"><span>The family edit</span></button><button type="button" class="album-spine-button" data-album="The summer album" data-message="Warm afternoons, kept close." data-image="/images/photobooth/4307635.avif" style="--spine:#0f3d3e;--spine-text:#e8d2a0;--spine-h:116px" aria-label="Open The summer album album"><span>The summer album</span></button><button type="button" class="album-spine-button" data-album="Home, together" data-message="The everyday, made unforgettable." data-image="/images/photobooth/30723691.avif" style="--spine:#b8860b;--spine-text:#fff8df;--spine-h:95px" aria-label="Open Home, together album"><span>Home, together</span></button><button type="button" class="album-spine-button" data-album="A little life" data-message="The people, the places, the feeling." data-image="/images/photobooth/37572244.avif" style="--spine:#7c4550;--spine-text:#fff0dc;--spine-h:108px" aria-label="Open A little life album"><span>A little life</span></button><button type="button" class="album-spine-button" data-album="Our forever" data-message="A love story in pages." data-image="/images/photobooth/26423890.avif" style="--spine:#294f4a;--spine-text:#e6d6a6;--spine-h:92px" aria-label="Open Our forever album"><span>Our forever</span></button><button type="button" class="album-spine-button" data-album="All the good days" data-message="A shelf for the memories." data-image="/images/photobooth/19119341.avif" style="--spine:#43586a;--spine-text:#f1e5ca;--spine-h:113px" aria-label="Open All the good days album"><span>All the good days</span></button><button type="button" class="album-spine-button" data-album="You were here" data-message="The gathering, held still." data-image="/images/photobooth/16902222.avif" style="--spine:#94583a;--spine-text:#fff2d2;--spine-h:98px" aria-label="Open You were here album"><span>You were here</span></button><button type="button" class="album-spine-button" data-album="Made of moments" data-message="A collection for later." data-image="/images/photobooth/18107912.avif" style="--spine:#4d6655;--spine-text:#e8dcb8;--spine-h:119px" aria-label="Open Made of moments album"><span>Made of moments</span></button><button type="button" class="album-spine-button" data-album="Keep this feeling" data-message="Small proof of a beautiful day." data-image="/images/photobooth/9271168.avif" style="--spine:#552d38;--spine-text:#efcf9b;--spine-h:90px" aria-label="Open Keep this feeling album"><span>Keep this feeling</span></button><button type="button" class="album-spine-button" data-album="The family edit" data-message="A place for all of us." data-image="/images/photobooth/29153202.avif" style="--spine:#32606a;--spine-text:#d9ecdf;--spine-h:105px" aria-label="Open The family edit album"><span>The family edit</span></button><button type="button" class="album-spine-button" data-album="The summer album" data-message="Warm afternoons, kept close." data-image="/images/photobooth/4307635.avif" style="--spine:#0f3d3e;--spine-text:#e8d2a0;--spine-h:116px" aria-label="Open The summer album album"><span>The summer album</span></button><button type="button" class="album-spine-button" data-album="Home, together" data-message="The everyday, made unforgettable." data-image="/images/photobooth/30723691.avif" style="--spine:#b8860b;--spine-text:#fff8df;--spine-h:95px" aria-label="Open Home, together album"><span>Home, together</span></button><button type="button" class="album-spine-button" data-album="A little life" data-message="The people, the places, the feeling." data-image="/images/photobooth/37572244.avif" style="--spine:#7c4550;--spine-text:#fff0dc;--spine-h:108px" aria-label="Open A little life album"><span>A little life</span></button></div></div><div class="library-shelf shelf-three"><div class="shelf-track"><button type="button" class="album-spine-button" data-album="Made of moments" data-message="A collection for later." data-image="/images/photobooth/18107912.avif" style="--spine:#4d6655;--spine-text:#e8dcb8;--spine-h:119px" aria-label="Open Made of moments album"><span>Made of moments</span></button><button type="button" class="album-spine-button" data-album="Keep this feeling" data-message="Small proof of a beautiful day." data-image="/images/photobooth/9271168.avif" style="--spine:#552d38;--spine-text:#efcf9b;--spine-h:90px" aria-label="Open Keep this feeling album"><span>Keep this feeling</span></button><button type="button" class="album-spine-button" data-album="The family edit" data-message="A place for all of us." data-image="/images/photobooth/29153202.avif" style="--spine:#32606a;--spine-text:#d9ecdf;--spine-h:105px" aria-label="Open The family edit album"><span>The family edit</span></button><button type="button" class="album-spine-button" data-album="The summer album" data-message="Warm afternoons, kept close." data-image="/images/photobooth/4307635.avif" style="--spine:#0f3d3e;--spine-text:#e8d2a0;--spine-h:116px" aria-label="Open The summer album album"><span>The summer album</span></button><button type="button" class="album-spine-button" data-album="Home, together" data-message="The everyday, made unforgettable." data-image="/images/photobooth/30723691.avif" style="--spine:#b8860b;--spine-text:#fff8df;--spine-h:95px" aria-label="Open Home, together album"><span>Home, together</span></button><button type="button" class="album-spine-button" data-album="A little life" data-message="The people, the places, the feeling." data-image="/images/photobooth/37572244.avif" style="--spine:#7c4550;--spine-text:#fff0dc;--spine-h:108px" aria-label="Open A little life album"><span>A little life</span></button><button type="button" class="album-spine-button" data-album="Our forever" data-message="A love story in pages." data-image="/images/photobooth/26423890.avif" style="--spine:#294f4a;--spine-text:#e6d6a6;--spine-h:92px" aria-label="Open Our forever album"><span>Our forever</span></button><button type="button" class="album-spine-button" data-album="All the good days" data-message="A shelf for the memories." data-image="/images/photobooth/19119341.avif" style="--spine:#43586a;--spine-text:#f1e5ca;--spine-h:113px" aria-label="Open All the good days album"><span>All the good days</span></button><button type="button" class="album-spine-button" data-album="You were here" data-message="The gathering, held still." data-image="/images/photobooth/16902222.avif" style="--spine:#94583a;--spine-text:#fff2d2;--spine-h:98px" aria-label="Open You were here album"><span>You were here</span></button><button type="button" class="album-spine-button" data-album="Made of moments" data-message="A collection for later." data-image="/images/photobooth/18107912.avif" style="--spine:#4d6655;--spine-text:#e8dcb8;--spine-h:119px" aria-label="Open Made of moments album"><span>Made of moments</span></button><button type="button" class="album-spine-button" data-album="Keep this feeling" data-message="Small proof of a beautiful day." data-image="/images/photobooth/9271168.avif" style="--spine:#552d38;--spine-text:#efcf9b;--spine-h:90px" aria-label="Open Keep this feeling album"><span>Keep this feeling</span></button><button type="button" class="album-spine-button" data-album="The family edit" data-message="A place for all of us." data-image="/images/photobooth/29153202.avif" style="--spine:#32606a;--spine-text:#d9ecdf;--spine-h:105px" aria-label="Open The family edit album"><span>The family edit</span></button><button type="button" class="album-spine-button" data-album="The summer album" data-message="Warm afternoons, kept close." data-image="/images/photobooth/4307635.avif" style="--spine:#0f3d3e;--spine-text:#e8d2a0;--spine-h:116px" aria-label="Open The summer album album"><span>The summer album</span></button><button type="button" class="album-spine-button" data-album="Home, together" data-message="The everyday, made unforgettable." data-image="/images/photobooth/30723691.avif" style="--spine:#b8860b;--spine-text:#fff8df;--spine-h:95px" aria-label="Open Home, together album"><span>Home, together</span></button><button type="button" class="album-spine-button" data-album="A little life" data-message="The people, the places, the feeling." data-image="/images/photobooth/37572244.avif" style="--spine:#7c4550;--spine-text:#fff0dc;--spine-h:108px" aria-label="Open A little life album"><span>A little life</span></button><button type="button" class="album-spine-button" data-album="Our forever" data-message="A love story in pages." data-image="/images/photobooth/26423890.avif" style="--spine:#294f4a;--spine-text:#e6d6a6;--spine-h:92px" aria-label="Open Our forever album"><span>Our forever</span></button><button type="button" class="album-spine-button" data-album="All the good days" data-message="A shelf for the memories." data-image="/images/photobooth/19119341.avif" style="--spine:#43586a;--spine-text:#f1e5ca;--spine-h:113px" aria-label="Open All the good days album"><span>All the good days</span></button><button type="button" class="album-spine-button" data-album="You were here" data-message="The gathering, held still." data-image="/images/photobooth/16902222.avif" style="--spine:#94583a;--spine-text:#fff2d2;--spine-h:98px" aria-label="Open You were here album"><span>You were here</span></button></div></div></div><div class="album-library-footer"><p>Select a spine to open its album.</p><a class="scene-link" href="printed-keepsakes.html">Create a photo album</a></div></section><div class="album-preview" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="album-preview-title"><div class="album-preview-shell"><button type="button" class="album-preview-close" aria-label="Close album preview">×</button><article class="album-preview-page"><small>SUNDOWN PRESS / PHOTO ALBUMS</small><h3 id="album-preview-title">The summer album</h3><p class="album-preview-message">Warm afternoons, kept close.</p><div class="album-preview-folio"><span>PERSONALISED KEEPSAKES</span><span>01</span></div></article><article class="album-preview-page"><div class="album-preview-photo"><img src="/images/photobooth/4307635.avif" alt="Preview image from The summer album"></div><p class="album-preview-note">A page to come back to.</p><div class="album-preview-folio"><span>SUNDOWN PRESS</span><span>02</span></div></article></div></div>
 
     <!-- ═══════════════════ WEDDING INVITATIONS SECTION ═══════════════════ -->
-    <section id="weddings" class="section weddings-section">
-      <div class="section-container">
-        <div class="section-header" data-animate="fade-up">
-          <span class="section-tag">03 — Wedding Invitations</span>
-          <div id="wedding-bloom-heading">
-            <h2 class="section-title">Your Love Story,<br /><span class="accent">Elegantly Told.</span></h2>
-          </div>
-          <p class="section-desc">
-            Bespoke digital wedding invitations with gentle animations, 
-            envelope reveals, and built-in RSVP — shared with a single link.
-          </p>
-        </div>
-
-        <div class="invitation-stack-wrap"><button class="stack-toggle" aria-expanded="false" aria-controls="invitation-layers">Explore the invitation collection <span aria-hidden="true">↗</span></button><p class="component-hint">Hover, focus or tap to unfold. Select a design to make it yours.</p><div class="invitation-stack" id="invitation-layers"><a class="invitation-layer" href="weddings.html" style="--layer:0;--tilt:-9deg"><img src="invite_card_1.jpg" alt="Royal Heritage invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 01</small><strong>Royal Heritage</strong><em>Personalise this design ↗</em></span></a><a class="invitation-layer" href="weddings.html" style="--layer:1;--tilt:7deg"><img src="invite_card_2.jpg" alt="Botanical Garden invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 02</small><strong>Botanical Garden</strong><em>Personalise this design ↗</em></span></a><a class="invitation-layer" href="weddings.html" style="--layer:2;--tilt:-5deg"><img src="invite_card_3.jpg" alt="Modern Minimal invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 03</small><strong>Modern Minimal</strong><em>Personalise this design ↗</em></span></a><a class="invitation-layer" href="weddings.html" style="--layer:3;--tilt:10deg"><img src="invite_card_4.jpg" alt="The Palace Edit invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 04</small><strong>The Palace Edit</strong><em>Personalise this design ↗</em></span></a><a class="invitation-layer" href="weddings.html" style="--layer:4;--tilt:-2deg"><img src="invite_card_5.jpg" alt="A Golden Evening invitation sample" loading="lazy"><span><small>THE WEDDING COLLECTION / 05</small><strong>A Golden Evening</strong><em>Personalise this design ↗</em></span></a></div></div>
-
-
-        <div class="wedding-features" data-animate="fade-up">
-          <div class="wf-item">
-            <div class="wf-icon">💌</div>
-            <span>Animated Envelope Reveal</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">📍</div>
-            <span>Venue Map & Directions</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">✓</div>
-            <span>Built-in RSVP</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">🎵</div>
-            <span>Background Music</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">📅</div>
-            <span>Countdown Timer</span>
-          </div>
-          <div class="wf-item">
-            <div class="wf-icon">🌐</div>
-            <span>Multi-language Support</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="weddings" class="scene wedding-scene" data-scene><div class="wedding-pin"><p class="scene-label">The wedding collection</p><h2 class="scene-title">A beautiful<br><em>beginning.</em></h2><div class="wedding-fan" aria-label="Wedding invitation designs" tabindex="0"><button type="button" class="wedding-specimen" data-wedding="0" aria-pressed="false" aria-label="Preview Royal Heritage" data-title="Royal Heritage" style="--slot:-2"><img src="invite_card_1.jpg" alt="Royal Heritage design preview" loading="lazy"><span>Royal Heritage</span></button><button type="button" class="wedding-specimen" data-wedding="1" aria-pressed="false" aria-label="Preview Botanical Garden" data-title="Botanical Garden" style="--slot:-1"><span class="wedding-art wedding-art-1"><small>TOGETHER WITH OUR FAMILIES</small><span class="wedding-art-mark" aria-hidden="true">SP</span><strong>Meera<em>&</em>Kunal</strong><small>INVITE YOU TO CELEBRATE<br>THEIR WEDDING</small><span class="wedding-art-date">THE BEGINNING OF ALWAYS</span></span><span>Botanical Garden</span></button><button type="button" class="wedding-specimen" data-wedding="2" aria-pressed="true" aria-label="Preview Modern Romance" data-title="Modern Romance" style="--slot:0"><span class="wedding-art wedding-art-2"><small>TOGETHER WITH OUR FAMILIES</small><span class="wedding-art-mark" aria-hidden="true">SP</span><strong>Tara<em>&</em>Arjun</strong><small>INVITE YOU TO CELEBRATE<br>THEIR WEDDING</small><span class="wedding-art-date">THE BEGINNING OF ALWAYS</span></span><span>Modern Romance</span></button><button type="button" class="wedding-specimen" data-wedding="3" aria-pressed="false" aria-label="Preview The Palace Edit" data-title="The Palace Edit" style="--slot:1"><img src="invite_card_4.jpg" alt="The Palace Edit design preview" loading="lazy"><span>The Palace Edit</span></button><button type="button" class="wedding-specimen" data-wedding="4" aria-pressed="false" aria-label="Preview A Golden Evening" data-title="A Golden Evening" style="--slot:2"><span class="wedding-art wedding-art-4"><small>TOGETHER WITH OUR FAMILIES</small><span class="wedding-art-mark" aria-hidden="true">SP</span><strong>Ishita<em>&</em>Aarav</strong><small>INVITE YOU TO CELEBRATE<br>THEIR WEDDING</small><span class="wedding-art-date">THE BEGINNING OF ALWAYS</span></span><span>A Golden Evening</span></button></div><div class="collection-console wedding-console"><button class="collection-step" type="button" data-wedding-step="-1" aria-label="Previous wedding design">Previous</button><div class="collection-caption" aria-live="polite"><h3 id="wedding-selection">Modern Romance</h3><p>Select a design. Find your beginning.</p></div><button class="collection-step" type="button" data-wedding-step="1" aria-label="Next wedding design">Next</button></div><div class="wedding-bottom"><p>From the first announcement<br>to the day you say “I do”.</p><span class="wedding-scroll">SCROLL TO UNFOLD · SELECT TO EXPLORE</span><a class="scene-link" href="invites.html">Find your invitation</a></div></div></section>
 
     <!-- ═══════════════════ PARALLAX DIVIDER 2 ═══════════════════ -->
     <section class="parallax-divider parallax-2">
@@ -710,7 +637,7 @@
                   <div class="booth-marquee"><span>SUNDOWN</span><em>The memory booth</em><span>PRESS</span></div>
                   <div class="booth-camera" aria-hidden="true"><span class="booth-lens"></span><span class="booth-status-light"></span></div>
                   <div class="booth-gallery-bezel">
-                    <div id="booth-gallery-root"></div>
+                    <div class="booth-gallery" id="booth-gallery" role="region" tabindex="0" aria-label="Infinite photo booth gallery" aria-describedby="booth-gallery-help"><div class="booth-gallery-tiles" aria-hidden="true"></div><span class="booth-gallery-badge" aria-hidden="true">THE GOOD TIMES, ON REPEAT</span><span class="booth-gallery-fallback">Portraits are loading. Drag to explore the gallery.</span></div><div class="booth-gallery-controls" aria-label="Photo gallery controls"><button type="button" data-booth-action="zoom-out" aria-label="Zoom out of photo gallery">−</button><button type="button" data-booth-action="zoom-in" aria-label="Zoom into photo gallery">+</button><button type="button" data-booth-action="reset" aria-label="Reset photo gallery">Reset</button><button type="button" data-booth-action="pause" aria-pressed="false">Pause</button></div>
 
                   </div>
                   <div class="booth-output" aria-hidden="true"><span class="booth-output-slot"></span><span class="booth-paper-strip"><span></span><span></span><span></span><small>KEEP THIS FEELING.</small></span></div>
@@ -869,9 +796,9 @@
         <div class="footer-links-group">
           <div class="footer-col">
             <h4>Products</h4>
-            <a href="digital-greetings.html">Digital Greetings</a>
+            <a href="invites.html">Invites</a>
             <a href="printed-keepsakes.html">Printed Keepsakes</a>
-            <a href="weddings.html">Wedding Invitations</a>
+            
             <a href="photo-booth.html">Photo Booth</a>
           </div>
           <div class="footer-col">
@@ -901,7 +828,7 @@
   <div class="persistent-cta-bar" id="persistentCtaBar">
     <div class="pcta-inner">
       <span class="pcta-text">Your invitation, designed by hand</span>
-      <a href="weddings.html" class="pcta-btn">START MY INVITATION</a>
+      <a href="invites.html" class="pcta-btn">START MY INVITATION</a>
     </div>
   </div>
 
@@ -914,7 +841,9 @@
     <span class="wa-ripple"></span>
   </a>
 
+  <button type="button" class="motion-toggle" aria-pressed="false">Motion on</button>
   <script type="module" src="src/main.js"></script>
   <script type="module" src="src/catalogue/Hero.jsx"></script>
 </body>
 </html>
+

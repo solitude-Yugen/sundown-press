@@ -1,0 +1,72 @@
+/* Contained product stages share the core Sundown palette. */
+.immersive-home { --ink: #0f3d3e; --paper: #f5f0e1; }
+.immersive-home .scene { max-width: 100%; min-width: 0; }
+.letter-scene { background: radial-gradient(ellipse at center, #fffdf7, #f5f0e1 75%); border-bottom: 1px solid #b8860b25; }
+.stationery-stage { --card-ink: #0f3d3e; }
+.stationery-note { background: #0f3d3e; }
+.stationery-note strong { font-size: 39px; }
+.stationery-stage[data-occasion-theme="Anniversary"] .art-card-border:after { border-radius: 130px 130px 0 0; }
+.stationery-stage[data-occasion-theme="Anniversary"] .art-sun { transform: rotate(-15deg); }
+.stationery-stage[data-occasion-theme="Anniversary"] .art-sun span { border-radius: 50% 50% 4px 4px; background: linear-gradient(45deg,#b8860b,#f0d68a); }
+.stationery-stage[data-occasion-theme="Celebration"] .art-card-front { background-color: #0f3d3e; color: #f0d68a; }
+.stationery-stage[data-occasion-theme="Celebration"] .art-card-border:after { border-radius: 0; transform: rotate(3deg); }
+.stationery-stage[data-occasion-theme="Just because"] .art-sun span { border-radius: 50% 0 50% 0; transform: rotate(45deg); }
+.stationery-stage[data-occasion-theme="Just because"] .art-card-border:after { border-radius: 100px; }
+.stationery-stage:not(:hover) .stationery-photo { animation: paper-drift 7s ease-in-out infinite alternate; }
+@keyframes paper-drift { from { translate: 0 -6px; } to { translate: 0 8px; } }
+.memory-scene { background: #f5f0e1; color: #0f3d3e; padding: 80px 0 60px; overflow: clip; border-block: 1px solid #b8860b30; }
+.collection-heading { text-align: center; padding: 0 24px; }
+.collection-heading .scene-title { font-size: clamp(54px,6.4vw,96px); margin: 22px 0; }
+.collection-heading > p:last-child { font-size: 16px; color: #596963; }
+.product-theatre { position: relative; width: min(1100px,100%); height: 470px; margin: 10px auto 0; perspective: 1400px; touch-action: pan-y; overflow: clip; }
+.product-theatre:before { content: ''; position: absolute; inset: 60% 13% 7%; background: radial-gradient(ellipse,#0f3d3e22,transparent 65%); transform: scaleY(.35); }
+.product-object { --slot: 0; --distance: 0; position: absolute; top: 35px; left: calc(50% - 140px); width: 280px; height: 355px; border: none; background: none; padding: 0; cursor: pointer; color: #0f3d3e; transform: translateX(calc(var(--slot) * clamp(180px,24vw,310px))) translateY(calc(var(--distance) * 25px + (1 - var(--entrance,1)) * 90px)) rotateY(calc(var(--slot) * -22deg)) rotateZ(calc(var(--slot) * 5deg)) scale(calc(1 - var(--distance) * .17)); opacity: calc(1 - var(--distance) * .3); transition: transform 1s cubic-bezier(.16,1,.3,1),opacity .8s; }
+.product-object[aria-pressed="true"] { filter: drop-shadow(0 25px 18px #0f3d3e20); }
+.product-object:hover .product-model { translate: 0 -10px; }
+.product-model { display: block; width: 100%; height: 100%; position: relative; transition: translate .6s; }
+.album-cover { position: absolute; inset: 0; background: #0f3d3e; color: #e8d2a0; display: flex; flex-direction: column; align-items: center; padding: 25px; box-shadow: inset 7px 0 5px #0003, 5px 3px 0 #d9cdb5,9px 6px 0 #ede4d1; border-radius: 2px 8px 8px 2px; border: 1px solid #b18d48; }
+.album-cover:after { content:'';position:absolute;inset:12px;border:1px solid #b18d4870;pointer-events:none; }
+.album-cover strong { font: 34px/.95 var(--font-display); margin: 15px 0; font-weight:400; }
+.album-cover small { font: 9px var(--font-body); letter-spacing:.16em; }
+.album-window { display:block;width:135px;height:130px;margin:4px 0 20px;padding:5px;border:1px solid #d2b472; }
+.album-window img { width:100%;height:100%;object-fit:cover;filter:sepia(.25); }
+.album-spine { position:absolute;inset:4px auto 4px -13px;width:20px;background:#092b2c;transform:skewY(-15deg); }
+.playing-card { position:absolute;inset:25px 45px 35px;border-radius:10px;background:#fffdf7;border:1px solid #c9b884;box-shadow:5px 12px 22px #0f3d3e26;display:flex;flex-direction:column;justify-content:space-between;padding:12px;transition:transform 1s cubic-bezier(.16,1,.3,1); }
+.playing-card b { font:25px var(--font-display);text-align:left; }.playing-card b:last-child { text-align:right;transform:rotate(180deg); }
+.playing-card>span { display:grid;place-content:center;flex:1;border:1px solid #bc9547;margin:7px;font:38px/.95 var(--font-display); }
+.card-one { background:repeating-linear-gradient(45deg,#0f3d3e 0 7px,#17494a 7px 9px);color:#e8d2a0;transform:translateX(-30px) rotate(-13deg); }
+.card-two { background:#e9ddbd;transform:translateX(15px) rotate(8deg); }
+.card-three { transform:translateX(45px) rotate(19deg); }
+.product-deck[aria-pressed="true"] .card-one { transform:translateX(-55px) rotate(-20deg); }.product-deck[aria-pressed="true"] .card-three { transform:translateX(55px) rotate(20deg); }
+.print-frame { position:absolute;inset:0 10px;background:#fffdf7;border:12px solid #9b793c;outline:2px solid #715722;box-shadow:inset 0 0 0 5px #e4d4b3,5px 10px 20px #0f3d3e25;display:flex;flex-direction:column;align-items:center;padding:25px 15px; }
+.print-frame strong { font:40px/.95 var(--font-display);font-weight:400;margin:20px 0; }.print-frame small { font:9px var(--font-body);letter-spacing:.12em; }
+.print-arch { width:120px;height:110px;margin-top:20px;background:repeating-radial-gradient(ellipse at 50% 100%,transparent 0 8px,#b18d48 9px 10px,transparent 11px 16px);border-radius:70px 70px 0 0;border-bottom:2px solid #b18d48; }
+.collection-console { max-width:700px;width:calc(100% - 40px);display:grid;grid-template-columns:100px minmax(0,1fr) 100px;align-items:center;gap:20px;margin:0 auto;padding:20px 0;border-top:1px solid #b8860b40; }
+.collection-step { border:1px solid #b8860b65;border-radius:40px;background:transparent;color:inherit;font:14px var(--font-body);padding:12px 15px;cursor:pointer;transition:background .25s,transform .25s; }.collection-step:hover { background:#b8860b20;transform:translateY(-3px); }
+.collection-caption { text-align:center; }.collection-caption h3 { font:400 32px/1.1 var(--font-display);margin-bottom:5px; }.collection-caption p { font:14px/1.5 var(--font-body); }
+.collection-footer { display:flex;flex-direction:column;align-items:center;gap:16px;margin:15px 20px 0;text-align:center; }.collection-footer p { font-size:14px; }.collection-footer small { font-size:12px;color:#687770; }
+.wedding-scene { background:#0f3d3e;color:#f5f0e1;height:185svh; }
+.wedding-pin { min-height:800px;height:100svh;padding:90px 20px 25px;background:radial-gradient(ellipse at 50% 55%,#1a5555,transparent 65%); }
+.wedding-pin:before { content:'';position:absolute;inset:100px 9% 80px;border:1px solid #d4a03c25;border-radius:50% 50% 0 0;pointer-events:none; }
+.wedding-pin .scene-title { font-size:clamp(56px,6.2vw,88px);margin:18px 0 0; }
+.wedding-fan { flex:1;position:relative;width:min(1200px,100%);min-height:340px;overflow:clip;touch-action:pan-y;perspective:1600px;display:block;padding:0; }
+.wedding-specimen { position:absolute;left:calc(50% - 105px);top:25px;width:210px;height:285px;--slot:0;--distance:0;padding:9px;background:#fffdf7;border:1px solid #c6b487;color:#0f3d3e;cursor:pointer;transform:translateX(calc(var(--slot) * (75px + var(--progress,0) * 55px))) translateY(calc(var(--distance) * 20px)) rotate(calc(var(--slot) * 9deg)) scale(calc(1 - var(--distance) * .07));opacity:calc(1 - var(--distance) * .13);transition:transform .85s cubic-bezier(.16,1,.3,1),opacity .6s,box-shadow .3s;box-shadow:5px 12px 25px #0005;transform-origin:50% 110%; }
+.wedding-specimen img { height:230px;width:100%;object-fit:cover; }.wedding-specimen span { font:italic 20px var(--font-display);margin-top:7px; }
+.wedding-specimen[aria-pressed="true"] { box-shadow:0 0 0 2px #d4a03c,0 25px 40px #0005; }
+.wedding-specimen .wedding-art { height:230px;margin:0;padding:15px 12px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;background:#e4e9db;color:#294c42;border:4px double #73876c;font-family:var(--font-display); }
+.wedding-art small { font:7px/1.6 var(--font-body);letter-spacing:.1em; }.wedding-art strong { font:30px/.9 var(--font-display);font-weight:400; }.wedding-art strong em { display:block;font-size:21px;margin:5px; }.wedding-art .wedding-art-mark { border:1px solid currentColor;border-radius:50%;width:35px;height:35px;display:grid;place-items:center;font-size:15px;margin:4px; }.wedding-art .wedding-art-date { font:7px var(--font-body);letter-spacing:.1em; }
+.wedding-specimen .wedding-art-2 { background:#fffaf0;color:#173d3e;border:1px solid #b29659;border-radius:75px 75px 0 0;padding-top:25px; }.wedding-specimen .wedding-art-4 { background:#203e3d;color:#e8cb8b;border:4px double #c4a458; }
+.wedding-specimen:hover { filter:brightness(1.05); }
+.wedding-console { position:relative;z-index:12;padding:13px 0;margin:0 auto 12px; }.wedding-console .collection-caption h3 { color:#e8c981; }
+.wedding-bottom { max-width:1000px;margin:0 auto;justify-content:center;gap:30px; }.wedding-scroll { display:none; }.wedding-bottom p { font-size:14px; }.wedding-bottom .scene-link { color:#f0d68a; }
+.scene button:focus-visible { outline:3px solid #d4a03c;outline-offset:5px; }
+@media(max-width:700px) {
+ .letter-scene,.memory-scene { padding-top:60px; }.stationery-stage { height:450px; }.stationery-note strong { font-size:30px; }
+ .collection-heading .scene-title { font-size:54px; }.product-theatre { height:380px; }.product-object { width:240px;height:320px;left:calc(50% - 120px);top:30px;transform:translateX(calc(var(--slot) * 155px)) translateY(calc(var(--distance) * 20px)) rotateY(calc(var(--slot) * -25deg)) scale(calc(1 - var(--distance) * .26));opacity:calc(1 - var(--distance) * .55); }
+ .album-cover { padding:22px; }.album-cover strong { font-size:28px; }.album-window { width:120px;height:115px;margin-bottom:10px; }.playing-card { inset:25px 35px; }.playing-card>span { font-size:30px; }.print-frame strong { font-size:34px; }.print-frame { padding:20px 10px; }.print-arch { width:100px;height:90px; }
+ .collection-console { grid-template-columns:75px minmax(0,1fr) 75px;gap:8px;width:calc(100% - 30px); }.collection-step { font-size:12px;padding:11px 8px; }.collection-caption h3 { font-size:25px; }.collection-caption p { font-size:12px; }
+ .wedding-scene { height:auto; }.wedding-pin { position:relative;min-height:0;height:auto;padding:65px 12px 40px; }.wedding-pin .scene-title { font-size:58px; }.wedding-fan { flex:none;height:350px;min-height:0; }.wedding-specimen { width:185px;height:265px;left:calc(50% - 92.5px);top:35px;transform:translateX(calc(var(--slot) * 70px)) translateY(calc(var(--distance) * 16px)) rotate(calc(var(--slot) * 12deg)) scale(calc(1 - var(--distance) * .12)); }.wedding-specimen img { height:212px; }.wedding-specimen span { font-size:18px; }.wedding-bottom { flex-direction:column;gap:17px;text-align:center; }.wedding-bottom p { max-width:270px; }.wedding-pin:before { inset:100px 20px 45px; }
+}
+@media(prefers-reduced-motion:reduce) { .stationery-stage * { animation:none!important; }.wedding-scene { height:auto; }.wedding-pin { position:relative;min-height:820px;height:auto; }.wedding-fan { flex:none;height:370px; }.product-object,.wedding-specimen { transition:none; } }
+.motion-paused .stationery-stage * { animation:none!important; }
+@media(max-width:700px){.wedding-specimen .wedding-art{height:212px}.wedding-art strong{font-size:26px}}

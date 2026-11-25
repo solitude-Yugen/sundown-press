@@ -1,0 +1,38 @@
+﻿You can also purchase readymade templates only in @499👇
+https://webgennie.com/invitations/
+
+
+
+
+ChatGPT Prompt:
+Create an ultra-detailed vertical 9:16 image for the landing page of a royal Indian wedding invitation website. Show grand Rajasthani palace gates: two tall carved wooden doors covered in gold floral filigree, closed, under a scalloped white marble arch. Add hanging brass lanterns glowing warm, pink bougainvillea draping over the arch, white flower urns on both sides, and rose petals scattered on polished marble. Soft cinematic golden-hour light, symmetrical, centred composition, photorealistic, 8K. Keep the bottom quarter slightly darker so a "Tap to Enter" button stands out. No text, no people.
+
+
+Flow Prompt:
+Cinematic 8-second vertical 9:16 shot starting exactly on this image. The ornate golden palace doors slowly swing open from the centre. Warm golden light floods through the gap, dust particles shimmer in the beams, the lanterns flicker gently, and rose petals drift across the marble floor. Slow, smooth push-in towards the doorway, ending on a soft white glow that fills the frame. Keep the doors, arch and colours identical to the image. No text, no people, no camera shake.
+
+
+Lovable Prompt:
+Build a fully animated, mobile-first wedding invitation website using the attached palace video.
+
+
+1. Opening: the video full screen, paused on its first frame, with a glowing "Tap to Enter" button. On tap, play the video (the doors open), then fade into the site. Start soft instrumental background music on tap, with a mute button in the corner.
+2. Hero: the couple's names in elegant gold serif, with a subtle shimmer, over a soft cream background with gold floral borders.
+3. Save the Date: a gold scratch card that reveals the wedding date when the guest scratches it with a finger.
+4. Countdown: a live timer to the wedding showing days, hours, minutes and seconds.
+5. Celebrations: the event schedule as elegant cards (Mehendi, Haldi, Sangeet, Wedding, Reception), each with date, time and dress code.
+6. Venue: venue name, address and a "Get Directions" button that opens Google Maps.
+7. RSVP: a simple form with name, number of guests and attending yes/no.
+
+
+Style: royal Indian luxury, cream and gold with deep maroon accents, serif headings, smooth fade and slide-up animations on scroll, fully responsive on phones.
+
+
+Ask me for these details before building: couple's names, wedding date, each event's date and time, and the venue address.
+
+
+
+Lovable Link: https://lovable.dev/invite/KM4MMAN
+
+You can also purchase readymade templates only in @499👇
+https://webgennie.com/invitations/
